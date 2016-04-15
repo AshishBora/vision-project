@@ -5,3 +5,6 @@ VQA_LSTM_CNN/data/annotations/*
 VQA_LSTM_CNN/data/*.json
 VQA_LSTM_CNN/data/zip/*
 data/.DS_Store
+*.ipynb_checkpoints*
+AttributeModels/*
+data/SUN/*
