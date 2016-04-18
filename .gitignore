@@ -11,3 +11,4 @@ data/SUN/*
 CaffeNet/*.caffemodel
 AlexNet/*
 temp/
+LearnTorch/*
