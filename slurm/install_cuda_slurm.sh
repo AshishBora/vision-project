@@ -5,8 +5,8 @@
 #SBATCH -N 1
 #SBATCH -p gpu
 #SBATCH -t 12:00:00 
-#SBATCH -e /work/04001/ashishb/maverick/vision-project/logs/install_cuda.err
-#SBATCH -o /work/04001/ashishb/maverick/vision-project/logs/install_cuda.out
+#SBATCH -e ./logs/install_cuda.err
+#SBATCH -o ./logs/install_cuda.out
 #SBATCH -J install_cuda
 #SBATCH --mail-user=ashish.bora@utexas.edu
 #SBATCH --mail-type=all
