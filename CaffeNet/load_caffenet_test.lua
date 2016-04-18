@@ -50,6 +50,8 @@ end
 
 -- load the model
 model = torch.load('caffenet.t7')
+model:evaluate()
+model:cuda()
 
 imFolder = '/work/04001/ashishb/maverick/vision-project/testImages/'
 path = imFolder .. 'cat.jpg'

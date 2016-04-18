@@ -60,6 +60,8 @@ end
 path = '/Users/ashish/caffe/models/bvlc_reference_caffenet/'
 model = loadcaffe.load('deploy.prototxt', 'bvlc_reference_caffenet.caffemodel', 'cudnn')
 print(model)
+model:evaluate()
+model:cuda()
 
 imFolder = '/work/04001/ashishb/maverick/vision-project/testImages/'
 path = imFolder .. 'cat.jpg'
