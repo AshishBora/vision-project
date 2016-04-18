@@ -10,3 +10,4 @@ AttributeModels/*
 data/SUN/*
 CaffeNet/*.caffemodel
 AlexNet/*
+temp/
