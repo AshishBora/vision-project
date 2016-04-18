@@ -12,3 +12,4 @@ CaffeNet/*.caffemodel
 AlexNet/*
 temp/
 LearnTorch/*
+*.t7
