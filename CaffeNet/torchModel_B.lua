@@ -41,7 +41,7 @@ end
 B:cuda()
 B:evaluate()
 
-imFolder = '/work/04009/abhi23/maverick/vision-project/testImages/'
+imFolder = '../testImages/'
 path = imFolder .. 'cat.jpg'
 input = preprocess(path)
 feat = conv:forward(input:cuda());
