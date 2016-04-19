@@ -30,7 +30,7 @@ function preprocess(path)
         local iW = input:size(3)
         local w1 = math.ceil((iW-oW)/2)
         local h1 = math.ceil((iH-oH)/2)
-                                               
+	local out = image.crop(input, w1, h1, w1+oW, h1+oH) -- center patch                                               
         -- make the range [0, 255]
         out:mul(255)
 
