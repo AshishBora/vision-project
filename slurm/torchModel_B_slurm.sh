@@ -8,7 +8,7 @@
 #SBATCH -e ./logs/torchModel_B.err
 #SBATCH -o ./logs/torchModel_B.out
 #SBATCH -J torchModel_B
-#SBATCH --mail-user=ashish.bora@utexas.edu
+#SBATCH --mail-user=as1992@cs.utexas.edu
 #SBATCH --mail-type=all
 
 echo job $JOB_ID execution at: `date`

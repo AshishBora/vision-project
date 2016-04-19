@@ -1,5 +1,12 @@
-job execution at: Mon Apr 18 19:01:51 CDT 2016
+job execution at: Tue Apr 19 18:45:30 CDT 2016
 running on node c221-201
+Dot Net Output
+1e-13 *
+ 3.2725
+[torch.CudaTensor of size 1]
+
+Full B Output
+3.2725365928417e-13
  3.2725e-13
  1.2079e-13
  1.2140e-15
