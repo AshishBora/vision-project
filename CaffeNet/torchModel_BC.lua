@@ -22,21 +22,28 @@ function createCModel(input_size)
 	local image_feat2 = nn.Identity()();
 	local question = nn.Identity()();
 	local confidence = nn.Identity()();
-	local input1 = nn.ConcatTable()({image_feat1, question, confidence});
-	local input2 = nn.ConcatTable()({image_feat2, question, confidence});
+
+	local input1 = nn.JoinTable(1)({image_feat1, question, confidence});
+	local input2 = nn.JoinTable(1)({image_feat2, question, confidence});
+
 	local slp1 = nn.Linear(input_size, 1);
 	local slp2 = slp:clone('weight','bias', 'gradWeight','gradBias');
 	local y1 = slp1(input1);
 	local y2 = slp2(input2);
+
 	nngraph.annotateNodes();
 	return nngraph.gModule({image_feat1, image_feat2, question, confidence}, {y1, y2});
 end
 
 function createBCModel( B_model, C_model, encoder)
-	local image_feat1 = nn.Identity()();
-	local image_feat2 = nn.Identity()();
-	local image_feat3 = nn.Identity()();
+	local image1 = nn.Identity()();
+	local image2 = nn.Identity()();
+	local image3 = nn.Identity()();
 	local question = nn.Identity()();
+
+	local image_feat1 = encoder[1](image1);
+	local image_feat2 = encoder[2](image2);
+	local image_feat3 = encoder[3](image3);
 
 	local confidence = B_model(question, image_feat1);
 	local scores = C_model(image_feat2, image_feat3, question, confidence);
