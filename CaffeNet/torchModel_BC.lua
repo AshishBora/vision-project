@@ -26,12 +26,12 @@ function createCModel(input_size)
 	local input2 = nn.JoinTable(1)({image_feat2, question, confidence});
 
 	local slp1 = nn.Linear(input_size, 1);
-	local slp2 = slp:clone('weight','bias', 'gradWeight','gradBias');
+	local slp2 = slp1:clone('weight','bias', 'gradWeight','gradBias');
 	local y1 = slp1(input1);
 	local y2 = slp2(input2);
 
 	nngraph.annotateNodes();
-	return nngraph.gModule({image_feat1, image_feat2, question, confidence}, {y1, y2});
+	return nn.gModule({image_feat1, image_feat2, question, confidence}, {y1, y2});
 end
 
 function createFullModel(B_model, C_model, encoder)
@@ -40,17 +40,17 @@ function createFullModel(B_model, C_model, encoder)
 	local image3 = nn.Identity()();
 	local question = nn.Identity()();
 
-	local image_feat1, image_feat2, image_feat3 = encoder({image1, image2, image3})
+	-- local image_feat1, image_feat2, image_feat3 = encoder({image1, image2, image3})
 	
-	-- local image_feat1 = encoder[1](image1);
-	-- local image_feat2 = encoder[2](image2);
-	-- local image_feat3 = encoder[3](image3);
+	local image_feat1 = encoder.modules[1](image1);
+	local image_feat2 = encoder.modules[2](image2);
+	local image_feat3 = encoder.modules[3](image3);
 
-	local confidence = B_model(question, image_feat1);
-	local scores = C_model(image_feat2, image_feat3, question, confidence);
+	local confidence = B_model({question, image_feat1});
+	local scores = C_model({image_feat2, image_feat3, question, confidence});
 	
 	nngraph.annotateNodes();
-	return nngraph.gModel({image1, image2, image3, question}, {scores});
+	return nn.gModule({image1, image2, image3, question}, {scores});
 end
 
 
@@ -84,10 +84,11 @@ end
 function getGetCateg(model)
 	-- GetCateg takes the encoded output given by the third encoder and
 	-- predicts the category
-	getCateg = nn.Sequential()
+	local getCateg = nn.Sequential()
 	for i = 22, 24 do
 		getCateg:add(model.modules[i]:clone())
 	end
+	return getCateg
 end
 
 -- load the model
@@ -101,6 +102,8 @@ getCateg = getGetCateg(model)
 B_model = createFullBModel(getCateg)
 C_model = createCModel(5097)
 BC_model = createFullModel(B_model, C_model, encoder)
+BC_model:cuda()
+BC_model:evaluate()
 
 imFolder = '../testImages/'
 path1 = imFolder .. 'cat.jpg'
@@ -108,12 +111,18 @@ path2 = imFolder .. 'Squirrel_posing.jpg'
 label = torch.bernoulli() + 1
 
 image_data = {}
-image_data[1] = preprocess(path1)
-image_data[2] = preprocess(path2)
-image_data[3] = image_data[label]:clone()
+image_data[1] = preprocess(path1):cuda()
+image_data[2] = preprocess(path2):cuda()
+image_data[3] = image_data[label]:clone():cuda()
 
 ques = torch.Tensor(1000):fill(0)
 ques[285] = 1
+ques:float()
+ques:cuda()
 
-output = BC_model:forward(image_data[1], image_data[2], image_data[3], ques})
-print(output)
+input = {image_data[1], image_data[2], image_data[3], ques}
+
+print(BC_model:__tostring__())
+
+-- output = BC_model:forward(input)
+-- print(output)
