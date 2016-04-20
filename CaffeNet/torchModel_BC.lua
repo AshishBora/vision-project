@@ -6,6 +6,7 @@ require 'nngraph';
 
 dofile('preproc.lua')
 
+
 function createFullBModel(getCateg)
 	local image_feat = nn.Identity()()
 	local question_input = nn.Identity()()
@@ -34,50 +35,41 @@ function createCModel(input_size)
 	return nn.gModule({image_feat1, image_feat2, question, confidence}, {y1, y2});
 end
 
-function createFullModel(B_model, C_model, encoder)
+
+function createFullModel(B_model, C_model, encoders)
 	local image1 = nn.Identity()();
 	local image2 = nn.Identity()();
 	local image3 = nn.Identity()();
 	local question = nn.Identity()();
 
-	-- local image_feat1, image_feat2, image_feat3 = encoder({image1, image2, image3})
-	
-	local image_feat1 = encoder.modules[1](image1);
-	local image_feat2 = encoder.modules[2](image2);
-	local image_feat3 = encoder.modules[3](image3);
+	local image_feat1 = encoders[1](image1);
+	local image_feat2 = encoders[2](image2);
+	local image_feat3 = encoders[3](image3);
 
-	local confidence = B_model({question, image_feat1});
-	local scores = C_model({image_feat2, image_feat3, question, confidence});
+	local confidence = B_model({question, image_feat3});
+	local scores = C_model({image_feat1, image_feat2, question, confidence});
 	
 	nngraph.annotateNodes();
 	return nn.gModule({image1, image2, image3, question}, {scores});
 end
 
 
-function getEncoder(model)
+function getEncoders(model)
 	-- encoder1 gets its parameters from the pretrained model
 	-- take only upto layer 21 to get 4096 dimensional
 	-- feature vector for each image
-	encoder1 = nn.Sequential()
+	local encoder1 = nn.Sequential()
 	for i = 1, 21 do
 		encoder1:add(model.modules[i]:clone())
 	end
 
-	-- parent module which will house the three encoders
-	-- We need three because we don't want to handle random
-	-- choice inside the network right now. We will enentually
-	-- incorporate this
-	encoder = nn.ParallelTable()
-	encoder:add(encoder1)
-	-- clone copies as well as shares the parameters when called with
-	-- extra arguments
-	encoder:add(encoder1:clone('weight','bias', 'gradWeight','gradBias')) --clone the encoder and share the weight, bias. Must also share the gradWeight and gradBias
-	encoder:add(encoder1:clone('weight','bias', 'gradWeight','gradBias')) --clone the encoder and share the weight, bias. Must also share the gradWeight and gradBias
+	-- clone copies as well as shares the parameters when called with extra arguments
 
-	-- put the encoder on cuda and in evalautaion mode
-	encoder:cuda()
-	encoder:evaluate()
-	return encoder
+	--clone the encoder and share the weight, bias. Must also share the gradWeight and gradBias
+	local encoder2 = encoder1:clone('weight','bias', 'gradWeight','gradBias') 
+	local encoder3 = encoder1:clone('weight','bias', 'gradWeight','gradBias')
+	
+	return {encoder1, encoder2, encoder3}
 end
 
 
@@ -91,38 +83,58 @@ function getGetCateg(model)
 	return getCateg
 end
 
+
 -- load the model
 model = torch.load('caffenet.t7')
 model:evaluate()
 model:cuda()
 
+
 -- create models
-encoder = getEncoder(model)
+encoders = getEncoders(model)
 getCateg = getGetCateg(model)
 B_model = createFullBModel(getCateg)
 C_model = createCModel(5097)
-BC_model = createFullModel(B_model, C_model, encoder)
+BC_model = createFullModel(B_model, C_model, encoders)
+
+
+-- put all models on cuda and in evalaute mode
+for i = 1, 3 do
+	encoders[i]:cuda()
+	encoders[i]:evaluate()
+end
+
+getCateg:cuda()
+getCateg:evaluate()
+
+B_model:cuda()
+B_model:evaluate()
+
+C_model:cuda()
+C_model:evaluate()
+
 BC_model:cuda()
 BC_model:evaluate()
 
+
+-- read and preprocess images
 imFolder = '../testImages/'
 path1 = imFolder .. 'cat.jpg'
 path2 = imFolder .. 'Squirrel_posing.jpg'
 label = torch.bernoulli() + 1
 
 image_data = {}
-image_data[1] = preprocess(path1):cuda()
-image_data[2] = preprocess(path2):cuda()
-image_data[3] = image_data[label]:clone():cuda()
+image_data[1] = preprocess(path1)
+image_data[2] = preprocess(path2)
+image_data[3] = image_data[label]:clone()
 
+
+-- generate a fake question
 ques = torch.Tensor(1000):fill(0)
 ques[285] = 1
-ques:float()
-ques:cuda()
 
-input = {image_data[1], image_data[2], image_data[3], ques}
 
-print(BC_model:__tostring__())
-
--- output = BC_model:forward(input)
--- print(output)
+-- forward propagate through the model
+output = BC_model:forward({image_data[1]:cuda(), image_data[2]:cuda(), image_data[3]:cuda(), ques:cuda()})
+print(output[1])
+print(output[2])

@@ -1,3 +1,9 @@
-job execution at: Wed Apr 20 01:53:43 CDT 2016
-running on node c221-104
-nn.gModule
+job execution at: Wed Apr 20 03:13:40 CDT 2016
+running on node c221-603
+-0.3805
+[torch.CudaTensor of size 1]
+
+0.01 *
+ 5.8508
+[torch.CudaTensor of size 1]
+
