@@ -10,13 +10,13 @@ require 'nn';
 
 QUESTION_SIZE=1000
 
-function createFullBModel(imageModel)
-    local image_input = nn.Identity()()
+function createFullBModel(B_model)
+    local image_feat = nn.Identity()()
     local question_input = nn.Identity()()
-    local image_output = imageModel(image_input)
+    local image_output = B_model(image_feat)
     local output = nn.DotProduct()({image_output, question_input})
     nngraph.annotateNodes()
-    return nn.gModule({question_input, image_input}, {output})
+    return nn.gModule({question_input, image_feat}, {output})
 end
 
 
@@ -56,10 +56,10 @@ dot_net_output = dot_net:forward({output:cuda(), question_input:cuda()})
 print 'Dot Net Output'
 print(dot_net_output)
 
-full_B = createFullBModel(model);
+full_B = createFullBModel(B);
 full_B:cuda();
 full_B:evaluate();
-full_B_output = full_B:forward({question_input:cuda(), input:cuda()})
+full_B_output = full_B:forward({question_input:cuda(), feat:cuda()})
 print 'Full B Output'
 print(full_B_output[1])
 
