@@ -13,3 +13,4 @@ AlexNet/*
 temp/
 LearnTorch/*
 *.t7
+debug/*
