@@ -96,20 +96,6 @@ B_model = createFullBModel(getCateg)
 C_model = createCModel(5097)
 BC_model = createFullModel(B_model, C_model, encoders)
 
--- Use a typical generic gradient update function
-function trainStep(model, input, target, criterion, learningRate)
-	local pred = model:forward(input)
-	local err = criterion:forward(pred, target)
-	local gradCriterion = criterion:backward(pred, target)
-
-	model:zeroGradParameters()
-	model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()})
-	model:updateParameters(learningRate)
-
-	print('pred = ', pred[1][1], pred[2][1])
-	print('err = ', err)
-end
-
 
 -- put all models on cuda and in evalaute mode
 for i = 1, 3 do

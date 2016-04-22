@@ -1,5 +1,20 @@
 dofile('torchModel_BC.lua')
 
+
+-- Use a typical generic gradient update function
+function trainStep(model, input, target, criterion, learningRate)
+	local pred = model:forward(input)
+	local err = criterion:forward(pred, target)
+	local gradCriterion = criterion:backward(pred, target)
+
+	model:zeroGradParameters()
+	model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()})
+	model:updateParameters(learningRate)
+
+	print('pred = ', pred[1][1], pred[2][1])
+	print('err = ', err)
+end
+
 -- read and preprocess dummy images
 imFolder = '../testImages/'
 path1 = imFolder .. 'cat.jpg'
