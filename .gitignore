@@ -9,6 +9,7 @@ data/.DS_Store
 AttributeModels/*
 data/SUN/*
 CaffeNet/*.caffemodel
+CaffeNet/*.ipynb
 AlexNet/*
 temp/
 LearnTorch/*
