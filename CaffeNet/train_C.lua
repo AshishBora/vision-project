@@ -42,13 +42,19 @@ end
 
 
 -- Use a typical generic gradient update function
-function accumulate(model, input, target, criterion, batch_size)
+function accumulate(model, input, target, criterion,eval_criterion,  batch_size)
     local pred = model:forward(input)
     local loss = criterion:forward(pred, target)
     local gradCriterion = criterion:backward(pred, target)
     model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()}, 1/batch_size)
+    
+    local eval_loss = eval_criterion:forward(pred, target)
+    local pred_err = 0
+    if(eval_loss > 0)
+	pred_err = 1
+    end
     -- outfile:write('pred = ', pred[1][1], pred[2][1])
-    return loss
+    return loss, pred_err
 end
 
 
@@ -125,6 +131,7 @@ BC_model:evaluate()
 C_model:training()
 
 crit = nn.MarginRankingCriterion(0.1)
+eval_crit = nn.MarginRankingCriterion(0.0)
 lr = 0.01
 batch_size = 250
 max_train_iter = 100
@@ -156,22 +163,25 @@ for i = 1, max_train_iter do
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(0)
 
+    local train_pred_err = 0
     for j = 1, batch_size do
         example = getCtrainExample(trainset, base_path)
         input = example[1]
         target = example[2]
-        local loss = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, batch_size)
+        local loss, pred_err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, eval_crit, batch_size)
         batch_loss = batch_loss + loss
+	train_pred_err = train_pred_err + pred_err;
         -- outfile:write('loss = ', loss)
     end
     BC_model:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, '\n')
+    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ' Training Error', train_pred_err/batch_size, '\n')
     outfile:close()
 
+
     if i % test_interval == 0 then
-        evalPerf(BC_model, crit, testset, base_path, test_iter)        
+        evalPerf(BC_model, eval_crit, testset, base_path, test_iter)        
     end
 
     if i % lr_stepsize == 0 then
