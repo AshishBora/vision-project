@@ -119,4 +119,4 @@ ques[2] = 1
 -- forward propagate through the model
 output = BC_model:forward({image_data[1], image_data[2], image_data[3], ques})
 
-graph.dot(BC_model.fg, 'Model')
+graph.dot(BC_model.fg, 'Model', 'BC_model')

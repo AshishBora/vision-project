@@ -1,0 +1,106 @@
+digraph G {
+	graph [bb="0,0,2106.3,976.08"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=1.5321,
+		label="scores (1)\ninput = {Tensor[20],Tensor[20],Tensor[10],Tensor[1]}\lmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node3,Node4,\
+Node5,Node6}",
+		pos="1043.6,161.87",
+		tooltip="[torchModel_BC_viz.lua]:50_",
+		width=6.315];
+	n2	 [height=0.98209,
+		label="Node2\ninput = {{Tensor[1],Tensor[1]}}\lreverseMap = {}",
+		pos="1043.6,35.355",
+		tooltip="[[C]]:-1_",
+		width=3.8989];
+	n1 -> n2	 [pos="e,1043.6,71.069 1043.6,106.62 1043.6,98.137 1043.6,89.457 1043.6,81.219"];
+	n3	 [height=1.2571,
+		label="image_feat1 (3)\ninput = {Tensor[100]}\lmodule = nn.Linear(100 -> 20)\lreverseMap = {}",
+		pos="1196.6,308.17",
+		tooltip="[torchModel_BC_viz.lua]:45_",
+		width=3.7477];
+	n3 -> n1	 [pos="e,1099.5,215.57 1152,265.05 1137.9,251.75 1122,236.79 1106.9,222.51"];
+	n4	 [height=1.2571,
+		label="image_feat2 (4)\ninput = {Tensor[100]}\lmodule = nn.Linear(100 -> 20)\lreverseMap = {}",
+		pos="1520.6,308.17",
+		tooltip="[torchModel_BC_viz.lua]:46_",
+		width=3.7477];
+	n4 -> n1	 [pos="e,1184,205.31 1421.8,277.27 1356,257.36 1268.3,230.82 1193.9,208.32"];
+	n5	 [height=1.2571,
+		label="question (5)\ninput = {Tensor[10]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="643.64,444.58",
+		tooltip="[torchModel_BC_viz.lua]:43_",
+		width=2.6386];
+	n5 -> n1	 [pos="e,856.68,193.34 655.33,399.33 669.01,355.98 695.84,291.04 741.64,253.02 772.01,227.8 809.24,209.64 847.06,196.56"];
+	n6	 [height=1.5321,
+		label="confidence (6)\ninput = {Tensor[10],Tensor[20]}\lmodule = nn.gModule\lreverseMap = {}\lmapindex = {Node5,Node10}",
+		pos="891.64,308.17",
+		tooltip="[torchModel_BC_viz.lua]:49_",
+		width=3.9099];
+	n5 -> n6	 [pos="e,810.38,353.22 705.58,410.01 734.56,394.31 769.64,375.3 801.49,358.03"];
+	n6 -> n1	 [pos="e,988.19,215.51 944.8,256.7 956.43,245.66 968.84,233.88 980.81,222.52"];
+	n7	 [height=1.2571,
+		label="image1 (7)\ninput = {Tensor[100]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="1218.6,444.58",
+		tooltip="[torchModel_BC_viz.lua]:40_",
+		width=2.7761];
+	n7 -> n3	 [pos="e,1203.9,353.51 1211.4,399.2 1209.5,387.84 1207.5,375.5 1205.6,363.7"];
+	n8	 [height=1.2571,
+		label="image2 (8)\ninput = {Tensor[100]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="1813.6,571.09",
+		tooltip="[torchModel_BC_viz.lua]:41_",
+		width=2.7761];
+	n8 -> n4	 [pos="e,1567.5,350.9 1769.1,530.46 1717.2,484.17 1631.2,407.59 1575.2,357.75"];
+	n9	 [height=1.2571,
+		label="Node9\ninput = {{Tensor[100],Tensor[100],Tensor[100],Tensor[10]}}\lselectindex = 4\lreverseMap = {}",
+		pos="256.64,697.6",
+		tooltip="[[C]]:-1_-4",
+		width=7.1289];
+	n9 -> n5	 [pos="e,588.17,481.56 322.73,653.74 394.61,607.11 508.72,533.1 579.73,487.04"];
+	n10	 [height=1.2571,
+		label="image_feat3 (10)\ninput = {Tensor[100]}\lmodule = nn.Linear(100 -> 20)\lreverseMap = {}",
+		pos="891.64,444.58",
+		tooltip="[torchModel_BC_viz.lua]:47_",
+		width=3.7477];
+	n10 -> n6	 [pos="e,891.64,363.35 891.64,399.2 891.64,390.96 891.64,382.19 891.64,373.49"];
+	n11	 [height=1.2571,
+		label="Node11\ninput = {{Tensor[100],Tensor[100],Tensor[100],Tensor[10]}}\lselectindex = 1\lreverseMap = {}",
+		pos="1318.6,697.6",
+		tooltip="[[C]]:-1_-1",
+		width=7.1289];
+	n11 -> n7	 [pos="e,1236.1,489.44 1301,652.3 1283.9,609.47 1258.1,544.51 1239.9,498.87"];
+	n12	 [height=1.2571,
+		label="Node12\ninput = {{Tensor[100],Tensor[100],Tensor[100],Tensor[10]}}\lselectindex = 2\lreverseMap = {}",
+		pos="1849.6,697.6",
+		tooltip="[[C]]:-1_-2",
+		width=7.1289];
+	n12 -> n8	 [pos="e,1826.4,616.2 1836.8,652.35 1834.4,643.82 1831.8,634.8 1829.2,626"];
+	n13	 [height=1.2571,
+		label="Node13\ninput = {{Tensor[100],Tensor[100],Tensor[100],Tensor[10]}}\lreverseMap = {}\lnSplitOutputs = 4",
+		pos="1052.6,824.11",
+		tooltip="[[C]]:-1_ split at [...s/ashish/torch/install/share/lua/5.1/nngraph/gmodule.lua]:96-mnode",
+		width=7.1289];
+	n13 -> n9	 [pos="e,439.05,729.44 858.33,794.48 757.77,779.48 633.05,760.58 521.64,742.86 498.16,739.12 473.52,735.12 449.12,731.1"];
+	n13 -> n11	 [pos="e,1229.8,740.2 1141.6,781.48 1167,769.59 1194.8,756.57 1220.7,744.44"];
+	n13 -> n12	 [pos="e,1667.2,729.45 1247,794.54 1347.8,779.53 1472.9,760.61 1584.6,742.86 1608.1,739.13 1632.8,735.12 1657.2,731.11"];
+	n16	 [height=1.2571,
+		label="Node16\ninput = {{Tensor[100],Tensor[100],Tensor[100],Tensor[10]}}\lselectindex = 3\lreverseMap = {}",
+		pos="787.64,697.6",
+		tooltip="[[C]]:-1_-3",
+		width=7.1289];
+	n13 -> n16	 [pos="e,876.17,740.2 964.03,781.48 938.84,769.64 911.26,756.68 885.55,744.6"];
+	n14	 [height=1.2571,
+		label="image3 (14)\ninput = {Tensor[100]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="831.64,571.09",
+		tooltip="[torchModel_BC_viz.lua]:42_",
+		width=2.7761];
+	n14 -> n10	 [pos="e,870.57,489.32 852.63,526.55 856.98,517.5 861.62,507.87 866.13,498.53"];
+	n15	 [height=0.98209,
+		label="Node15\ninput = {Tensor[100],Tensor[100],Tensor[100],Tensor[10]}\lreverseMap = {}",
+		pos="1052.6,940.72",
+		tooltip="[[C]]:-1_",
+		width=6.8649];
+	n15 -> n13	 [pos="e,1052.6,869.67 1052.6,905.34 1052.6,897.28 1052.6,888.5 1052.6,879.8"];
+	n16 -> n14	 [pos="e,816.05,616.2 803.28,652.35 806.32,643.73 809.55,634.6 812.69,625.71"];
+}
