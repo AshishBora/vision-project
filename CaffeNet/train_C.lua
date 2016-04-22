@@ -42,7 +42,7 @@ end
 
 
 -- Use a typical generic gradient update function
-function accumulate(model, input, target, criterion,eval_criterion,  batch_size)
+function accumulate(model, input, target, criterion, eval_criterion,  batch_size)
     local pred = model:forward(input)
     local loss = criterion:forward(pred, target)
     local gradCriterion = criterion:backward(pred, target)
@@ -152,7 +152,7 @@ for i = 1, max_train_iter do
     -- initial testing
     if i == 0 then
         outfile = io.open("train_C.out", "a")
-        evalPerf(BC_model, crit, testset, base_path, test_iter)
+        evalPerf(BC_model, eval_crit, testset, base_path, test_iter)
         outfile:close()
     end
 
@@ -168,7 +168,9 @@ for i = 1, max_train_iter do
         example = getCtrainExample(trainset, base_path)
         input = example[1]
         target = example[2]
-        local loss, pred_err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, eval_crit, batch_size)
+	local loss = 0
+	local pred_err = 0
+        loss, pred_err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, eval_crit, batch_size)
         batch_loss = batch_loss + loss
 	train_pred_err = train_pred_err + pred_err;
         -- outfile:write('loss = ', loss)
@@ -176,7 +178,7 @@ for i = 1, max_train_iter do
     BC_model:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ' Training Error', train_pred_err/batch_size, '\n')
+    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error', train_pred_err/batch_size, '\n')
     outfile:close()
 
 
