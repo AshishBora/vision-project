@@ -8,7 +8,7 @@
 #SBATCH -e ./logs/test_10perclass.err
 #SBATCH -o ./logs/test_10perclass.out
 #SBATCH -J test_10perclass
-#SBATCH --mail-user=as1992@cs.utexas.edu
+#SBATCH --mail-user=ashish.bora@utexas.edu
 #SBATCH --mail-type=all
 
 echo job $JOB_ID execution at: `date`
