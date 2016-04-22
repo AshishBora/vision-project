@@ -6,6 +6,19 @@ require 'nngraph';
 
 dofile('preproc.lua')
 
+function createFullAModel()
+	local image_feat1 = nn.Identity()();
+        local image_feat2 = nn.Identity()();
+	
+        local image_concat = nn.JoinTable(1)({image_feat1, image_feat2});
+	
+	local fc6 = nn.Linear(8192, 1000)(image_concat)
+
+	nngraph.annotateNodes();
+	return nn.gModule({image_feat1, image_feat2}, {fc6});
+end
+
+
 function createFullBModel(getCateg)
 	local image_feat = nn.Identity()()
 	local question_input = nn.Identity()()
@@ -53,6 +66,24 @@ function createFullModel(B_model, C_model, encoders)
 end
 
 
+--function createFullModel(A_model, B_model, C_model, encoders)
+--        local image1 = nn.Identity()();
+--       local image2 = nn.Identity()();
+--        local image3 = nn.Identity()();
+--
+--        local image_feat1 = encoders[1](image1);
+--        local image_feat2 = encoders[2](image2);
+--        local image_feat3 = encoders[3](image3);
+--
+--	local question = A_model({image_feat1, image_feat2});
+--        local confidence = B_model({question, image_feat3});
+--        local scores = C_model({image_feat1, image_feat2, question, confidence});
+--
+--        nngraph.annotateNodes();
+--        return nn.gModule({image1, image2, image3}, {scores});
+--end
+
+
 function getEncoders(model)
 	-- encoder1 gets its parameters from the pretrained model
 	-- take only upto layer 21 to get 4096 dimensional
@@ -94,8 +125,9 @@ encoders = getEncoders(model)
 getCateg = getGetCateg(model)
 B_model = createFullBModel(getCateg)
 C_model = createCModel(5097)
+-- A_model = createAModel();
 BC_model = createFullModel(B_model, C_model, encoders)
-
+-- ABC_model = createFullModel(A_model, B_model, C_model, encoders);
 
 -- put all models on cuda and in evalaute mode
 for i = 1, 3 do
