@@ -127,10 +127,13 @@ test_interval = 10
 test_iter = 1000
 lr_stepsize = 20
 gamma = 0.1
+snapshot_interval = 50
+snapshot_prefix = './'
 -- TO DO : Add weight decay
 
 print('Training... ')
 for i = 1, max_train_iter do
+
     BC_model:zeroGradParameters()
     local batch_err = 0
 
@@ -155,6 +158,11 @@ for i = 1, max_train_iter do
 
     if i % lr_stepsize == 0 then
         lr = lr * gamma
+    end
+
+    if i % snapshot_interval == 0 then
+        filename = snapshot_prefix .. 'BC_model__' .. tostring(i) .. '.t7'
+        torch.save(filename, BC_model)
     end
 
 end
