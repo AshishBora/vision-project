@@ -3,8 +3,6 @@ require 'loadcaffe';
 require 'cudnn';
 -- require 'cunn';
 
-outfile = io.open("train_C.out", "w")
-
 -- function to get an example for training C
 function getCtrainExample(trainset, base_path)
 
@@ -57,7 +55,10 @@ end
 -- function to evalaute the model
 function evalPerf(model, criterion, testset, base_path, test_iter)
 
+    outfile = io.open("train_C.out", "a")
     outfile:write('Testing... ')
+    outfile:close()
+
     local test_loss = 0
     local test_pred_err = 0
 
@@ -78,29 +79,35 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
         test_pred_err = test_pred_err + pred_err
         test_loss = test_loss + samp_loss
     end
+
+    outfile = io.open("train_C.out", "a")
     outfile:write('average test_loss = ', test_loss/test_iter, ', ')
     outfile:write('average test_pred_err = ', test_pred_err/test_iter, '\n')
-
+    outfile:close()
 end
 
--- outfile = io.open('./logs/train_C.outfile', 'w')
--- io.output(outfile)
-
 -- get some essential functions
+outfile = io.open("train_C.out", "w")
 outfile:write('Running string split... ')
 dofile('string_split.lua')
 outfile:write('done\n')
+outfile:close()
 
+outfile = io.open("train_C.out", "a")
 outfile:write('Running getImPaths... ')
 dofile('getImPaths.lua')
 outfile:write('done\n')
+outfile:close()
 
 -- Laod the original model and creat BC model
+outfile = io.open("train_C.out", "a")
 outfile:write('Loading pretrained model... ')
 dofile('torchModel_BC.lua')
 outfile:write('done\n')
+outfile:close()
 
 -- get the list of images to be used for training
+outfile = io.open("train_C.out", "a")
 outfile:write('Loading image paths and labels... ')
 train_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/train_listfile_100.txt'
 val_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/val_listfile.txt'
@@ -110,6 +117,7 @@ testset = getImPaths(val_listfile_path)
 
 base_path = '/work/04001/ashishb/maverick/data/'
 outfile:write('done\n')
+outfile:close()
 
 -- put everything in evaluate mode
 BC_model:evaluate()
@@ -128,8 +136,18 @@ snapshot_interval = 50
 snapshot_prefix = './'
 -- TO DO : Add weight decay
 
+outfile = io.open("train_C.out", "a")
 outfile:write('Training... \n')
+outfile:close()
+
 for i = 1, max_train_iter do
+
+    -- initial testing
+    if i == 0 then
+        outfile = io.open("train_C.out", "a")
+        evalPerf(BC_model, crit, testset, base_path, test_iter)
+        outfile:close()
+    end
 
     BC_model:zeroGradParameters()
     local batch_loss = 0
@@ -153,9 +171,7 @@ for i = 1, max_train_iter do
     outfile:close()
 
     if i % test_interval == 0 then
-        outfile = io.open("train_C.out", "a")
-        evalPerf(BC_model, crit, testset, base_path, test_iter)
-        outfile:close()
+        evalPerf(BC_model, crit, testset, base_path, test_iter)        
     end
 
     if i % lr_stepsize == 0 then
@@ -163,10 +179,8 @@ for i = 1, max_train_iter do
     end
 
     if i % snapshot_interval == 0 then
-        filename = snapshot_prefix .. 'BC_model__' .. tostring(i) .. '.t7'
-        torch.save(filename, BC_model)
+        snapshot_filename = snapshot_prefix .. 'BC_model__' .. tostring(i) .. '.t7'
+        torch.save(snapshot_filename, BC_model)
     end
 
 end
-
-outfile:close()
