@@ -46,12 +46,11 @@ end
 -- Use a typical generic gradient update function
 function accumulate(model, input, target, criterion, batch_size)
     local pred = model:forward(input)
-    local err = criterion:forward(pred, target)
+    local loss = criterion:forward(pred, target)
     local gradCriterion = criterion:backward(pred, target)
     model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()}, 1/batch_size)
-
     -- outfile:write('pred = ', pred[1][1], pred[2][1])
-    return err
+    return loss
 end
 
 
@@ -65,7 +64,7 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
-    
+
     for j = 1, test_iter do
         example = getCtrainExample(testset, base_path)
         input = example[1]
@@ -119,9 +118,9 @@ C_model:training()
 
 crit = nn.MarginRankingCriterion(0.1)
 lr = 0.01
-batch_size = 100
+batch_size = 250
 max_train_iter = 100
-test_interval = 50
+test_interval = 20
 test_iter = 1000
 lr_stepsize = 50
 gamma = 0.1
@@ -133,7 +132,7 @@ outfile:write('Training... \n')
 for i = 1, max_train_iter do
 
     BC_model:zeroGradParameters()
-    local batch_err = 0
+    local batch_loss = 0
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
@@ -143,14 +142,14 @@ for i = 1, max_train_iter do
         example = getCtrainExample(trainset, base_path)
         input = example[1]
         target = example[2]
-        local err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, batch_size)
-        batch_err = batch_err + err
-        -- outfile:write('err = ', err)
+        local loss = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, batch_size)
+        batch_loss = batch_loss + loss
+        -- outfile:write('loss = ', loss)
     end
     BC_model:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('lr = ', lr, ', batch_err = ', batch_err, '\n')
+    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, '\n')
     outfile:close()
 
     if i % test_interval == 0 then
