@@ -3,77 +3,104 @@ Running getImPaths... done
 Loading pretrained model... done
 Loading image paths and labels... done
 Training... 
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
-batch_err = 0
-batch_err = 0
-Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+lr = 0.01, batch_err = 78.017364805937
+lr = 0.01, batch_err = 59.054677785048
+lr = 0.01, batch_err = 46.729562775046
+lr = 0.01, batch_err = 71.850745308399
+lr = 0.01, batch_err = 46.180167883635
+lr = 0.01, batch_err = 53.96660919264
+lr = 0.01, batch_err = 38.080575821921
+lr = 0.01, batch_err = 23.312348956987
+lr = 0.01, batch_err = 35.388079786301
+lr = 0.01, batch_err = 12.974977722578
+lr = 0.01, batch_err = 12.60884539485
+lr = 0.01, batch_err = 9.3165762932505
+lr = 0.01, batch_err = 9.542331097275
+lr = 0.01, batch_err = 11.078452562494
+lr = 0.01, batch_err = 9.4101878352463
+lr = 0.01, batch_err = 11.186594611406
+lr = 0.01, batch_err = 8.9418868155218
+lr = 0.01, batch_err = 10.988722471893
+lr = 0.01, batch_err = 9.0293690599501
+lr = 0.01, batch_err = 12.889036980271
+lr = 0.01, batch_err = 9.8688732430339
+lr = 0.01, batch_err = 11.21463896404
+lr = 0.01, batch_err = 10.086716600414
+lr = 0.01, batch_err = 10.263674554275
+lr = 0.01, batch_err = 10.049736840278
+lr = 0.01, batch_err = 10.749600921525
+lr = 0.01, batch_err = 10.618823705707
+lr = 0.01, batch_err = 10.2648658494
+lr = 0.01, batch_err = 9.5527173645794
+lr = 0.01, batch_err = 12.146612933278
+lr = 0.01, batch_err = 10.238759747148
+lr = 0.01, batch_err = 9.6818604875356
+lr = 0.01, batch_err = 10.485011909809
+lr = 0.01, batch_err = 9.6834890894592
+lr = 0.01, batch_err = 9.5577896103263
+lr = 0.01, batch_err = 10.32135508135
+lr = 0.01, batch_err = 9.5855482801795
+lr = 0.01, batch_err = 9.8035298752133
+lr = 0.01, batch_err = 8.9477392077446
+lr = 0.01, batch_err = 10.699140259624
+lr = 0.01, batch_err = 10.727617866592
+lr = 0.01, batch_err = 10.14848889038
+lr = 0.01, batch_err = 10.078075028956
+lr = 0.01, batch_err = 9.6686223037541
+lr = 0.01, batch_err = 9.8288281068206
+lr = 0.01, batch_err = 9.9972782030701
+lr = 0.01, batch_err = 10.270676106447
+lr = 0.01, batch_err = 10.144279422238
+lr = 0.01, batch_err = 10.013350896537
+Testing... average test_loss = 0.10038822600073, average test_pred_err = 0.991
+lr = 0.001, batch_err = 9.8399986750446
+lr = 0.001, batch_err = 9.5326431826223
+lr = 0.001, batch_err = 10.536157845287
+lr = 0.001, batch_err = 9.2871192091144
+lr = 0.001, batch_err = 10.373173962673
+lr = 0.001, batch_err = 9.5045940988697
+lr = 0.001, batch_err = 9.9873845734168
+lr = 0.001, batch_err = 10.18040134334
+lr = 0.001, batch_err = 10.003632227285
+lr = 0.001, batch_err = 9.7259276916738
+lr = 0.001, batch_err = 10.502269302262
+lr = 0.001, batch_err = 10.291384757264
+lr = 0.001, batch_err = 9.9245624778326
+lr = 0.001, batch_err = 10.288347017346
+lr = 0.001, batch_err = 9.5506329941097
+lr = 0.001, batch_err = 9.8427578012459
+lr = 0.001, batch_err = 9.8952963720076
+lr = 0.001, batch_err = 9.8850010942202
+lr = 0.001, batch_err = 10.235193837667
+lr = 0.001, batch_err = 9.9662787216715
+lr = 0.001, batch_err = 10.263678862108
+lr = 0.001, batch_err = 10.114165771613
+lr = 0.001, batch_err = 9.7063527302816
+lr = 0.001, batch_err = 9.8607945443131
+lr = 0.001, batch_err = 9.6105945170391
+lr = 0.001, batch_err = 10.071685022302
+lr = 0.001, batch_err = 10.128682480659
+lr = 0.001, batch_err = 10.264928887365
+lr = 0.001, batch_err = 10.36959566921
+lr = 0.001, batch_err = 9.8912959550042
+lr = 0.001, batch_err = 9.872588569764
+lr = 0.001, batch_err = 10.41707694889
+lr = 0.001, batch_err = 9.8123570042662
+lr = 0.001, batch_err = 9.8382334227208
+lr = 0.001, batch_err = 9.8885330148041
+lr = 0.001, batch_err = 10.062248453731
+lr = 0.001, batch_err = 10.381782934163
+lr = 0.001, batch_err = 10.380558718229
+lr = 0.001, batch_err = 10.283798026154
+lr = 0.001, batch_err = 10.067051965371
+lr = 0.001, batch_err = 9.3753015918191
+lr = 0.001, batch_err = 10.574971264321
+lr = 0.001, batch_err = 10.486351778964
+lr = 0.001, batch_err = 9.2855784930289
+lr = 0.001, batch_err = 10.033955944469
+lr = 0.001, batch_err = 9.4221412909683
+lr = 0.001, batch_err = 10.71825350076
+lr = 0.001, batch_err = 10.017952514673
+lr = 0.001, batch_err = 10.098598842835
+lr = 0.001, batch_err = 10.369766999269
+Testing... average test_loss = 0.10195917581287, average test_pred_err = 0.999

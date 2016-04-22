@@ -64,7 +64,8 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
-    torch.manualSeed(3489208)
+    -- torch.manualSeed(3489208)
+    
     for j = 1, test_iter do
         example = getCtrainExample(testset, base_path)
         input = example[1]
@@ -118,13 +119,13 @@ C_model:training()
 
 crit = nn.MarginRankingCriterion(0.1)
 lr = 0.01
-batch_size = 4
-max_train_iter = 50
-test_interval = 2
-test_iter = 5
-lr_stepsize = 2
+batch_size = 100
+max_train_iter = 100
+test_interval = 50
+test_iter = 1000
+lr_stepsize = 50
 gamma = 0.1
-snapshot_interval = 5
+snapshot_interval = 50
 snapshot_prefix = './'
 -- TO DO : Add weight decay
 
@@ -136,7 +137,7 @@ for i = 1, max_train_iter do
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
-    torch.manualSeed(0)
+    -- torch.manualSeed(0)
 
     for j = 1, batch_size do
         example = getCtrainExample(trainset, base_path)
@@ -149,7 +150,7 @@ for i = 1, max_train_iter do
     BC_model:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('batch_err = ', batch_err, '\n')
+    outfile:write('lr = ', lr, ', batch_err = ', batch_err, '\n')
     outfile:close()
 
     if i % test_interval == 0 then
