@@ -3,6 +3,8 @@ require 'loadcaffe';
 require 'cudnn';
 -- require 'cunn';
 
+outfile = io.open("train_C.out", "w")
+
 -- function to get an example for training C
 function getCtrainExample(trainset, base_path)
 
@@ -25,11 +27,11 @@ function getCtrainExample(trainset, base_path)
     local target = 2*label-3
 
     -- Testing
-    -- io.write(im1_Path)
-    -- io.write(im2_Path)
-    -- io.write(y[1], y[2])
-    -- io.write(label)
-    -- io.write(ques[y[1]], ques[y[2]])
+    -- outfile:write(im1_Path)
+    -- outfile:write(im2_Path)
+    -- outfile:write(y[1], y[2])
+    -- outfile:write(label)
+    -- outfile:write(ques[y[1]], ques[y[2]])
     
     local image_data = {}
     image_data[1] = preprocess(base_path .. im1_Path)
@@ -48,7 +50,7 @@ function accumulate(model, input, target, criterion, batch_size)
     local gradCriterion = criterion:backward(pred, target)
     model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()}, 1/batch_size)
 
-    -- io.write('pred = ', pred[1][1], pred[2][1])
+    -- outfile:write('pred = ', pred[1][1], pred[2][1])
     return err
 end
 
@@ -56,7 +58,7 @@ end
 -- function to evalaute the model
 function evalPerf(model, criterion, testset, base_path, test_iter)
 
-    io.write('Testing... ')
+    outfile:write('Testing... ')
     local test_loss = 0
     local test_pred_err = 0
 
@@ -76,8 +78,8 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
         test_pred_err = test_pred_err + pred_err
         test_loss = test_loss + samp_loss
     end
-    io.write('average test_loss = ', test_loss/test_iter, ', ')
-    io.write('average test_pred_err = ', test_pred_err/test_iter, '\n')
+    outfile:write('average test_loss = ', test_loss/test_iter, ', ')
+    outfile:write('average test_pred_err = ', test_pred_err/test_iter, '\n')
 
 end
 
@@ -85,21 +87,21 @@ end
 -- io.output(outfile)
 
 -- get some essential functions
-io.write('Running string split... ')
+outfile:write('Running string split... ')
 dofile('string_split.lua')
-io.write('done\n')
+outfile:write('done\n')
 
-io.write('Running getImPaths... ')
+outfile:write('Running getImPaths... ')
 dofile('getImPaths.lua')
-io.write('done\n')
+outfile:write('done\n')
 
 -- Laod the original model and creat BC model
-io.write('Loading pretrained model... ')
+outfile:write('Loading pretrained model... ')
 dofile('torchModel_BC.lua')
-io.write('done\n')
+outfile:write('done\n')
 
 -- get the list of images to be used for training
-io.write('Loading image paths and labels... ')
+outfile:write('Loading image paths and labels... ')
 train_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/train_listfile_100.txt'
 val_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/val_listfile.txt'
 
@@ -107,7 +109,7 @@ trainset = getImPaths(train_listfile_path)
 testset = getImPaths(val_listfile_path)
 
 base_path = '/work/04001/ashishb/maverick/data/'
-io.write('done\n')
+outfile:write('done\n')
 
 -- put everything in evaluate mode
 BC_model:evaluate()
@@ -117,7 +119,7 @@ C_model:training()
 crit = nn.MarginRankingCriterion(0.1)
 lr = 0.01
 batch_size = 4
-max_train_iter = 10
+max_train_iter = 50
 test_interval = 2
 test_iter = 5
 lr_stepsize = 2
@@ -126,7 +128,7 @@ snapshot_interval = 5
 snapshot_prefix = './'
 -- TO DO : Add weight decay
 
-io.write('Training... \n')
+outfile:write('Training... \n')
 for i = 1, max_train_iter do
 
     BC_model:zeroGradParameters()
@@ -142,13 +144,18 @@ for i = 1, max_train_iter do
         target = example[2]
         local err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, batch_size)
         batch_err = batch_err + err
-        -- io.write('err = ', err)
+        -- outfile:write('err = ', err)
     end
     BC_model:updateParameters(lr)
-    io.write('batch_err = ', batch_err, '\n')
+
+    outfile = io.open("train_C.out", "a")
+    outfile:write('batch_err = ', batch_err, '\n')
+    outfile:close()
 
     if i % test_interval == 0 then
+        outfile = io.open("train_C.out", "a")
         evalPerf(BC_model, crit, testset, base_path, test_iter)
+        outfile:close()
     end
 
     if i % lr_stepsize == 0 then
@@ -162,4 +169,4 @@ for i = 1, max_train_iter do
 
 end
 
--- io.close(outfile)
+outfile:close()

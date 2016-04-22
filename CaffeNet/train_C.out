@@ -1,0 +1,79 @@
+Running string split... done
+Running getImPaths... done
+Loading pretrained model... done
+Loading image paths and labels... done
+Training... 
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
+batch_err = 0
+batch_err = 0
+Testing... average test_loss = 0.63363540887833, average test_pred_err = 0.2
