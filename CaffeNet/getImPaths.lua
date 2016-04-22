@@ -4,7 +4,7 @@ function getImPaths(list_file_path)
     for line in io.lines(list_file_path) do
         words = line:split(' ')
         im_Path, label = words[1], words[2]
-        label = tonumber(label)
+        label = tonumber(label) + 1
         if imPaths[label] == nil then
             imPaths[label] = {}
         end        

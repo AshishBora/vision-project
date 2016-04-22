@@ -11,7 +11,7 @@ dofile('getImPaths.lua')
 function testExample(model, input, targetValue)
 	output = model:forward(input:cuda())
 	max, indices = torch.max(output, 1)
-	if(indices[1] == (targetValue + 1)) then
+	if(indices[1] == targetValue) then
 		return 1
 	else
 		return 0
