@@ -6,7 +6,6 @@ VQA_LSTM_CNN/data/*.json
 VQA_LSTM_CNN/data/zip/*
 data/.DS_Store
 *.ipynb_checkpoints*
-AttributeModels/*
 data/SUN/*
 CaffeNet/*.caffemodel
 CaffeNet/*.ipynb
@@ -15,3 +14,7 @@ temp/
 LearnTorch/*
 *.t7
 debug/*
+AttributeModels/*.caffemodel
+AttributeModels/*.npy
+AttributeModels/*.prototxt
+AttributeModels/*.prototxt.lua

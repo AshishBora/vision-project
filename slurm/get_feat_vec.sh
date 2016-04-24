@@ -5,9 +5,9 @@
 #SBATCH -N 1
 #SBATCH -p gpu
 #SBATCH -t 12:00:00 
-#SBATCH -e ./logs/dummy.err
-#SBATCH -o ./logs/dummy.out
-#SBATCH -J dummy
+#SBATCH -e ./logs/get_feat_vec.err
+#SBATCH -o ./logs/get_feat_vec.out
+#SBATCH -J get_feat_vec
 #SBATCH --mail-user=ashish.bora@utexas.edu
 #SBATCH --mail-type=all
 
@@ -20,4 +20,4 @@ echo "running on node $NODE_HOSTNAME"
 
 cd ./AttributeModels
 
-luajit dummy.lua
+python get_feat_vec_maverick.py

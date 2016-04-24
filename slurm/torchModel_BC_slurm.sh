@@ -18,6 +18,6 @@ echo "running on node $NODE_HOSTNAME"
 # echo "Starting to tune the last layer"
 # echo -e "\n\nTraining LeNet\n\n"
 
-cd ./CaffeNet
+cd ./AttributeModels
 
 luajit torchModel_BC.lua

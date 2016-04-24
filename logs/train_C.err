@@ -1,5 +1,1 @@
-luajit: train_C.lua:173: attempt to use a closed file
-stack traceback:
-	[C]: in function 'close'
-	train_C.lua:173: in main chunk
-	[C]: at 0x004051e0
+luajit: train_C.lua:54: 'then' expected near 'pred_err'
