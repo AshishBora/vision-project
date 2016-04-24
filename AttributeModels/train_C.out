@@ -1,0 +1,147 @@
+Running string split... Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Loading pretrained model... done
+Training... 
+Testing... Loading pretrained model... done
+Training... 
+Testing... Loading pretrained model... done
+Training... 
+Testing... average test_loss = 0.047726185452314, average test_pred_err = 0.506
+Loading pretrained model... done
+Training... 
+Testing... average test_loss = 0.041894503748193, average test_pred_err = 0.465
+Iteration no. 1, lr = 0.01, average batch_loss = 0.11541754316369, Training Error = 0.516
+Iteration no. 2, lr = 0.01, average batch_loss = 0.11182029053977, Training Error = 0.504
+Iteration no. 3, lr = 0.01, average batch_loss = 0.1042132584325, Training Error = 0.476
+Iteration no. 4, lr = 0.01, average batch_loss = 0.10637597421537, Training Error = 0.472
+Iteration no. 5, lr = 0.01, average batch_loss = 0.10384591232091, Training Error = 0.5
+Iteration no. 6, lr = 0.01, average batch_loss = 0.10697924528737, Training Error = 0.472
+Iteration no. 7, lr = 0.01, average batch_loss = 0.10610738746881, Training Error = 0.48
+Iteration no. 8, lr = 0.01, average batch_loss = 0.10909478653623, Training Error = 0.536
+Iteration no. 9, lr = 0.01, average batch_loss = 0.10344636304928, Training Error = 0.496
+Iteration no. 10, lr = 0.01, average batch_loss = 0.1082514554894, Training Error = 0.512
+Iteration no. 11, lr = 0.01, average batch_loss = 0.11079457636095, Training Error = 0.512
+Iteration no. 12, lr = 0.01, average batch_loss = 0.10931524380172, Training Error = 0.492
+Iteration no. 13, lr = 0.01, average batch_loss = 0.10630255939232, Training Error = 0.524
+Iteration no. 14, lr = 0.01, average batch_loss = 0.10062776194772, Training Error = 0.456
+Iteration no. 15, lr = 0.01, average batch_loss = 0.10369703223228, Training Error = 0.456
+Iteration no. 16, lr = 0.01, average batch_loss = 0.11080030131926, Training Error = 0.536
+Iteration no. 17, lr = 0.01, average batch_loss = 0.099045912570833, Training Error = 0.468
+Iteration no. 18, lr = 0.01, average batch_loss = 0.096242855245198, Training Error = 0.46
+Iteration no. 19, lr = 0.01, average batch_loss = 0.10930346996869, Training Error = 0.532
+Iteration no. 20, lr = 0.01, average batch_loss = 0.10409590449533, Training Error = 0.492
+Testing... Loading pretrained model... done
+Training... 
+Testing... average test_loss = 0.044273886303844, average test_pred_err = 0.506
+Iteration no. 1, lr = 0.01, average batch_loss = 0.12005955695234, Training Error = 0.532
+Iteration no. 2, lr = 0.01, average batch_loss = 0.11206146908854, Training Error = 0.464
+Iteration no. 3, lr = 0.01, average batch_loss = 0.10497296613489, Training Error = 0.452
+Iteration no. 4, lr = 0.01, average batch_loss = 0.10593452555, Training Error = 0.468
+Iteration no. 5, lr = 0.01, average batch_loss = 0.11488725379626, Training Error = 0.492
+Iteration no. 6, lr = 0.01, average batch_loss = 0.10921969115679, Training Error = 0.484
+Iteration no. 7, lr = 0.01, average batch_loss = 0.10730125969336, Training Error = 0.48
+Iteration no. 8, lr = 0.01, average batch_loss = 0.1033680714211, Training Error = 0.492
+Iteration no. 9, lr = 0.01, average batch_loss = 0.10144059874835, Training Error = 0.5
+Iteration no. 10, lr = 0.01, average batch_loss = 0.1143629703411, Training Error = 0.54
+Iteration no. 11, lr = 0.01, average batch_loss = 0.10837476545696, Training Error = 0.516
+Iteration no. 12, lr = 0.01, average batch_loss = 0.09971622047749, Training Error = 0.476
+Iteration no. 13, lr = 0.01, average batch_loss = 0.10701899090245, Training Error = 0.48
+Iteration no. 14, lr = 0.01, average batch_loss = 0.11070938722173, Training Error = 0.552
+Iteration no. 15, lr = 0.01, average batch_loss = 0.10902972342062, Training Error = 0.508
+Iteration no. 16, lr = 0.01, average batch_loss = 0.10420221277267, Training Error = 0.48
+Iteration no. 17, lr = 0.01, average batch_loss = 0.10274850829426, Training Error = 0.484
+Iteration no. 18, lr = 0.01, average batch_loss = 0.10141656281548, Training Error = 0.488
+Iteration no. 19, lr = 0.01, average batch_loss = 0.1109239807839, Training Error = 0.568
+Iteration no. 20, lr = 0.01, average batch_loss = 0.1068898442842, Training Error = 0.528
+Testing... average test_loss = 0.030821499699337, average test_pred_err = 0.493
+Iteration no. 21, lr = 0.01, average batch_loss = 0.10166941416258, Training Error = 0.476
+Iteration no. 22, lr = 0.01, average batch_loss = 0.10774403472767, Training Error = 0.528
+Iteration no. 23, lr = 0.01, average batch_loss = 0.091163963124703, Training Error = 0.444
+Iteration no. 24, lr = 0.01, average batch_loss = 0.10537480371693, Training Error = 0.524
+Iteration no. 25, lr = 0.01, average batch_loss = 0.1048830979134, Training Error = 0.476
+Iteration no. 26, lr = 0.01, average batch_loss = 0.09969225211007, Training Error = 0.464
+Iteration no. 27, lr = 0.01, average batch_loss = 0.11093140018679, Training Error = 0.552
+Iteration no. 28, lr = 0.01, average batch_loss = 0.11003422442147, Training Error = 0.548
+Iteration no. 29, lr = 0.01, average batch_loss = 0.10385060037971, Training Error = 0.52
+Iteration no. 30, lr = 0.01, average batch_loss = 0.10808165661776, Training Error = 0.544
+Iteration no. 31, lr = 0.01, average batch_loss = 0.1041650760593, Training Error = 0.508
+Iteration no. 32, lr = 0.01, average batch_loss = 0.096274809478154, Training Error = 0.444
+Iteration no. 33, lr = 0.01, average batch_loss = 0.096085023345063, Training Error = 0.464
+Iteration no. 34, lr = 0.01, average batch_loss = 0.10458913667131, Training Error = 0.468
+Iteration no. 35, lr = 0.01, average batch_loss = 0.10674360001947, Training Error = 0.504
+Iteration no. 36, lr = 0.01, average batch_loss = 0.10337483449847, Training Error = 0.488
+Iteration no. 37, lr = 0.01, average batch_loss = 0.11103878995439, Training Error = 0.564
+Iteration no. 38, lr = 0.01, average batch_loss = 0.10830124214041, Training Error = 0.5
+Iteration no. 39, lr = 0.01, average batch_loss = 0.099936694052185, Training Error = 0.496
+Iteration no. 40, lr = 0.01, average batch_loss = 0.10650931766131, Training Error = 0.52
+Testing... average test_loss = 0.028296482653702, average test_pred_err = 0.504
+Iteration no. 41, lr = 0.01, average batch_loss = 0.096415346423935, Training Error = 0.488
+Iteration no. 42, lr = 0.01, average batch_loss = 0.1016784509117, Training Error = 0.476
+Iteration no. 43, lr = 0.01, average batch_loss = 0.10121840383302, Training Error = 0.54
+Iteration no. 44, lr = 0.01, average batch_loss = 0.10208469327571, Training Error = 0.456
+Iteration no. 45, lr = 0.01, average batch_loss = 0.10667170853032, Training Error = 0.556
+Iteration no. 46, lr = 0.01, average batch_loss = 0.097979509656587, Training Error = 0.472
+Iteration no. 47, lr = 0.01, average batch_loss = 0.098629069374557, Training Error = 0.488
+Iteration no. 48, lr = 0.01, average batch_loss = 0.10489047754911, Training Error = 0.536
+Iteration no. 49, lr = 0.01, average batch_loss = 0.096277107315419, Training Error = 0.5
+Iteration no. 50, lr = 0.01, average batch_loss = 0.10024830393172, Training Error = 0.5
+Iteration no. 51, lr = 0.001, average batch_loss = 0.10083303996305, Training Error = 0.48
+Iteration no. 52, lr = 0.001, average batch_loss = 0.10501119267032, Training Error = 0.516
+Iteration no. 53, lr = 0.001, average batch_loss = 0.10307678142057, Training Error = 0.492
+Iteration no. 54, lr = 0.001, average batch_loss = 0.097033953650894, Training Error = 0.476
+Iteration no. 55, lr = 0.001, average batch_loss = 0.091562751043347, Training Error = 0.416
+Iteration no. 56, lr = 0.001, average batch_loss = 0.098606500396192, Training Error = 0.504
+Iteration no. 57, lr = 0.001, average batch_loss = 0.09608788544088, Training Error = 0.448
+Iteration no. 58, lr = 0.001, average batch_loss = 0.10410249666228, Training Error = 0.52
+Iteration no. 59, lr = 0.001, average batch_loss = 0.10174940004719, Training Error = 0.504
+Iteration no. 60, lr = 0.001, average batch_loss = 0.10233777343996, Training Error = 0.52
+Testing... average test_loss = 0.028089113273951, average test_pred_err = 0.52
+Iteration no. 61, lr = 0.001, average batch_loss = 0.096905378373206, Training Error = 0.464
+Iteration no. 62, lr = 0.001, average batch_loss = 0.10354370628202, Training Error = 0.5
+Iteration no. 63, lr = 0.001, average batch_loss = 0.10447252187242, Training Error = 0.508
+Iteration no. 64, lr = 0.001, average batch_loss = 0.099520082787015, Training Error = 0.48
+Iteration no. 65, lr = 0.001, average batch_loss = 0.10506028399285, Training Error = 0.512
+Iteration no. 66, lr = 0.001, average batch_loss = 0.10962316457834, Training Error = 0.58
+Iteration no. 67, lr = 0.001, average batch_loss = 0.10320301514369, Training Error = 0.492
+Iteration no. 68, lr = 0.001, average batch_loss = 0.099375815145446, Training Error = 0.468
+Iteration no. 69, lr = 0.001, average batch_loss = 0.10113949707084, Training Error = 0.5
+Iteration no. 70, lr = 0.001, average batch_loss = 0.1032926332058, Training Error = 0.52
+Iteration no. 71, lr = 0.001, average batch_loss = 0.10321154836746, Training Error = 0.52
+Iteration no. 72, lr = 0.001, average batch_loss = 0.10413830194811, Training Error = 0.528
+Iteration no. 73, lr = 0.001, average batch_loss = 0.10553407302488, Training Error = 0.504
+Iteration no. 74, lr = 0.001, average batch_loss = 0.10042418843151, Training Error = 0.472
+Iteration no. 75, lr = 0.001, average batch_loss = 0.10008446455249, Training Error = 0.484
+Iteration no. 76, lr = 0.001, average batch_loss = 0.098872788934773, Training Error = 0.484
+Iteration no. 77, lr = 0.001, average batch_loss = 0.10343836504755, Training Error = 0.532
+Iteration no. 78, lr = 0.001, average batch_loss = 0.097887265160321, Training Error = 0.492
+Iteration no. 79, lr = 0.001, average batch_loss = 0.10170216649609, Training Error = 0.536
+Iteration no. 80, lr = 0.001, average batch_loss = 0.10257476947128, Training Error = 0.5
+Testing... average test_loss = 0.026895358384316, average test_pred_err = 0.502
+Iteration no. 81, lr = 0.001, average batch_loss = 0.10428711415193, Training Error = 0.536
+Iteration no. 82, lr = 0.001, average batch_loss = 0.10247229880703, Training Error = 0.5
+Iteration no. 83, lr = 0.001, average batch_loss = 0.095298919392264, Training Error = 0.46
+Iteration no. 84, lr = 0.001, average batch_loss = 0.10443953289763, Training Error = 0.52
+Iteration no. 85, lr = 0.001, average batch_loss = 0.096176909338289, Training Error = 0.44
+Iteration no. 86, lr = 0.001, average batch_loss = 0.095778219175413, Training Error = 0.444
+Iteration no. 87, lr = 0.001, average batch_loss = 0.096254643334542, Training Error = 0.456
+Iteration no. 88, lr = 0.001, average batch_loss = 0.10000446375221, Training Error = 0.488
+Iteration no. 89, lr = 0.001, average batch_loss = 0.098760317998887, Training Error = 0.472
+Iteration no. 90, lr = 0.001, average batch_loss = 0.1084465885337, Training Error = 0.5
+Iteration no. 91, lr = 0.001, average batch_loss = 0.094532381987523, Training Error = 0.456
+Iteration no. 92, lr = 0.001, average batch_loss = 0.1006249449827, Training Error = 0.488
+Iteration no. 93, lr = 0.001, average batch_loss = 0.10040030700431, Training Error = 0.492
+Iteration no. 94, lr = 0.001, average batch_loss = 0.1008282295864, Training Error = 0.512
+Iteration no. 95, lr = 0.001, average batch_loss = 0.099786912174021, Training Error = 0.476
+Iteration no. 96, lr = 0.001, average batch_loss = 0.10067244732744, Training Error = 0.536
+Iteration no. 97, lr = 0.001, average batch_loss = 0.098669714118424, Training Error = 0.512
+Iteration no. 98, lr = 0.001, average batch_loss = 0.098031445537234, Training Error = 0.472
+Iteration no. 99, lr = 0.001, average batch_loss = 0.097864619943391, Training Error = 0.448
+Iteration no. 100, lr = 0.001, average batch_loss = 0.10102575960063, Training Error = 0.496
+Testing... average test_loss = 0.025732019627351, average test_pred_err = 0.518
