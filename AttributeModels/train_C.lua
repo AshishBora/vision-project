@@ -1,22 +1,36 @@
-require 'image';
-require 'loadcaffe';
-require 'cudnn';
--- require 'cunn';
+require 'nngraph';
+
+
+function createFullModel(B_model, C_model)
+    local image_feat1 = nn.Identity()();
+    local image_feat2 = nn.Identity()();
+    local image_feat3 = nn.Identity()();
+    local question = nn.Identity()();
+
+    local confidence = B_model({question, image_feat3});
+    local scores = C_model({image_feat1, image_feat2, question, confidence});
+    
+    nngraph.annotateNodes();
+    return nn.gModule({image_feat1, image_feat2, image_feat3, question}, {scores});
+end
 
 -- function to get an example for training C
-function getCtrainExample(trainset, base_path)
+function getCtrainExample(set, labels)
 
     -- randomly select two images from different classes
-    local y = torch.randperm(#trainset)
-    local im1_Path = trainset[y[1]][torch.random(1, #trainset[y[1]])]
-    local im2_Path = trainset[y[2]][torch.random(1, #trainset[y[2]])]
+    local y = torch.randperm((#set)[1])
+
+    local im_feat = {}
+    im_feat[1] = set[y[1]]
+    im_feat[2] = set[y[2]]
 
     -- randomly select one of those to be given to model B
     local label = torch.bernoulli() + 1
+    im_feat[3] = im_feat[label]:clone()
 
     -- randomly select one of the images to ask about its class
-    local ques = torch.Tensor(1000):fill(0)
-    ques[y[torch.bernoulli() + 1]] = 1
+    local ques = torch.Tensor(42):fill(0)
+    ques[labels[y[torch.bernoulli() + 1]]] = 1
 
     -- target is just remapping label
     -- label = 1  =>  target = -1 
@@ -31,22 +45,18 @@ function getCtrainExample(trainset, base_path)
     -- outfile:write(label)
     -- outfile:write(ques[y[1]], ques[y[2]])
     
-    local image_data = {}
-    image_data[1] = preprocess(base_path .. im1_Path)
-    image_data[2] = preprocess(base_path .. im2_Path)
-    image_data[3] = image_data[label]:clone()
-    local input = {image_data[1], image_data[2], image_data[3], ques}
+    local input = {im_feat[1], im_feat[2], im_feat[3], ques}
     
     return {input, target}
 end
 
 
 -- Use a typical generic gradient update function
-function accumulate(model, input, target, criterion, eval_criterion,  batch_size)
+function accumulate(model, input, target, criterion, eval_criterion, batch_size)
     local pred = model:forward(input)
     local loss = criterion:forward(pred, target)
     local gradCriterion = criterion:backward(pred, target)
-    model:backward(input, {gradCriterion[1]:cuda(), gradCriterion[2]:cuda()}, 1/batch_size)
+    model:backward(input, {gradCriterion[1], gradCriterion[2]}, 1/batch_size)
     
     local eval_loss = eval_criterion:forward(pred, target)
     local pred_err = 0
@@ -59,7 +69,7 @@ end
 
 
 -- function to evalaute the model
-function evalPerf(model, criterion, testset, base_path, test_iter)
+function evalPerf(model, criterion, set, labels, iter)
 
     outfile = io.open("train_C.out", "a")
     outfile:write('Testing... ')
@@ -72,11 +82,11 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
 
-    for j = 1, test_iter do
-        example = getCtrainExample(testset, base_path)
+    for j = 1, iter do
+        example = getCtrainExample(set, labels)
         input = example[1]
         target = example[2]
-        local pred = model:forward({input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()})
+        local pred = model:forward({input[1], input[2], input[3], input[4]})
         local samp_loss = criterion:forward(pred, target)
         local pred_err = 0
         if samp_loss > 0 then
@@ -87,47 +97,58 @@ function evalPerf(model, criterion, testset, base_path, test_iter)
     end
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('average test_loss = ', test_loss/test_iter, ', ')
-    outfile:write('average test_pred_err = ', test_pred_err/test_iter, '\n')
+    outfile:write('average test_loss = ', test_loss/iter, ', ')
+    outfile:write('average test_pred_err = ', test_pred_err/iter, '\n')
     outfile:close()
 end
 
 -- get some essential functions
-outfile = io.open("train_C.out", "w")
-outfile:write('Running string split... ')
-dofile('string_split.lua')
-outfile:write('done\n')
-outfile:close()
+-- outfile = io.open("train_C.out", "w")
+-- outfile:write('Running string split... ')
+-- dofile('string_split.lua')
+-- outfile:write('done\n')
+-- outfile:close()
 
-outfile = io.open("train_C.out", "a")
-outfile:write('Running getImPaths... ')
-dofile('getImPaths.lua')
-outfile:write('done\n')
-outfile:close()
+-- outfile = io.open("train_C.out", "a")
+-- outfile:write('Running getImPaths... ')
+-- dofile('getImPaths.lua')
+-- outfile:write('done\n')
+-- outfile:close()
 
 -- Laod the original model and creat BC model
 outfile = io.open("train_C.out", "a")
 outfile:write('Loading pretrained model... ')
-dofile('torchModel_BC.lua')
+
+B_model = torch.load('B_model_nn.t7')
+C_model = torch.load('C_model.t7')
+BC_model = createFullModel(B_model, C_model)
+-- ABC_model = createFullModel(A_model, B_model, C_model, encoders);
+
+-- convert to double
+BC_model:double()
+
 outfile:write('done\n')
 outfile:close()
 
--- get the list of images to be used for training
-outfile = io.open("train_C.out", "a")
-outfile:write('Loading image paths and labels... ')
-train_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/train_listfile_100.txt'
-val_listfile_path = '/work/04001/ashishb/maverick/data/listfiles/val_listfile.txt'
 
-trainset = getImPaths(train_listfile_path)
-testset = getImPaths(val_listfile_path)
+-- read preprocessed feature vectors and labels
+feat_vecs = torch.load('feat_vecs.t7')
+labels = torch.load('labels.t7')
 
-base_path = '/work/04001/ashishb/maverick/data/'
-outfile:write('done\n')
-outfile:close()
+-- TO DO : random shuffle of data
+-- y = torch.randperm(#feat_vecs)
 
--- put everything in evaluate mode
+-- generate trainset and testset
+-- percentage of images in the train set
+train_perc = 0.80
+trainset_size = torch.round((#feat_vecs)[1] * train_perc)
+trainset = feat_vecs[{{1, trainset_size}}]
+train_labels = labels[{{1, trainset_size}}]
+testset = feat_vecs[{{trainset_size+1, (#feat_vecs)[1]}}]
+test_labels = labels[{{trainset_size+1, (#feat_vecs)[1]}}]
+
+-- put the model in evalaute mode except for C
 BC_model:evaluate()
--- put C in training mode
 C_model:training()
 
 crit = nn.MarginRankingCriterion(0.1)
@@ -151,9 +172,7 @@ for i = 1, max_train_iter do
 
     -- initial testing
     if i == 1 then
-        outfile = io.open("train_C.out", "a")
-        evalPerf(BC_model, eval_crit, testset, base_path, test_iter)
-        outfile:close()
+        evalPerf(BC_model, eval_crit, testset, test_labels, test_iter)
     end
 
     BC_model:zeroGradParameters()
@@ -165,12 +184,12 @@ for i = 1, max_train_iter do
 
     local train_pred_err = 0
     for j = 1, batch_size do
-        example = getCtrainExample(trainset, base_path)
+        example = getCtrainExample(trainset, train_labels)
         input = example[1]
         target = example[2]
 	local loss = 0
 	local pred_err = 0
-        loss, pred_err = accumulate(BC_model, {input[1]:cuda(), input[2]:cuda(), input[3]:cuda(), input[4]:cuda()}, target, crit, eval_crit, batch_size)
+        loss, pred_err = accumulate(BC_model, {input[1], input[2], input[3], input[4]}, target, crit, eval_crit, batch_size)
         batch_loss = batch_loss + loss
 	train_pred_err = train_pred_err + pred_err;
         -- outfile:write('loss = ', loss)
@@ -185,7 +204,7 @@ for i = 1, max_train_iter do
 
 
     if i % test_interval == 0 then
-        evalPerf(BC_model, eval_crit, testset, base_path, test_iter)        
+        evalPerf(BC_model, eval_crit, testset, test_labels, test_iter)        
     end
 
     if i % lr_stepsize == 0 then
