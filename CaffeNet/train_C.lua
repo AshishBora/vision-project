@@ -50,8 +50,8 @@ function accumulate(model, input, target, criterion, eval_criterion,  batch_size
     
     local eval_loss = eval_criterion:forward(pred, target)
     local pred_err = 0
-    if(eval_loss > 0)
-	pred_err = 1
+    if(eval_loss > 0) then
+        pred_err = 1
     end
     -- outfile:write('pred = ', pred[1][1], pred[2][1])
     return loss, pred_err
@@ -127,7 +127,7 @@ outfile:close()
 
 -- put everything in evaluate mode
 BC_model:evaluate()
--- put C in training model
+-- put C in training mode
 C_model:training()
 
 crit = nn.MarginRankingCriterion(0.1)
@@ -150,10 +150,8 @@ outfile:close()
 for i = 1, max_train_iter do
 
     -- initial testing
-    if i == 0 then
-        outfile = io.open("train_C.out", "a")
+    if i == 1 then
         evalPerf(BC_model, eval_crit, testset, base_path, test_iter)
-        outfile:close()
     end
 
     BC_model:zeroGradParameters()
@@ -175,10 +173,10 @@ for i = 1, max_train_iter do
 	train_pred_err = train_pred_err + pred_err;
         -- outfile:write('loss = ', loss)
     end
-    BC_model:updateParameters(lr)
+    C_model:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error', train_pred_err/batch_size, '\n')
+    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error = ', train_pred_err/batch_size, '\n')
     outfile:close()
 
 
