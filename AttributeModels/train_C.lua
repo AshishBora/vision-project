@@ -148,17 +148,15 @@ labels = torch.load('labels.t7')
 -- y = torch.randperm(#feat_vecs)
 
 -- generate trainset and testset
--- percentage of images in the train set
-train_perc = 0.80
+train_perc = 0.80 -- percentage of images in the train set
 trainset_size = torch.round((#feat_vecs)[1] * train_perc)
 trainset = feat_vecs[{{1, trainset_size}}]
 train_labels = labels[{{1, trainset_size}}]
 testset = feat_vecs[{{trainset_size+1, (#feat_vecs)[1]}}]
 test_labels = labels[{{trainset_size+1, (#feat_vecs)[1]}}]
 
--- put the model in evalaute mode except for C
+-- put the model in evalaute mode
 BC_model:evaluate()
--- C_model:training()
 
 crit = nn.BCECriterion()
 eval_crit = crit
@@ -205,13 +203,12 @@ for i = 1, max_train_iter do
         -- print(target)
     end
 
-    -- update parameters only for C
+    -- update parameters for only a few layers in C
     C_model.modules[10]:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
     outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error = ', train_pred_err/batch_size, '\n')
     outfile:close()
-
 
     if i % test_interval == 0 then
         evalPerf(BC_model, eval_crit, testset, test_labels, test_iter)        
@@ -222,8 +219,21 @@ for i = 1, max_train_iter do
     end
 
     if i % snapshot_interval == 0 then
-        snapshot_filename = snapshot_prefix .. 'BC_model__' .. tostring(i) .. '.t7'
-        torch.save(snapshot_filename, BC_model)
+
+        outfile = io.open("train_C.out", "a")
+
+        outfile:write('Snapshotting B_model... ')
+        snapshot_filename_B = snapshot_prefix .. 'B_model__' .. tostring(i) .. '.t7'
+        torch.save(snapshot_filename_B, B_model)
+        outfile:write('done\n')
+
+        outfile:write('Snapshotting C_model... ')
+        snapshot_filename_C = snapshot_prefix .. 'C_model__' .. tostring(i) .. '.t7'
+        torch.save(snapshot_filename_C, C_model)
+        outfile:write('done\n')
+
+        outfile:close()
+
     end
 
 end
