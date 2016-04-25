@@ -18,3 +18,8 @@ AttributeModels/*.caffemodel
 AttributeModels/*.npy
 AttributeModels/*.prototxt
 AttributeModels/*.prototxt.lua
+
+AttributeModels/*.ipynb
+AttributeModels/npy/*
+AttributeModels/sukrit*
+AttributeModels/debug/*
