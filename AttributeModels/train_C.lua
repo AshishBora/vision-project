@@ -222,11 +222,6 @@ for i = 1, max_train_iter do
 
         outfile = io.open("train_C.out", "a")
 
-        outfile:write('Snapshotting B_model... ')
-        snapshot_filename_B = snapshot_prefix .. 'B_model__' .. tostring(i) .. '.t7'
-        torch.save(snapshot_filename_B, B_model)
-        outfile:write('done\n')
-
         outfile:write('Snapshotting C_model... ')
         snapshot_filename_C = snapshot_prefix .. 'C_model__' .. tostring(i) .. '.t7'
         torch.save(snapshot_filename_C, C_model)
