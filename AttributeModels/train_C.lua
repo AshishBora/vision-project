@@ -129,7 +129,7 @@ outfile = io.open("train_C.out", "w")
 outfile:write('Loading pretrained model... ')
 
 B_model = torch.load('B_model_nn.t7')
-C_model = torch.load('C_model_debug.t7')
+C_model = torch.load('C_model.t7')
 BC_model = createFullModel(B_model, C_model)
 -- ABC_model = createFullModel(A_model, B_model, C_model, encoders);
 
