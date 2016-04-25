@@ -32,11 +32,8 @@ function getCtrainExample(set, labels)
     local ques = torch.Tensor(42):fill(0)
     ques[labels[y[torch.bernoulli() + 1]]] = 1
 
-    -- target is just remapping label
-    -- label = 1  =>  target = -1 
-    -- label = 2  =>  target = 1
-    -- This is necessary for MaxMarginCriterion
-    local target = 2*label-3
+    -- target is probability of label = 2
+    local target = label - 1
 
     -- Testing
     -- outfile:write(im1_Path)
@@ -53,16 +50,21 @@ end
 
 -- Use a typical generic gradient update function
 function accumulate(model, input, target, criterion, eval_criterion, batch_size)
-    local pred = model:forward(input)
-    local loss = criterion:forward(pred, target)
-    local gradCriterion = criterion:backward(pred, target)
-    model:backward(input, {gradCriterion[1], gradCriterion[2]}, 1/batch_size)
+    local prob = model:forward(input)
+    local loss = criterion:forward(prob, torch.Tensor{target})
+    local gradCriterion = criterion:backward(prob, torch.Tensor{target})
+    model:backward(input, gradCriterion, 1/batch_size)
     
-    local eval_loss = eval_criterion:forward(pred, target)
+    local pred = 2
+    if(prob[1] < 0.5) then
+        pred = 1
+    end
+
     local pred_err = 0
-    if(eval_loss > 0) then
+    if pred ~= target+1 then
         pred_err = 1
     end
+
     -- outfile:write('pred = ', pred[1][1], pred[2][1])
     return loss, pred_err
 end
@@ -86,12 +88,19 @@ function evalPerf(model, criterion, set, labels, iter)
         example = getCtrainExample(set, labels)
         input = example[1]
         target = example[2]
-        local pred = model:forward({input[1], input[2], input[3], input[4]})
-        local samp_loss = criterion:forward(pred, target)
+        local prob = model:forward({input[1], input[2], input[3], input[4]})
+        local samp_loss = criterion:forward(prob, torch.Tensor{target})
+
+        local pred = 2
+        if(prob[1] < 0.5) then
+            pred = 1
+        end
+
         local pred_err = 0
-        if samp_loss > 0 then
+        if pred ~= target+1 then
             pred_err = 1
         end
+
         test_pred_err = test_pred_err + pred_err
         test_loss = test_loss + samp_loss
     end
@@ -116,11 +125,11 @@ end
 -- outfile:close()
 
 -- Laod the original model and creat BC model
-outfile = io.open("train_C.out", "a")
+outfile = io.open("train_C.out", "w")
 outfile:write('Loading pretrained model... ')
 
 B_model = torch.load('B_model_nn.t7')
-C_model = torch.load('C_model.t7')
+C_model = torch.load('C_model_debug.t7')
 BC_model = createFullModel(B_model, C_model)
 -- ABC_model = createFullModel(A_model, B_model, C_model, encoders);
 
@@ -149,18 +158,18 @@ test_labels = labels[{{trainset_size+1, (#feat_vecs)[1]}}]
 
 -- put the model in evalaute mode except for C
 BC_model:evaluate()
-C_model:training()
+-- C_model:training()
 
-crit = nn.MarginRankingCriterion(0.1)
-eval_crit = nn.MarginRankingCriterion(0.0)
-lr = 0.01
-batch_size = 250
-max_train_iter = 100
-test_interval = 20
+crit = nn.BCECriterion()
+eval_crit = crit
+lr = 2
+batch_size = 512
+max_train_iter = 10000
+test_interval = 50
 test_iter = 1000
-lr_stepsize = 50
-gamma = 0.1
-snapshot_interval = 50
+lr_stepsize = 100
+gamma = 0.7
+snapshot_interval = 100
 snapshot_prefix = './'
 -- TO DO : Add weight decay
 
@@ -180,23 +189,24 @@ for i = 1, max_train_iter do
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
-    -- torch.manualSeed(0)
+    -- torch.manualSeed(214325)
 
     local train_pred_err = 0
     for j = 1, batch_size do
         example = getCtrainExample(trainset, train_labels)
         input = example[1]
         target = example[2]
-	local loss = 0
-	local pred_err = 0
+        local loss = 0
+        local pred_err = 0
         loss, pred_err = accumulate(BC_model, {input[1], input[2], input[3], input[4]}, target, crit, eval_crit, batch_size)
         batch_loss = batch_loss + loss
-	train_pred_err = train_pred_err + pred_err;
-        -- outfile:write('loss = ', loss)
+        train_pred_err = train_pred_err + pred_err;
+        -- print(C_model.modules[9].output)
+        -- print(target)
     end
 
     -- update parameters only for C
-    C_model:updateParameters(lr)
+    C_model.modules[10]:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
     outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error = ', train_pred_err/batch_size, '\n')
