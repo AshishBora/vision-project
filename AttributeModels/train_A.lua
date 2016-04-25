@@ -134,7 +134,8 @@ test_labels = labels[{{trainset_size+1, (#feat_vecs)[1]}}]
 
 -- set training hyperparameters
 crit = nn.BCECriterion()
-lr = 0.02
+-- lr = 0.001 : diverges
+lr = 0.0001
 batch_size = 512
 max_train_iter = 10000
 test_interval = 50
@@ -143,7 +144,7 @@ lr_stepsize = 100
 gamma = 0.7
 snapshot_interval = 100
 snapshot_prefix = './'
-snapshot = false -- set to false by default to avoid overwriting
+snapshot = true -- set to false by default to avoid overwriting
 -- TO DO : Add weight decay
 
 -- Start training
