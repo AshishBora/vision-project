@@ -169,10 +169,17 @@ lr_stepsize = 100
 gamma = 0.7
 snapshot_interval = 100
 snapshot_prefix = './'
+snapshot = true
 -- TO DO : Add weight decay
 
-outfile = io.open("train_C.out", "a")
-outfile:write('Training... \n')
+-- Start training
+outfile = io.open("train_A.out", "a")
+outfile:write('Training with snapshotting ')
+if snapshot then
+    outfile:write('enabled... \n')
+else
+    outfile:write('disabled... \n')
+end
 outfile:close()
 
 for i = 1, max_train_iter do
@@ -218,7 +225,7 @@ for i = 1, max_train_iter do
         lr = lr * gamma
     end
 
-    if i % snapshot_interval == 0 then
+    if snapshot and (i % snapshot_interval == 0) then
 
         outfile = io.open("train_C.out", "a")
 
