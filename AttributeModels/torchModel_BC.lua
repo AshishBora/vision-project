@@ -6,9 +6,9 @@ require 'nngraph';
 
 function createFullAModel()
 	local image_feat1 = nn.Identity()();
-        local image_feat2 = nn.Identity()();
-	
-        local image_concat = nn.JoinTable(1)({image_feat1, image_feat2});
+	local image_feat2 = nn.Identity()();
+
+	local image_concat = nn.JoinTable(1)({image_feat1, image_feat2});
 	
 	local fc6 = nn.Linear(8192, 1000)(image_concat)
 
