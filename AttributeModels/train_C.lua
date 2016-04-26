@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[5]:
-
 require 'nngraph';
 
 
@@ -60,15 +55,8 @@ function do_weight_decay(model, wd)
     end
 end
 
--- Use a typical generic gradient update function
-function accumulate(model, input, target, criterion, eval_criterion, batch_size, wd)
-    local prob = model:forward(input)
-    local loss = criterion:forward(prob, torch.Tensor{target})
-    local gradCriterion = torch.mul(criterion:backward(prob, torch.Tensor{target}), 0);
-    print(#gradCriterion)
-    model:backward(input, gradCriterion, 1/batch_size)
-    do_weight_decay(model, wd);
-    
+function get_pred_err(prob, target)
+
     local pred = 2
     if(prob[1] < 0.5) then
         pred = 1
@@ -79,7 +67,18 @@ function accumulate(model, input, target, criterion, eval_criterion, batch_size,
         pred_err = 1
     end
 
-    -- outfile:write('pred = ', pred[1][1], pred[2][1])
+    return pred_err
+end
+
+-- Use a typical generic gradient update function
+function accumulate(model, input, target, criterion, eval_criterion, batch_size, wd)
+    local prob = model:forward(input)
+    local loss = criterion:forward(prob, torch.Tensor{target})
+    local gradCriterion = criterion:backward(prob, torch.Tensor{target})
+    model:backward(input, gradCriterion, 1/batch_size)
+    do_weight_decay(model, wd)
+    local pred_err = get_pred_err(prob, target)
+    -- print('prob = ', prob)
     return loss, pred_err
 end
 
@@ -104,17 +103,7 @@ function evalPerf(model, criterion, set, labels, iter)
         target = example[2]
         local prob = model:forward({input[1], input[2], input[3], input[4]})
         local samp_loss = criterion:forward(prob, torch.Tensor{target})
-
-        local pred = 2
-        if(prob[1] < 0.5) then
-            pred = 1
-        end
-
-        local pred_err = 0
-        if pred ~= target+1 then
-            pred_err = 1
-        end
-
+        local pred_err = get_pred_err(prob, target)
         test_pred_err = test_pred_err + pred_err
         test_loss = test_loss + samp_loss
     end
@@ -125,8 +114,6 @@ function evalPerf(model, criterion, set, labels, iter)
     outfile:close()
 end
 
-
-# In[ ]:
 
 -- get some essential functions
 -- outfile = io.open("train_C.out", "w")
@@ -146,7 +133,7 @@ outfile = io.open("train_C.out", "w")
 outfile:write('Loading pretrained model... ')
 
 B_model = torch.load('B_model_nn.t7')
-C_model = torch.load('C_model__1500_init.t7')
+C_model = torch.load('C_model__1500.t7')
 BC_model = createFullModel(B_model, C_model)
 -- ABC_model = createFullModel(A_model, B_model, C_model, encoders);
 
@@ -178,7 +165,7 @@ BC_model:evaluate()
 crit = nn.BCECriterion()
 eval_crit = crit
 lr = 2
-attr_lr = 2
+attr_lr = 1
 batch_size = 512
 max_train_iter = 10000
 test_interval = 50
@@ -186,14 +173,14 @@ test_iter = 1000
 lr_stepsize = 100
 gamma = 0.7
 attr_gamma = 0.5
-wd = 0.0005
+wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
-snapshot = true
+snapshot = false
 -- TO DO : Add weight decay
 
 -- Start training
-outfile = io.open("train_A.out", "a")
+outfile = io.open('train_C.out', 'a')
 outfile:write('Training with snapshotting ')
 if snapshot then
     outfile:write('enabled... \n')
@@ -203,11 +190,14 @@ end
 outfile:close()
 
 
-C_model.modules[2]:reset();
-C_model.modules[6]:reset();
-local method = 'xavier';
-C_model.modules[2] = require('weight-init')(C_model.modules[2], method)
-C_model.modules[6] = require('weight-init')(C_model.modules[6], method)
+-- local method = 'xavier';
+-- C_model.modules[2] = require('weight-init')(C_model.modules[2], method)
+-- C_model.modules[6] = require('weight-init')(C_model.modules[6], method)
+
+C_model.modules[2]:reset(0.01);
+C_model.modules[6]:reset(0.01);
+C_model.modules[10].modules[1].weight:mul(0.3)
+C_model.modules[10].modules[3].weight:mul(0.3)
 
 for i = 1, max_train_iter do
 
@@ -221,7 +211,7 @@ for i = 1, max_train_iter do
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
-    -- torch.manualSeed(214325)
+    torch.manualSeed(214325)
 
     local train_pred_err = 0
     for j = 1, batch_size do
@@ -234,16 +224,17 @@ for i = 1, max_train_iter do
         batch_loss = batch_loss + loss
         train_pred_err = train_pred_err + pred_err;
         -- print(C_model.modules[9].output)
+        -- print('loss =', loss)
         -- print(target)
     end
 
     -- update parameters for only a few layers in C
     C_model.modules[2]:updateParameters(attr_lr)
     C_model.modules[6]:updateParameters(attr_lr)
-    C_model.modules[10]:updateParameters(lr)
+    -- C_model.modules[10]:updateParameters(lr)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('Iteration no. ', i, ', lr = ', lr, ', average batch_loss = ', batch_loss/batch_size, ', Training Error = ', train_pred_err/batch_size, '\n')
+    outfile:write('Iteration no. ', i, ', lr = ', lr, ', attr_lr = ', attr_lr, ', batch_loss = ', batch_loss/batch_size, ', train_err = ', train_pred_err/batch_size, '\n')
     outfile:close()
 
     if i % test_interval == 0 then
@@ -252,7 +243,7 @@ for i = 1, max_train_iter do
 
     if i % lr_stepsize == 0 then
         lr = lr * gamma;
-        attr_lr= attr_lr * attr_gamma;
+        attr_lr = attr_lr * attr_gamma;
     end
 
     if snapshot and (i % snapshot_interval == 0) then
@@ -261,6 +252,7 @@ for i = 1, max_train_iter do
 
         outfile:write('Snapshotting C_model... ')
         snapshot_filename_C = snapshot_prefix .. 'C_model__' .. tostring(i) .. '.t7'
+        C_model:clearState()
         torch.save(snapshot_filename_C, C_model)
         outfile:write('done\n')
 
@@ -269,4 +261,3 @@ for i = 1, max_train_iter do
     end
 
 end
-

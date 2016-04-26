@@ -1,48 +1,415 @@
 Loading pretrained model... done
-Testing... average test_loss = 6.8978578581984, average test_pred_err = 0.467
-Iteration no. 1, lr = 2, average batch_loss = 8.0821073509098, Training Error = 0.486328125
-Iteration no. 2, lr = 2, average batch_loss = 0.95715834630156, Training Error = 0.443359375
-Iteration no. 3, lr = 2, average batch_loss = 1.376659674279, Training Error = 0.505859375
-Iteration no. 4, lr = 2, average batch_loss = 0.77056329832895, Training Error = 0.515625
-Iteration no. 5, lr = 2, average batch_loss = 0.69481861988974, Training Error = 0.458984375
-Iteration no. 6, lr = 2, average batch_loss = 0.79194917127161, Training Error = 0.482421875
-Iteration no. 7, lr = 2, average batch_loss = 0.74302835270013, Training Error = 0.466796875
-Iteration no. 8, lr = 2, average batch_loss = 1.3189759227626, Training Error = 0.53515625
-Iteration no. 9, lr = 2, average batch_loss = 0.72184104367993, Training Error = 0.505859375
-Iteration no. 10, lr = 2, average batch_loss = 0.84581767731034, Training Error = 0.498046875
-Iteration no. 11, lr = 2, average batch_loss = 0.69431989707442, Training Error = 0.490234375
-Iteration no. 12, lr = 2, average batch_loss = 0.69561459111944, Training Error = 0.462890625
-Iteration no. 13, lr = 2, average batch_loss = 0.7075638821886, Training Error = 0.513671875
-Iteration no. 14, lr = 2, average batch_loss = 0.69372489349022, Training Error = 0.51171875
-Iteration no. 15, lr = 2, average batch_loss = 0.72213751161781, Training Error = 0.521484375
-Iteration no. 16, lr = 2, average batch_loss = 0.69721328798482, Training Error = 0.482421875
-Iteration no. 17, lr = 2, average batch_loss = 0.70941757819482, Training Error = 0.5
-Iteration no. 18, lr = 2, average batch_loss = 0.69836659711106, Training Error = 0.5234375
-Iteration no. 19, lr = 2, average batch_loss = 0.7068680575195, Training Error = 0.482421875
-Iteration no. 20, lr = 2, average batch_loss = 0.69240580787964, Training Error = 0.48046875
-Iteration no. 21, lr = 2, average batch_loss = 0.6962657531269, Training Error = 0.529296875
-Iteration no. 22, lr = 2, average batch_loss = 0.6945275343661, Training Error = 0.4921875
-Iteration no. 23, lr = 2, average batch_loss = 0.6934035914602, Training Error = 0.482421875
-Iteration no. 24, lr = 2, average batch_loss = 0.69216164617155, Training Error = 0.470703125
-Iteration no. 25, lr = 2, average batch_loss = 0.6992254586489, Training Error = 0.505859375
-Iteration no. 26, lr = 2, average batch_loss = 0.69422100037, Training Error = 0.490234375
-Iteration no. 27, lr = 2, average batch_loss = 0.69354153409546, Training Error = 0.490234375
-Iteration no. 28, lr = 2, average batch_loss = 0.69343535725475, Training Error = 0.53125
-Iteration no. 29, lr = 2, average batch_loss = 0.69366860645337, Training Error = 0.484375
-Iteration no. 30, lr = 2, average batch_loss = 0.69300921862033, Training Error = 0.490234375
-Iteration no. 31, lr = 2, average batch_loss = 0.69322954265786, Training Error = 0.5
-Iteration no. 32, lr = 2, average batch_loss = 0.69319489944161, Training Error = 0.513671875
-Iteration no. 33, lr = 2, average batch_loss = 0.69375282690074, Training Error = 0.494140625
-Iteration no. 34, lr = 2, average batch_loss = 0.69296834466309, Training Error = 0.490234375
-Iteration no. 35, lr = 2, average batch_loss = 0.69290933586918, Training Error = 0.484375
-Iteration no. 36, lr = 2, average batch_loss = 0.69355199076108, Training Error = 0.498046875
-Iteration no. 37, lr = 2, average batch_loss = 0.69287276755807, Training Error = 0.48828125
-Iteration no. 38, lr = 2, average batch_loss = 0.69348069184073, Training Error = 0.505859375
-Iteration no. 39, lr = 2, average batch_loss = 0.69479858267483, Training Error = 0.5234375
-Iteration no. 40, lr = 2, average batch_loss = 0.69090071167649, Training Error = 0.46484375
-Iteration no. 41, lr = 2, average batch_loss = 0.69179844895216, Training Error = 0.470703125
-Iteration no. 42, lr = 2, average batch_loss = 0.69145840551678, Training Error = 0.470703125
-Iteration no. 43, lr = 2, average batch_loss = 0.69679100061248, Training Error = 0.53515625
-Iteration no. 44, lr = 2, average batch_loss = 0.70491330275357, Training Error = 0.517578125
-Iteration no. 45, lr = 2, average batch_loss = 0.69920783999077, Training Error = 0.482421875
-Iteration no. 46, lr = 2, average batch_loss = 0.69402256773049, Training Error = 0.494140625
+Training with snapshotting disabled... 
+Testing... average test_loss = 0.89001316798064, average test_pred_err = 0.482
+Iteration no. 1, lr = 2, attr_lr = 1, batch_loss = 0.87880039387084, train_err = 0.490234375
+Iteration no. 2, lr = 2, attr_lr = 1, batch_loss = 0.5330025839509, train_err = 0.259765625
+Iteration no. 3, lr = 2, attr_lr = 1, batch_loss = 0.40841917071417, train_err = 0.169921875
+Iteration no. 4, lr = 2, attr_lr = 1, batch_loss = 0.35310081684526, train_err = 0.126953125
+Iteration no. 5, lr = 2, attr_lr = 1, batch_loss = 0.29978414833095, train_err = 0.09375
+Iteration no. 6, lr = 2, attr_lr = 1, batch_loss = 0.27679168886838, train_err = 0.083984375
+Iteration no. 7, lr = 2, attr_lr = 1, batch_loss = 0.25759835889438, train_err = 0.068359375
+Iteration no. 8, lr = 2, attr_lr = 1, batch_loss = 0.24818029321487, train_err = 0.056640625
+Iteration no. 9, lr = 2, attr_lr = 1, batch_loss = 0.23695173234894, train_err = 0.052734375
+Iteration no. 10, lr = 2, attr_lr = 1, batch_loss = 0.22992029747127, train_err = 0.052734375
+Iteration no. 11, lr = 2, attr_lr = 1, batch_loss = 0.22418015137297, train_err = 0.052734375
+Iteration no. 12, lr = 2, attr_lr = 1, batch_loss = 0.22080106981072, train_err = 0.048828125
+Iteration no. 13, lr = 2, attr_lr = 1, batch_loss = 0.21708048174976, train_err = 0.048828125
+Iteration no. 14, lr = 2, attr_lr = 1, batch_loss = 0.21473488672002, train_err = 0.048828125
+Iteration no. 15, lr = 2, attr_lr = 1, batch_loss = 0.21206782312928, train_err = 0.046875
+Iteration no. 16, lr = 2, attr_lr = 1, batch_loss = 0.21037469972431, train_err = 0.048828125
+Iteration no. 17, lr = 2, attr_lr = 1, batch_loss = 0.20823503811282, train_err = 0.046875
+Iteration no. 18, lr = 2, attr_lr = 1, batch_loss = 0.20686651998023, train_err = 0.044921875
+Iteration no. 19, lr = 2, attr_lr = 1, batch_loss = 0.2051400502126, train_err = 0.044921875
+Iteration no. 20, lr = 2, attr_lr = 1, batch_loss = 0.20400357360436, train_err = 0.044921875
+Iteration no. 21, lr = 2, attr_lr = 1, batch_loss = 0.20260266778109, train_err = 0.04296875
+Iteration no. 22, lr = 2, attr_lr = 1, batch_loss = 0.20174453533679, train_err = 0.041015625
+Iteration no. 23, lr = 2, attr_lr = 1, batch_loss = 0.20016470356811, train_err = 0.041015625
+Iteration no. 24, lr = 2, attr_lr = 1, batch_loss = 0.19997042383602, train_err = 0.041015625
+Iteration no. 25, lr = 2, attr_lr = 1, batch_loss = 0.19863406367337, train_err = 0.041015625
+Iteration no. 26, lr = 2, attr_lr = 1, batch_loss = 0.19820214769881, train_err = 0.041015625
+Iteration no. 27, lr = 2, attr_lr = 1, batch_loss = 0.19711362770508, train_err = 0.041015625
+Iteration no. 28, lr = 2, attr_lr = 1, batch_loss = 0.19678367780426, train_err = 0.041015625
+Iteration no. 29, lr = 2, attr_lr = 1, batch_loss = 0.19595590197342, train_err = 0.041015625
+Iteration no. 30, lr = 2, attr_lr = 1, batch_loss = 0.19549828461713, train_err = 0.041015625
+Iteration no. 31, lr = 2, attr_lr = 1, batch_loss = 0.19465794136171, train_err = 0.041015625
+Iteration no. 32, lr = 2, attr_lr = 1, batch_loss = 0.19422209079694, train_err = 0.041015625
+Iteration no. 33, lr = 2, attr_lr = 1, batch_loss = 0.19392036022535, train_err = 0.041015625
+Iteration no. 34, lr = 2, attr_lr = 1, batch_loss = 0.1935111806581, train_err = 0.041015625
+Iteration no. 35, lr = 2, attr_lr = 1, batch_loss = 0.19263528327867, train_err = 0.041015625
+Iteration no. 36, lr = 2, attr_lr = 1, batch_loss = 0.19248171403303, train_err = 0.041015625
+Iteration no. 37, lr = 2, attr_lr = 1, batch_loss = 0.19196312435118, train_err = 0.041015625
+Iteration no. 38, lr = 2, attr_lr = 1, batch_loss = 0.19197893972141, train_err = 0.041015625
+Iteration no. 39, lr = 2, attr_lr = 1, batch_loss = 0.19109619168602, train_err = 0.041015625
+Iteration no. 40, lr = 2, attr_lr = 1, batch_loss = 0.19088261469591, train_err = 0.0390625
+Iteration no. 41, lr = 2, attr_lr = 1, batch_loss = 0.19064106835783, train_err = 0.041015625
+Iteration no. 42, lr = 2, attr_lr = 1, batch_loss = 0.19060830975965, train_err = 0.0390625
+Iteration no. 43, lr = 2, attr_lr = 1, batch_loss = 0.18993192184598, train_err = 0.0390625
+Iteration no. 44, lr = 2, attr_lr = 1, batch_loss = 0.18969925050177, train_err = 0.0390625
+Iteration no. 45, lr = 2, attr_lr = 1, batch_loss = 0.18915105568772, train_err = 0.0390625
+Iteration no. 46, lr = 2, attr_lr = 1, batch_loss = 0.18939209227366, train_err = 0.0390625
+Iteration no. 47, lr = 2, attr_lr = 1, batch_loss = 0.1887541598372, train_err = 0.0390625
+Iteration no. 48, lr = 2, attr_lr = 1, batch_loss = 0.18892809316241, train_err = 0.0390625
+Iteration no. 49, lr = 2, attr_lr = 1, batch_loss = 0.1881978761254, train_err = 0.0390625
+Iteration no. 50, lr = 2, attr_lr = 1, batch_loss = 0.18856617864806, train_err = 0.0390625
+Testing... average test_loss = 0.95013895746941, average test_pred_err = 0.509
+Iteration no. 51, lr = 2, attr_lr = 1, batch_loss = 0.18762898661275, train_err = 0.0390625
+Iteration no. 52, lr = 2, attr_lr = 1, batch_loss = 0.18779798892893, train_err = 0.0390625
+Iteration no. 53, lr = 2, attr_lr = 1, batch_loss = 0.18740013472716, train_err = 0.0390625
+Iteration no. 54, lr = 2, attr_lr = 1, batch_loss = 0.18757986629104, train_err = 0.0390625
+Iteration no. 55, lr = 2, attr_lr = 1, batch_loss = 0.18706663557262, train_err = 0.0390625
+Iteration no. 56, lr = 2, attr_lr = 1, batch_loss = 0.1870175522328, train_err = 0.0390625
+Iteration no. 57, lr = 2, attr_lr = 1, batch_loss = 0.18666175764265, train_err = 0.037109375
+Iteration no. 58, lr = 2, attr_lr = 1, batch_loss = 0.18692221745538, train_err = 0.0390625
+Iteration no. 59, lr = 2, attr_lr = 1, batch_loss = 0.18616267373845, train_err = 0.037109375
+Iteration no. 60, lr = 2, attr_lr = 1, batch_loss = 0.18622192837344, train_err = 0.0390625
+Iteration no. 61, lr = 2, attr_lr = 1, batch_loss = 0.18625069195223, train_err = 0.037109375
+Iteration no. 62, lr = 2, attr_lr = 1, batch_loss = 0.18610277135023, train_err = 0.0390625
+Iteration no. 63, lr = 2, attr_lr = 1, batch_loss = 0.18555560850034, train_err = 0.037109375
+Iteration no. 64, lr = 2, attr_lr = 1, batch_loss = 0.18570903179458, train_err = 0.0390625
+Iteration no. 65, lr = 2, attr_lr = 1, batch_loss = 0.1855352607243, train_err = 0.037109375
+Iteration no. 66, lr = 2, attr_lr = 1, batch_loss = 0.18552635741551, train_err = 0.0390625
+Iteration no. 67, lr = 2, attr_lr = 1, batch_loss = 0.18500961719564, train_err = 0.037109375
+Iteration no. 68, lr = 2, attr_lr = 1, batch_loss = 0.1851500192901, train_err = 0.037109375
+Iteration no. 69, lr = 2, attr_lr = 1, batch_loss = 0.18466840973048, train_err = 0.037109375
+Iteration no. 70, lr = 2, attr_lr = 1, batch_loss = 0.18496810671721, train_err = 0.037109375
+Iteration no. 71, lr = 2, attr_lr = 1, batch_loss = 0.18465820998173, train_err = 0.037109375
+Iteration no. 72, lr = 2, attr_lr = 1, batch_loss = 0.18471973173757, train_err = 0.037109375
+Iteration no. 73, lr = 2, attr_lr = 1, batch_loss = 0.18423192854749, train_err = 0.037109375
+Iteration no. 74, lr = 2, attr_lr = 1, batch_loss = 0.18421544541833, train_err = 0.037109375
+Iteration no. 75, lr = 2, attr_lr = 1, batch_loss = 0.18423173655159, train_err = 0.037109375
+Iteration no. 76, lr = 2, attr_lr = 1, batch_loss = 0.18418074063519, train_err = 0.037109375
+Iteration no. 77, lr = 2, attr_lr = 1, batch_loss = 0.18394187339412, train_err = 0.037109375
+Iteration no. 78, lr = 2, attr_lr = 1, batch_loss = 0.18399400055585, train_err = 0.037109375
+Iteration no. 79, lr = 2, attr_lr = 1, batch_loss = 0.18369361502346, train_err = 0.037109375
+Iteration no. 80, lr = 2, attr_lr = 1, batch_loss = 0.18358456802251, train_err = 0.037109375
+Iteration no. 81, lr = 2, attr_lr = 1, batch_loss = 0.18350922665734, train_err = 0.037109375
+Iteration no. 82, lr = 2, attr_lr = 1, batch_loss = 0.18362611700005, train_err = 0.037109375
+Iteration no. 83, lr = 2, attr_lr = 1, batch_loss = 0.18312168418609, train_err = 0.037109375
+Iteration no. 84, lr = 2, attr_lr = 1, batch_loss = 0.1831340300748, train_err = 0.037109375
+Iteration no. 85, lr = 2, attr_lr = 1, batch_loss = 0.18311380408734, train_err = 0.037109375
+Iteration no. 86, lr = 2, attr_lr = 1, batch_loss = 0.183079645018, train_err = 0.037109375
+Iteration no. 87, lr = 2, attr_lr = 1, batch_loss = 0.18300492716982, train_err = 0.037109375
+Iteration no. 88, lr = 2, attr_lr = 1, batch_loss = 0.18296150019748, train_err = 0.037109375
+Iteration no. 89, lr = 2, attr_lr = 1, batch_loss = 0.18273357498736, train_err = 0.037109375
+Iteration no. 90, lr = 2, attr_lr = 1, batch_loss = 0.18257168808737, train_err = 0.037109375
+Iteration no. 91, lr = 2, attr_lr = 1, batch_loss = 0.1824104418782, train_err = 0.037109375
+Iteration no. 92, lr = 2, attr_lr = 1, batch_loss = 0.18249207832644, train_err = 0.037109375
+Iteration no. 93, lr = 2, attr_lr = 1, batch_loss = 0.18238597570105, train_err = 0.037109375
+Iteration no. 94, lr = 2, attr_lr = 1, batch_loss = 0.18253623187621, train_err = 0.037109375
+Iteration no. 95, lr = 2, attr_lr = 1, batch_loss = 0.18207127085891, train_err = 0.037109375
+Iteration no. 96, lr = 2, attr_lr = 1, batch_loss = 0.18236639389172, train_err = 0.037109375
+Iteration no. 97, lr = 2, attr_lr = 1, batch_loss = 0.18201545527763, train_err = 0.037109375
+Iteration no. 98, lr = 2, attr_lr = 1, batch_loss = 0.18218795711236, train_err = 0.037109375
+Iteration no. 99, lr = 2, attr_lr = 1, batch_loss = 0.18189547482386, train_err = 0.037109375
+Iteration no. 100, lr = 2, attr_lr = 1, batch_loss = 0.18202078872542, train_err = 0.037109375
+Testing... average test_loss = 0.95257300737841, average test_pred_err = 0.508
+Iteration no. 101, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18170820263064, train_err = 0.037109375
+Iteration no. 102, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1806334215554, train_err = 0.037109375
+Iteration no. 103, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1802752988067, train_err = 0.037109375
+Iteration no. 104, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18029677931673, train_err = 0.037109375
+Iteration no. 105, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18018691449865, train_err = 0.037109375
+Iteration no. 106, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18055226352733, train_err = 0.037109375
+Iteration no. 107, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18011671799908, train_err = 0.037109375
+Iteration no. 108, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18062526371398, train_err = 0.037109375
+Iteration no. 109, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17993382440967, train_err = 0.037109375
+Iteration no. 110, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18043627263357, train_err = 0.037109375
+Iteration no. 111, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17993264599978, train_err = 0.037109375
+Iteration no. 112, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18043202335753, train_err = 0.037109375
+Iteration no. 113, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17987097629892, train_err = 0.037109375
+Iteration no. 114, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18042717583664, train_err = 0.037109375
+Iteration no. 115, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17984011252755, train_err = 0.037109375
+Iteration no. 116, lr = 1.4, attr_lr = 0.5, batch_loss = 0.180245528484, train_err = 0.037109375
+Iteration no. 117, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17983791409925, train_err = 0.037109375
+Iteration no. 118, lr = 1.4, attr_lr = 0.5, batch_loss = 0.18029340349457, train_err = 0.037109375
+Iteration no. 119, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17960566986995, train_err = 0.037109375
+Iteration no. 120, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17993494520053, train_err = 0.037109375
+Iteration no. 121, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1796778024737, train_err = 0.037109375
+Iteration no. 122, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17997835659717, train_err = 0.037109375
+Iteration no. 123, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17975429936194, train_err = 0.037109375
+Iteration no. 124, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17987962106097, train_err = 0.037109375
+Iteration no. 125, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1796896596808, train_err = 0.037109375
+Iteration no. 126, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17995181690948, train_err = 0.037109375
+Iteration no. 127, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17953220948553, train_err = 0.037109375
+Iteration no. 128, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17962875155935, train_err = 0.037109375
+Iteration no. 129, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17958680603828, train_err = 0.037109375
+Iteration no. 130, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17974022921866, train_err = 0.037109375
+Iteration no. 131, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17947810010109, train_err = 0.037109375
+Iteration no. 132, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17973649674908, train_err = 0.037109375
+Iteration no. 133, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17926295714968, train_err = 0.037109375
+Iteration no. 134, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17979805321471, train_err = 0.03515625
+Iteration no. 135, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17929960246553, train_err = 0.03515625
+Iteration no. 136, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17972619616353, train_err = 0.03515625
+Iteration no. 137, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17919989469971, train_err = 0.03515625
+Iteration no. 138, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17962833995268, train_err = 0.03515625
+Iteration no. 139, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17919808740298, train_err = 0.03515625
+Iteration no. 140, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1794435846973, train_err = 0.03515625
+Iteration no. 141, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17913425180415, train_err = 0.03515625
+Iteration no. 142, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17944754587136, train_err = 0.03515625
+Iteration no. 143, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17909078516118, train_err = 0.03515625
+Iteration no. 144, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17942821907257, train_err = 0.03515625
+Iteration no. 145, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17894015054178, train_err = 0.03515625
+Iteration no. 146, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17939610683854, train_err = 0.03515625
+Iteration no. 147, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1789101769616, train_err = 0.03515625
+Iteration no. 148, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17942975706622, train_err = 0.03515625
+Iteration no. 149, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17882498426015, train_err = 0.03515625
+Iteration no. 150, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17935924817993, train_err = 0.03515625
+Testing... average test_loss = 0.95313995253219, average test_pred_err = 0.508
+Iteration no. 151, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17874231384033, train_err = 0.03515625
+Iteration no. 152, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17932633804564, train_err = 0.03515625
+Iteration no. 153, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17874497215691, train_err = 0.03515625
+Iteration no. 154, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17922685460104, train_err = 0.03515625
+Iteration no. 155, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17864283643087, train_err = 0.03515625
+Iteration no. 156, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17914952083769, train_err = 0.03515625
+Iteration no. 157, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17860188387632, train_err = 0.03515625
+Iteration no. 158, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1791180407431, train_err = 0.03515625
+Iteration no. 159, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17849972281585, train_err = 0.03515625
+Iteration no. 160, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17896758952461, train_err = 0.03515625
+Iteration no. 161, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17863251538163, train_err = 0.03515625
+Iteration no. 162, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17900763408365, train_err = 0.03515625
+Iteration no. 163, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17853245334988, train_err = 0.03515625
+Iteration no. 164, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17895601116926, train_err = 0.03515625
+Iteration no. 165, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17854718220244, train_err = 0.03515625
+Iteration no. 166, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1788934286333, train_err = 0.03515625
+Iteration no. 167, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17838558178535, train_err = 0.03515625
+Iteration no. 168, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17867571534972, train_err = 0.03515625
+Iteration no. 169, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17847473996612, train_err = 0.03515625
+Iteration no. 170, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17867097200655, train_err = 0.03515625
+Iteration no. 171, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17843446528962, train_err = 0.03515625
+Iteration no. 172, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17859426596842, train_err = 0.03515625
+Iteration no. 173, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17829261700181, train_err = 0.03515625
+Iteration no. 174, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17859149389367, train_err = 0.03515625
+Iteration no. 175, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17823951911387, train_err = 0.03515625
+Iteration no. 176, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1786232934438, train_err = 0.03515625
+Iteration no. 177, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17813349483149, train_err = 0.03515625
+Iteration no. 178, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17852843107827, train_err = 0.03515625
+Iteration no. 179, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17828023205027, train_err = 0.03515625
+Iteration no. 180, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17852960771859, train_err = 0.03515625
+Iteration no. 181, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17811997137026, train_err = 0.03515625
+Iteration no. 182, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17855698810835, train_err = 0.03515625
+Iteration no. 183, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17815409566756, train_err = 0.03515625
+Iteration no. 184, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1784290639627, train_err = 0.03515625
+Iteration no. 185, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17802585584175, train_err = 0.03515625
+Iteration no. 186, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17846426979854, train_err = 0.03515625
+Iteration no. 187, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17791469646316, train_err = 0.03515625
+Iteration no. 188, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1784238125369, train_err = 0.03515625
+Iteration no. 189, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17780885298177, train_err = 0.03515625
+Iteration no. 190, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17828246702382, train_err = 0.03515625
+Iteration no. 191, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17792297575552, train_err = 0.03515625
+Iteration no. 192, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17822715803757, train_err = 0.03515625
+Iteration no. 193, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17794261383024, train_err = 0.03515625
+Iteration no. 194, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17826929906159, train_err = 0.03515625
+Iteration no. 195, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17773437804277, train_err = 0.03515625
+Iteration no. 196, lr = 1.4, attr_lr = 0.5, batch_loss = 0.1782479007304, train_err = 0.03515625
+Iteration no. 197, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17775717888149, train_err = 0.03515625
+Iteration no. 198, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17814145172128, train_err = 0.03515625
+Iteration no. 199, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17783317259258, train_err = 0.03515625
+Iteration no. 200, lr = 1.4, attr_lr = 0.5, batch_loss = 0.17804994201348, train_err = 0.03515625
+Testing... average test_loss = 0.95350034147694, average test_pred_err = 0.507
+Iteration no. 201, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17768041853935, train_err = 0.03515625
+Iteration no. 202, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17743543706858, train_err = 0.03515625
+Iteration no. 203, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17724221940261, train_err = 0.03515625
+Iteration no. 204, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17730432874263, train_err = 0.03515625
+Iteration no. 205, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17729443255978, train_err = 0.03515625
+Iteration no. 206, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17742279916077, train_err = 0.03515625
+Iteration no. 207, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17724376508218, train_err = 0.03515625
+Iteration no. 208, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17737551762413, train_err = 0.03515625
+Iteration no. 209, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17721256212962, train_err = 0.03515625
+Iteration no. 210, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17736676161875, train_err = 0.03515625
+Iteration no. 211, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17719935551131, train_err = 0.03515625
+Iteration no. 212, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17738720754019, train_err = 0.03515625
+Iteration no. 213, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17713604089153, train_err = 0.03515625
+Iteration no. 214, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1773403493304, train_err = 0.03515625
+Iteration no. 215, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1771417185719, train_err = 0.03515625
+Iteration no. 216, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17730848427135, train_err = 0.033203125
+Iteration no. 217, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17715281114238, train_err = 0.03515625
+Iteration no. 218, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17733690119717, train_err = 0.033203125
+Iteration no. 219, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17705692192632, train_err = 0.03515625
+Iteration no. 220, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17735373453229, train_err = 0.033203125
+Iteration no. 221, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17703671487509, train_err = 0.033203125
+Iteration no. 222, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1772013051694, train_err = 0.033203125
+Iteration no. 223, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17711808761043, train_err = 0.033203125
+Iteration no. 224, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17713633961427, train_err = 0.033203125
+Iteration no. 225, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17712955651372, train_err = 0.033203125
+Iteration no. 226, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17718179494611, train_err = 0.033203125
+Iteration no. 227, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1770647247273, train_err = 0.033203125
+Iteration no. 228, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1772415249463, train_err = 0.033203125
+Iteration no. 229, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17703449008154, train_err = 0.033203125
+Iteration no. 230, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17718969707242, train_err = 0.033203125
+Iteration no. 231, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17697630154388, train_err = 0.033203125
+Iteration no. 232, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17713384091039, train_err = 0.033203125
+Iteration no. 233, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17695746617985, train_err = 0.033203125
+Iteration no. 234, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17718897275862, train_err = 0.033203125
+Iteration no. 235, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17687948806467, train_err = 0.033203125
+Iteration no. 236, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17714496007264, train_err = 0.033203125
+Iteration no. 237, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17690094939443, train_err = 0.033203125
+Iteration no. 238, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1770802619006, train_err = 0.033203125
+Iteration no. 239, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17694646578016, train_err = 0.033203125
+Iteration no. 240, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17705156616566, train_err = 0.033203125
+Iteration no. 241, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17690473475332, train_err = 0.033203125
+Iteration no. 242, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1770323834569, train_err = 0.033203125
+Iteration no. 243, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17694049971749, train_err = 0.033203125
+Iteration no. 244, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1770710105023, train_err = 0.033203125
+Iteration no. 245, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17688955716391, train_err = 0.033203125
+Iteration no. 246, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17697725532196, train_err = 0.033203125
+Iteration no. 247, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17693457912279, train_err = 0.033203125
+Iteration no. 248, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17695345571529, train_err = 0.033203125
+Iteration no. 249, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1768175545871, train_err = 0.033203125
+Iteration no. 250, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17697288005446, train_err = 0.033203125
+Testing... average test_loss = 0.95362431947893, average test_pred_err = 0.507
+Iteration no. 251, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17679318837515, train_err = 0.033203125
+Iteration no. 252, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17698926261355, train_err = 0.033203125
+Iteration no. 253, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17677441333523, train_err = 0.033203125
+Iteration no. 254, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17697027666516, train_err = 0.033203125
+Iteration no. 255, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17674674405204, train_err = 0.033203125
+Iteration no. 256, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17692496058127, train_err = 0.033203125
+Iteration no. 257, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17677972809888, train_err = 0.033203125
+Iteration no. 258, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17690436030903, train_err = 0.033203125
+Iteration no. 259, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17676354790468, train_err = 0.033203125
+Iteration no. 260, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17690487180976, train_err = 0.033203125
+Iteration no. 261, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17674589208619, train_err = 0.033203125
+Iteration no. 262, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17691238024154, train_err = 0.033203125
+Iteration no. 263, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17673146320797, train_err = 0.033203125
+Iteration no. 264, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17690757840178, train_err = 0.033203125
+Iteration no. 265, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17663540359718, train_err = 0.033203125
+Iteration no. 266, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17680667522052, train_err = 0.033203125
+Iteration no. 267, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17664219267038, train_err = 0.033203125
+Iteration no. 268, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17683764365726, train_err = 0.033203125
+Iteration no. 269, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17669162908604, train_err = 0.033203125
+Iteration no. 270, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17671116711913, train_err = 0.033203125
+Iteration no. 271, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17675942123229, train_err = 0.033203125
+Iteration no. 272, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17674406148237, train_err = 0.033203125
+Iteration no. 273, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17665446161256, train_err = 0.033203125
+Iteration no. 274, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17673208445404, train_err = 0.033203125
+Iteration no. 275, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17659863958814, train_err = 0.033203125
+Iteration no. 276, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1766949275511, train_err = 0.033203125
+Iteration no. 277, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17665425780475, train_err = 0.033203125
+Iteration no. 278, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17673654567026, train_err = 0.033203125
+Iteration no. 279, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17661204261923, train_err = 0.033203125
+Iteration no. 280, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17671842775784, train_err = 0.033203125
+Iteration no. 281, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17662131034438, train_err = 0.033203125
+Iteration no. 282, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17672453745734, train_err = 0.033203125
+Iteration no. 283, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17654874099959, train_err = 0.033203125
+Iteration no. 284, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17669908769079, train_err = 0.033203125
+Iteration no. 285, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17658632450329, train_err = 0.033203125
+Iteration no. 286, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17676709879215, train_err = 0.033203125
+Iteration no. 287, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17644573561702, train_err = 0.033203125
+Iteration no. 288, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1766659019979, train_err = 0.033203125
+Iteration no. 289, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17654073918584, train_err = 0.033203125
+Iteration no. 290, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17666288116473, train_err = 0.033203125
+Iteration no. 291, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17647886294322, train_err = 0.033203125
+Iteration no. 292, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17665150429356, train_err = 0.033203125
+Iteration no. 293, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17643907454852, train_err = 0.033203125
+Iteration no. 294, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17654148679836, train_err = 0.033203125
+Iteration no. 295, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17655900618244, train_err = 0.033203125
+Iteration no. 296, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17661290077536, train_err = 0.033203125
+Iteration no. 297, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17644462176236, train_err = 0.033203125
+Iteration no. 298, lr = 0.98, attr_lr = 0.25, batch_loss = 0.17655275732258, train_err = 0.033203125
+Iteration no. 299, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1764557518419, train_err = 0.033203125
+Iteration no. 300, lr = 0.98, attr_lr = 0.25, batch_loss = 0.1765449334176, train_err = 0.033203125
+Testing... average test_loss = 0.95374115636603, average test_pred_err = 0.507
+Iteration no. 301, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17645580816899, train_err = 0.033203125
+Iteration no. 302, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17625249638278, train_err = 0.033203125
+Iteration no. 303, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17619305645433, train_err = 0.033203125
+Iteration no. 304, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17626258005995, train_err = 0.033203125
+Iteration no. 305, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17620268556372, train_err = 0.033203125
+Iteration no. 306, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17629193199406, train_err = 0.033203125
+Iteration no. 307, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17618497329712, train_err = 0.033203125
+Iteration no. 308, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17626636494083, train_err = 0.033203125
+Iteration no. 309, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17619170980044, train_err = 0.033203125
+Iteration no. 310, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17626056252337, train_err = 0.033203125
+Iteration no. 311, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17622191513661, train_err = 0.033203125
+Iteration no. 312, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17621166221635, train_err = 0.033203125
+Iteration no. 313, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1761887687301, train_err = 0.033203125
+Iteration no. 314, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17623132854009, train_err = 0.033203125
+Iteration no. 315, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17619386642747, train_err = 0.033203125
+Iteration no. 316, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17617961464665, train_err = 0.033203125
+Iteration no. 317, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17624581780656, train_err = 0.033203125
+Iteration no. 318, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17621405008423, train_err = 0.033203125
+Iteration no. 319, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17616447324579, train_err = 0.033203125
+Iteration no. 320, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17620724280678, train_err = 0.033203125
+Iteration no. 321, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17617985905017, train_err = 0.033203125
+Iteration no. 322, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1761611044169, train_err = 0.033203125
+Iteration no. 323, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17617485821775, train_err = 0.033203125
+Iteration no. 324, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17619360410908, train_err = 0.033203125
+Iteration no. 325, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17617457233132, train_err = 0.033203125
+Iteration no. 326, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17613041228497, train_err = 0.033203125
+Iteration no. 327, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17614744503713, train_err = 0.033203125
+Iteration no. 328, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17618249899829, train_err = 0.033203125
+Iteration no. 329, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17610487939407, train_err = 0.033203125
+Iteration no. 330, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17620224108155, train_err = 0.033203125
+Iteration no. 331, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17609804706821, train_err = 0.033203125
+Iteration no. 332, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17611944259452, train_err = 0.033203125
+Iteration no. 333, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17617811983564, train_err = 0.033203125
+Iteration no. 334, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17612406525565, train_err = 0.033203125
+Iteration no. 335, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17610721276986, train_err = 0.033203125
+Iteration no. 336, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17612475288335, train_err = 0.033203125
+Iteration no. 337, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17611403964564, train_err = 0.033203125
+Iteration no. 338, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17614669481007, train_err = 0.033203125
+Iteration no. 339, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17610502189924, train_err = 0.033203125
+Iteration no. 340, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17613328102665, train_err = 0.033203125
+Iteration no. 341, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17606886096742, train_err = 0.033203125
+Iteration no. 342, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1761704033588, train_err = 0.033203125
+Iteration no. 343, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17606193694334, train_err = 0.033203125
+Iteration no. 344, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17614461700527, train_err = 0.033203125
+Iteration no. 345, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1760394777428, train_err = 0.033203125
+Iteration no. 346, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17611420068038, train_err = 0.033203125
+Iteration no. 347, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17604518432432, train_err = 0.033203125
+Iteration no. 348, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17612309285156, train_err = 0.033203125
+Iteration no. 349, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17607156698622, train_err = 0.033203125
+Iteration no. 350, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17607261172001, train_err = 0.033203125
+Testing... average test_loss = 0.95379707738784, average test_pred_err = 0.507
+Iteration no. 351, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17603813696592, train_err = 0.033203125
+Iteration no. 352, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17608517942108, train_err = 0.033203125
+Iteration no. 353, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17605369476894, train_err = 0.033203125
+Iteration no. 354, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17604541322827, train_err = 0.033203125
+Iteration no. 355, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17607843009489, train_err = 0.033203125
+Iteration no. 356, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17603092628873, train_err = 0.033203125
+Iteration no. 357, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17609204815688, train_err = 0.033203125
+Iteration no. 358, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17603081911664, train_err = 0.033203125
+Iteration no. 359, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17607769689084, train_err = 0.033203125
+Iteration no. 360, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17602800516093, train_err = 0.033203125
+Iteration no. 361, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17603869949224, train_err = 0.033203125
+Iteration no. 362, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17604370025283, train_err = 0.033203125
+Iteration no. 363, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17601727639948, train_err = 0.033203125
+Iteration no. 364, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17602975358551, train_err = 0.033203125
+Iteration no. 365, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17602287530847, train_err = 0.033203125
+Iteration no. 366, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1760586595861, train_err = 0.033203125
+Iteration no. 367, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17598054635822, train_err = 0.033203125
+Iteration no. 368, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1760123944603, train_err = 0.033203125
+Iteration no. 369, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17601712989377, train_err = 0.033203125
+Iteration no. 370, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17601709227768, train_err = 0.033203125
+Iteration no. 371, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759577362223, train_err = 0.033203125
+Iteration no. 372, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17602403139186, train_err = 0.033203125
+Iteration no. 373, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17597450125258, train_err = 0.033203125
+Iteration no. 374, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17599140133003, train_err = 0.033203125
+Iteration no. 375, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17599976078671, train_err = 0.033203125
+Iteration no. 376, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17596007179347, train_err = 0.033203125
+Iteration no. 377, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17600023515044, train_err = 0.033203125
+Iteration no. 378, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17595539575203, train_err = 0.033203125
+Iteration no. 379, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759798467902, train_err = 0.033203125
+Iteration no. 380, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759086834784, train_err = 0.033203125
+Iteration no. 381, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17601709938999, train_err = 0.033203125
+Iteration no. 382, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17594389067454, train_err = 0.033203125
+Iteration no. 383, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17598301650368, train_err = 0.033203125
+Iteration no. 384, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759239046599, train_err = 0.033203125
+Iteration no. 385, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759909801189, train_err = 0.033203125
+Iteration no. 386, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17592225754653, train_err = 0.033203125
+Iteration no. 387, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17592682618696, train_err = 0.033203125
+Iteration no. 388, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17598666396191, train_err = 0.033203125
+Iteration no. 389, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17591769570168, train_err = 0.033203125
+Iteration no. 390, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759544777998, train_err = 0.033203125
+Iteration no. 391, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17593816724513, train_err = 0.033203125
+Iteration no. 392, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17588642782307, train_err = 0.033203125
+Iteration no. 393, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17586716666326, train_err = 0.033203125
+Iteration no. 394, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17594650239014, train_err = 0.033203125
+Iteration no. 395, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17590994805507, train_err = 0.033203125
+Iteration no. 396, lr = 0.686, attr_lr = 0.125, batch_loss = 0.1759494564761, train_err = 0.033203125
+Iteration no. 397, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17590185252795, train_err = 0.033203125
+Iteration no. 398, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17589811406838, train_err = 0.033203125
+Iteration no. 399, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17590183221887, train_err = 0.033203125
+Iteration no. 400, lr = 0.686, attr_lr = 0.125, batch_loss = 0.17588305399716, train_err = 0.033203125
+Testing... average test_loss = 0.95385148367017, average test_pred_err = 0.507
+Iteration no. 401, lr = 0.4802, attr_lr = 0.0625, batch_loss = 0.17592059707987, train_err = 0.033203125
+Iteration no. 402, lr = 0.4802, attr_lr = 0.0625, batch_loss = 0.17580099200418, train_err = 0.033203125
+Iteration no. 403, lr = 0.4802, attr_lr = 0.0625, batch_loss = 0.17575610500526, train_err = 0.033203125
+Iteration no. 404, lr = 0.4802, attr_lr = 0.0625, batch_loss = 0.17576868500554, train_err = 0.033203125
