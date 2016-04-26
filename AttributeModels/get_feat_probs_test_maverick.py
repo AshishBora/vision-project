@@ -46,9 +46,6 @@ for i in range(len(imPaths)):
 
 imPaths = imPaths2
 
-## FOR DEBUG ONLY
-imPaths = imPaths[:40]
-
 iter_ = 0
 max_iter = len(imPaths) / batch_size
 startTime = datetime.now()
