@@ -9,6 +9,9 @@ function getCrossEnt(prob, target)
 end
 
 function getTopK(input, k)
+	if k == 0 then
+		return {}
+	end
 	output, indices = torch.topk(input, k, 1, true)
 	return indices
 end
@@ -62,11 +65,13 @@ function getPrecision(prob, target)
 
 	local precision = 0
 	local num_im = target:size()[1]
+	print('Total number of test images =', num_im)
 
 	for i = 1, num_im do
 		trgt = target[i]
 		T = getNonZero(trgt)
 		k = #T
+		-- print(k)
 		prb = prob[i]
 		P = getTopK(prb, k)
 
@@ -76,7 +81,7 @@ function getPrecision(prob, target)
 		-- print('P = ')
 		-- print(P)
 
-		intersection = getIntersection(torch.Tensor(T), P)
+		intersection = getIntersection(T, P)
 		prec = (#intersection) / k
 		precision = precision + prec
 	end
@@ -102,4 +107,4 @@ prob = torch.load('probs_test.t7')
 -- print(crossEnt)
 
 precision = getPrecision(prob, target)
-print(precision)
+print('Average precision = ', precision)

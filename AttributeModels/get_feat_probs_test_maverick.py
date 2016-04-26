@@ -1,3 +1,4 @@
+
 import numpy as np
 import caffe
 import os
@@ -33,6 +34,20 @@ num_im = len(imPaths)
 print('Hi 5')
 print(num_im)
 print(batch_size)
+
+GlobOrder = []
+for im_path in imPaths:
+    GlobOrder.append(int(im_path.split('_')[-1].split('.')[0]))
+
+imPaths2 = []
+for i in range(len(imPaths)):
+    index = GlobOrder.index(i+1)
+    imPaths2.append(imPaths[index])
+
+imPaths = imPaths2
+
+## FOR DEBUG ONLY
+imPaths = imPaths[:40]
 
 iter_ = 0
 max_iter = len(imPaths) / batch_size
