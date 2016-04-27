@@ -149,7 +149,14 @@ feat_vecs = torch.load('feat_vecs.t7')
 labels = torch.load('labels.t7')
 
 -- TO DO : random shuffle of data
--- y = torch.randperm(#feat_vecs)
+feat_vecs_temp = feat_vecs:clone()
+labels_temp = labels:clone()
+
+y = torch.randperm((#feat_vecs)[1])
+for i = 1, ((#feat_vecs)[1]) do
+    feat_vecs[i] = feat_vecs_temp[y[i]]
+    labels[i] = labels_temp[y[i]]
+end
 
 -- generate trainset and testset
 train_perc = 0.80 -- percentage of images in the train set
@@ -165,14 +172,14 @@ BC_model:evaluate()
 crit = nn.BCECriterion()
 eval_crit = crit
 lr = 2
-attr_lr = 1
+attr_lr = 0.1
 batch_size = 512
 max_train_iter = 10000
 test_interval = 50
 test_iter = 1000
 lr_stepsize = 100
-gamma = 0.7
-attr_gamma = 0.5
+gamma = 1
+attr_gamma = 1
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
@@ -198,6 +205,8 @@ C_model.modules[2]:reset(0.01);
 C_model.modules[6]:reset(0.01);
 C_model.modules[10].modules[1].weight:mul(0.3)
 C_model.modules[10].modules[3].weight:mul(0.3)
+C_model.modules[10].modules[1].bias:mul(0.3)
+C_model.modules[10].modules[3].bias:mul(0.09)
 
 for i = 1, max_train_iter do
 
@@ -211,7 +220,7 @@ for i = 1, max_train_iter do
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
-    torch.manualSeed(214325)
+    -- torch.manualSeed(214325)
 
     local train_pred_err = 0
     for j = 1, batch_size do
