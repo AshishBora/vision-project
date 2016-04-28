@@ -1,17 +1,6 @@
 require 'nngraph';
 
 
-function getGetAttScores(model)
-	-- GetCateg takes the encoded output given by the third encoder and
-	-- predicts the category
-	local getAttScores = nn.Sequential()
-	for i = 21, 23 do
-		getAttScores:add(model.modules[i]:clone())
-	end
-	getAttScores:add(nn.Sigmoid())
-	return getAttScores
-end
-
 function createCModel(getAttScores)
 	local image_feat1 = nn.Identity()();
 	local image_feat2 = nn.Identity()();
