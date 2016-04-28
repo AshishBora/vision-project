@@ -148,7 +148,7 @@ outfile:close()
 feat_vecs = torch.load('feat_vecs.t7')
 labels = torch.load('labels.t7')
 
--- TO DO : random shuffle of data
+-- randomly shuffle data
 feat_vecs_temp = feat_vecs:clone()
 labels_temp = labels:clone()
 
@@ -172,7 +172,7 @@ BC_model:evaluate()
 crit = nn.BCECriterion()
 eval_crit = crit
 lr = 2
-attr_lr = 0.1
+attr_lr = 0.5
 batch_size = 512
 max_train_iter = 10000
 test_interval = 50
@@ -242,8 +242,12 @@ for i = 1, max_train_iter do
     C_model.modules[6]:updateParameters(attr_lr)
     -- C_model.modules[10]:updateParameters(lr)
 
+    local grad_norm = torch.norm(C_model.modules[2].modules[3].gradWeight)
+
     outfile = io.open("train_C.out", "a")
-    outfile:write('Iteration no. ', i, ', lr = ', lr, ', attr_lr = ', attr_lr, ', batch_loss = ', batch_loss/batch_size, ', train_err = ', train_pred_err/batch_size, '\n')
+    outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
+    outfile:write(', batch_loss: ', batch_loss/batch_size, ', train_err: ', train_pred_err/batch_size)
+    outfile:write(', grad_norm: ', grad_norm, '\n')
     outfile:close()
 
     if i % test_interval == 0 then

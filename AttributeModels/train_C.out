@@ -1,355 +1,80 @@
 Loading pretrained model... done
 Training with snapshotting disabled... 
-Testing... average test_loss = 0.92780634565574, average test_pred_err = 0.455
-Iteration no. 1, lr = 2, attr_lr = 0.1, batch_loss = 1.0032539157253, train_err = 0.5234375
-Iteration no. 2, lr = 2, attr_lr = 0.1, batch_loss = 0.8459265386838, train_err = 0.453125
-Iteration no. 3, lr = 2, attr_lr = 0.1, batch_loss = 0.96861971034819, train_err = 0.501953125
-Iteration no. 4, lr = 2, attr_lr = 0.1, batch_loss = 0.9500646578816, train_err = 0.515625
-Iteration no. 5, lr = 2, attr_lr = 0.1, batch_loss = 0.92148496429329, train_err = 0.486328125
-Iteration no. 6, lr = 2, attr_lr = 0.1, batch_loss = 0.87106491150356, train_err = 0.453125
-Iteration no. 7, lr = 2, attr_lr = 0.1, batch_loss = 0.99219790696951, train_err = 0.5546875
-Iteration no. 8, lr = 2, attr_lr = 0.1, batch_loss = 0.90066386358079, train_err = 0.494140625
-Iteration no. 9, lr = 2, attr_lr = 0.1, batch_loss = 0.84235228809693, train_err = 0.482421875
-Iteration no. 10, lr = 2, attr_lr = 0.1, batch_loss = 0.82589606307723, train_err = 0.458984375
-Iteration no. 11, lr = 2, attr_lr = 0.1, batch_loss = 0.8885550445429, train_err = 0.486328125
-Iteration no. 12, lr = 2, attr_lr = 0.1, batch_loss = 0.91898705986089, train_err = 0.537109375
-Iteration no. 13, lr = 2, attr_lr = 0.1, batch_loss = 0.85731944246118, train_err = 0.48828125
-Iteration no. 14, lr = 2, attr_lr = 0.1, batch_loss = 0.86003801662312, train_err = 0.482421875
-Iteration no. 15, lr = 2, attr_lr = 0.1, batch_loss = 0.82582441466163, train_err = 0.501953125
-Iteration no. 16, lr = 2, attr_lr = 0.1, batch_loss = 0.82062397583286, train_err = 0.46875
-Iteration no. 17, lr = 2, attr_lr = 0.1, batch_loss = 0.90989580288834, train_err = 0.53515625
-Iteration no. 18, lr = 2, attr_lr = 0.1, batch_loss = 0.84606567043416, train_err = 0.501953125
-Iteration no. 19, lr = 2, attr_lr = 0.1, batch_loss = 0.79325001567098, train_err = 0.474609375
-Iteration no. 20, lr = 2, attr_lr = 0.1, batch_loss = 0.85432072364876, train_err = 0.48828125
-Iteration no. 21, lr = 2, attr_lr = 0.1, batch_loss = 0.7834875177314, train_err = 0.46875
-Iteration no. 22, lr = 2, attr_lr = 0.1, batch_loss = 0.81823762822837, train_err = 0.48046875
-Iteration no. 23, lr = 2, attr_lr = 0.1, batch_loss = 0.80745195186256, train_err = 0.501953125
-Iteration no. 24, lr = 2, attr_lr = 0.1, batch_loss = 0.8250209020334, train_err = 0.50390625
-Iteration no. 25, lr = 2, attr_lr = 0.1, batch_loss = 0.83809841380085, train_err = 0.505859375
-Iteration no. 26, lr = 2, attr_lr = 0.1, batch_loss = 0.81793540364388, train_err = 0.509765625
-Iteration no. 27, lr = 2, attr_lr = 0.1, batch_loss = 0.81203835465778, train_err = 0.494140625
-Iteration no. 28, lr = 2, attr_lr = 0.1, batch_loss = 0.78754370195595, train_err = 0.5
-Iteration no. 29, lr = 2, attr_lr = 0.1, batch_loss = 0.79290156347791, train_err = 0.466796875
-Iteration no. 30, lr = 2, attr_lr = 0.1, batch_loss = 0.78631489872529, train_err = 0.50390625
-Iteration no. 31, lr = 2, attr_lr = 0.1, batch_loss = 0.80733295837925, train_err = 0.517578125
-Iteration no. 32, lr = 2, attr_lr = 0.1, batch_loss = 0.78160434681778, train_err = 0.505859375
-Iteration no. 33, lr = 2, attr_lr = 0.1, batch_loss = 0.79963334328454, train_err = 0.513671875
-Iteration no. 34, lr = 2, attr_lr = 0.1, batch_loss = 0.76028714007979, train_err = 0.458984375
-Iteration no. 35, lr = 2, attr_lr = 0.1, batch_loss = 0.75324496460217, train_err = 0.4765625
-Iteration no. 36, lr = 2, attr_lr = 0.1, batch_loss = 0.80410101228022, train_err = 0.51953125
-Iteration no. 37, lr = 2, attr_lr = 0.1, batch_loss = 0.72820804472371, train_err = 0.455078125
-Iteration no. 38, lr = 2, attr_lr = 0.1, batch_loss = 0.73201406250235, train_err = 0.44921875
-Iteration no. 39, lr = 2, attr_lr = 0.1, batch_loss = 0.72842088950463, train_err = 0.46484375
-Iteration no. 40, lr = 2, attr_lr = 0.1, batch_loss = 0.72519748464879, train_err = 0.46484375
-Iteration no. 41, lr = 2, attr_lr = 0.1, batch_loss = 0.72388710456515, train_err = 0.45703125
-Iteration no. 42, lr = 2, attr_lr = 0.1, batch_loss = 0.74633024143381, train_err = 0.48046875
-Iteration no. 43, lr = 2, attr_lr = 0.1, batch_loss = 0.73607443503756, train_err = 0.474609375
-Iteration no. 44, lr = 2, attr_lr = 0.1, batch_loss = 0.74530343679313, train_err = 0.470703125
-Iteration no. 45, lr = 2, attr_lr = 0.1, batch_loss = 0.77293081751245, train_err = 0.51171875
-Iteration no. 46, lr = 2, attr_lr = 0.1, batch_loss = 0.76442822275185, train_err = 0.51171875
-Iteration no. 47, lr = 2, attr_lr = 0.1, batch_loss = 0.75221622110778, train_err = 0.509765625
-Iteration no. 48, lr = 2, attr_lr = 0.1, batch_loss = 0.73122701547598, train_err = 0.498046875
-Iteration no. 49, lr = 2, attr_lr = 0.1, batch_loss = 0.74467938263419, train_err = 0.470703125
-Iteration no. 50, lr = 2, attr_lr = 0.1, batch_loss = 0.76456803595018, train_err = 0.509765625
-Testing... average test_loss = 0.71829205790134, average test_pred_err = 0.458
-Iteration no. 51, lr = 2, attr_lr = 0.1, batch_loss = 0.69718491616051, train_err = 0.482421875
-Iteration no. 52, lr = 2, attr_lr = 0.1, batch_loss = 0.795356473947, train_err = 0.525390625
-Iteration no. 53, lr = 2, attr_lr = 0.1, batch_loss = 0.66587239009215, train_err = 0.427734375
-Iteration no. 54, lr = 2, attr_lr = 0.1, batch_loss = 0.7377300139392, train_err = 0.48046875
-Iteration no. 55, lr = 2, attr_lr = 0.1, batch_loss = 0.69162048076674, train_err = 0.462890625
-Iteration no. 56, lr = 2, attr_lr = 0.1, batch_loss = 0.67635614522261, train_err = 0.4765625
-Iteration no. 57, lr = 2, attr_lr = 0.1, batch_loss = 0.75005915853364, train_err = 0.486328125
-Iteration no. 58, lr = 2, attr_lr = 0.1, batch_loss = 0.69345696571855, train_err = 0.458984375
-Iteration no. 59, lr = 2, attr_lr = 0.1, batch_loss = 0.69204292959581, train_err = 0.447265625
-Iteration no. 60, lr = 2, attr_lr = 0.1, batch_loss = 0.74321746964031, train_err = 0.478515625
-Iteration no. 61, lr = 2, attr_lr = 0.1, batch_loss = 0.69205516535296, train_err = 0.4765625
-Iteration no. 62, lr = 2, attr_lr = 0.1, batch_loss = 0.68209722898043, train_err = 0.455078125
-Iteration no. 63, lr = 2, attr_lr = 0.1, batch_loss = 0.69727323432543, train_err = 0.45703125
-Iteration no. 64, lr = 2, attr_lr = 0.1, batch_loss = 0.70322164614974, train_err = 0.466796875
-Iteration no. 65, lr = 2, attr_lr = 0.1, batch_loss = 0.68929553428363, train_err = 0.474609375
-Iteration no. 66, lr = 2, attr_lr = 0.1, batch_loss = 0.68187951740453, train_err = 0.458984375
-Iteration no. 67, lr = 2, attr_lr = 0.1, batch_loss = 0.7304548888519, train_err = 0.46875
-Iteration no. 68, lr = 2, attr_lr = 0.1, batch_loss = 0.68621063643808, train_err = 0.4921875
-Iteration no. 69, lr = 2, attr_lr = 0.1, batch_loss = 0.74734688020838, train_err = 0.4921875
-Iteration no. 70, lr = 2, attr_lr = 0.1, batch_loss = 0.64942142707073, train_err = 0.431640625
-Iteration no. 71, lr = 2, attr_lr = 0.1, batch_loss = 0.63110531562668, train_err = 0.4296875
-Iteration no. 72, lr = 2, attr_lr = 0.1, batch_loss = 0.68129667042686, train_err = 0.4609375
-Iteration no. 73, lr = 2, attr_lr = 0.1, batch_loss = 0.66594235564776, train_err = 0.453125
-Iteration no. 74, lr = 2, attr_lr = 0.1, batch_loss = 0.66311002066446, train_err = 0.4453125
-Iteration no. 75, lr = 2, attr_lr = 0.1, batch_loss = 0.68955723138685, train_err = 0.470703125
-Iteration no. 76, lr = 2, attr_lr = 0.1, batch_loss = 0.68824147277053, train_err = 0.462890625
-Iteration no. 77, lr = 2, attr_lr = 0.1, batch_loss = 0.65944086886388, train_err = 0.4453125
-Iteration no. 78, lr = 2, attr_lr = 0.1, batch_loss = 0.67550330182369, train_err = 0.462890625
-Iteration no. 79, lr = 2, attr_lr = 0.1, batch_loss = 0.68445356757341, train_err = 0.48828125
-Iteration no. 80, lr = 2, attr_lr = 0.1, batch_loss = 0.68457742381059, train_err = 0.46484375
-Iteration no. 81, lr = 2, attr_lr = 0.1, batch_loss = 0.68180353460438, train_err = 0.46875
-Iteration no. 82, lr = 2, attr_lr = 0.1, batch_loss = 0.69929203203442, train_err = 0.486328125
-Iteration no. 83, lr = 2, attr_lr = 0.1, batch_loss = 0.67844604912088, train_err = 0.466796875
-Iteration no. 84, lr = 2, attr_lr = 0.1, batch_loss = 0.67918229181967, train_err = 0.44921875
-Iteration no. 85, lr = 2, attr_lr = 0.1, batch_loss = 0.67478768405349, train_err = 0.455078125
-Iteration no. 86, lr = 2, attr_lr = 0.1, batch_loss = 0.64198978993235, train_err = 0.41796875
-Iteration no. 87, lr = 2, attr_lr = 0.1, batch_loss = 0.67596734901563, train_err = 0.4453125
-Iteration no. 88, lr = 2, attr_lr = 0.1, batch_loss = 0.6395377233254, train_err = 0.423828125
-Iteration no. 89, lr = 2, attr_lr = 0.1, batch_loss = 0.67311497743533, train_err = 0.458984375
-Iteration no. 90, lr = 2, attr_lr = 0.1, batch_loss = 0.66368323769621, train_err = 0.443359375
-Iteration no. 91, lr = 2, attr_lr = 0.1, batch_loss = 0.64485946935705, train_err = 0.4140625
-Iteration no. 92, lr = 2, attr_lr = 0.1, batch_loss = 0.64912589601924, train_err = 0.427734375
-Iteration no. 93, lr = 2, attr_lr = 0.1, batch_loss = 0.6886612222197, train_err = 0.462890625
-Iteration no. 94, lr = 2, attr_lr = 0.1, batch_loss = 0.6721165747158, train_err = 0.4453125
-Iteration no. 95, lr = 2, attr_lr = 0.1, batch_loss = 0.65580686332148, train_err = 0.44140625
-Iteration no. 96, lr = 2, attr_lr = 0.1, batch_loss = 0.63113806480454, train_err = 0.42578125
-Iteration no. 97, lr = 2, attr_lr = 0.1, batch_loss = 0.61745166970985, train_err = 0.416015625
-Iteration no. 98, lr = 2, attr_lr = 0.1, batch_loss = 0.65943419338817, train_err = 0.4453125
-Iteration no. 99, lr = 2, attr_lr = 0.1, batch_loss = 0.66472405597306, train_err = 0.4453125
-Iteration no. 100, lr = 2, attr_lr = 0.1, batch_loss = 0.64125294374515, train_err = 0.443359375
-Testing... average test_loss = 0.6842749181513, average test_pred_err = 0.484
-Iteration no. 101, lr = 2, attr_lr = 0.1, batch_loss = 0.60047516561742, train_err = 0.40234375
-Iteration no. 102, lr = 2, attr_lr = 0.1, batch_loss = 0.64232022914477, train_err = 0.447265625
-Iteration no. 103, lr = 2, attr_lr = 0.1, batch_loss = 0.65329103089938, train_err = 0.439453125
-Iteration no. 104, lr = 2, attr_lr = 0.1, batch_loss = 0.66846635227684, train_err = 0.4609375
-Iteration no. 105, lr = 2, attr_lr = 0.1, batch_loss = 0.62292647498501, train_err = 0.400390625
-Iteration no. 106, lr = 2, attr_lr = 0.1, batch_loss = 0.63603540441969, train_err = 0.421875
-Iteration no. 107, lr = 2, attr_lr = 0.1, batch_loss = 0.60414617260085, train_err = 0.390625
-Iteration no. 108, lr = 2, attr_lr = 0.1, batch_loss = 0.62936909489227, train_err = 0.4296875
-Iteration no. 109, lr = 2, attr_lr = 0.1, batch_loss = 0.64135194261284, train_err = 0.4375
-Iteration no. 110, lr = 2, attr_lr = 0.1, batch_loss = 0.62127837288667, train_err = 0.412109375
-Iteration no. 111, lr = 2, attr_lr = 0.1, batch_loss = 0.64166630870068, train_err = 0.4609375
-Iteration no. 112, lr = 2, attr_lr = 0.1, batch_loss = 0.63536217984292, train_err = 0.443359375
-Iteration no. 113, lr = 2, attr_lr = 0.1, batch_loss = 0.62913436275482, train_err = 0.423828125
-Iteration no. 114, lr = 2, attr_lr = 0.1, batch_loss = 0.59529517180925, train_err = 0.39453125
-Iteration no. 115, lr = 2, attr_lr = 0.1, batch_loss = 0.66130470594894, train_err = 0.4609375
-Iteration no. 116, lr = 2, attr_lr = 0.1, batch_loss = 0.62203611204027, train_err = 0.419921875
-Iteration no. 117, lr = 2, attr_lr = 0.1, batch_loss = 0.64621622455993, train_err = 0.451171875
-Iteration no. 118, lr = 2, attr_lr = 0.1, batch_loss = 0.62060714785068, train_err = 0.41015625
-Iteration no. 119, lr = 2, attr_lr = 0.1, batch_loss = 0.62274362689057, train_err = 0.447265625
-Iteration no. 120, lr = 2, attr_lr = 0.1, batch_loss = 0.64068562846198, train_err = 0.451171875
-Iteration no. 121, lr = 2, attr_lr = 0.1, batch_loss = 0.62818876308979, train_err = 0.4296875
-Iteration no. 122, lr = 2, attr_lr = 0.1, batch_loss = 0.61996380659853, train_err = 0.43359375
-Iteration no. 123, lr = 2, attr_lr = 0.1, batch_loss = 0.63657703668916, train_err = 0.43359375
-Iteration no. 124, lr = 2, attr_lr = 0.1, batch_loss = 0.59950603087098, train_err = 0.416015625
-Iteration no. 125, lr = 2, attr_lr = 0.1, batch_loss = 0.63645993066409, train_err = 0.423828125
-Iteration no. 126, lr = 2, attr_lr = 0.1, batch_loss = 0.62553032055661, train_err = 0.404296875
-Iteration no. 127, lr = 2, attr_lr = 0.1, batch_loss = 0.61912050600914, train_err = 0.416015625
-Iteration no. 128, lr = 2, attr_lr = 0.1, batch_loss = 0.64831307939941, train_err = 0.4375
-Iteration no. 129, lr = 2, attr_lr = 0.1, batch_loss = 0.63625288021191, train_err = 0.416015625
-Iteration no. 130, lr = 2, attr_lr = 0.1, batch_loss = 0.59971115801682, train_err = 0.412109375
-Iteration no. 131, lr = 2, attr_lr = 0.1, batch_loss = 0.65625202657641, train_err = 0.45703125
-Iteration no. 132, lr = 2, attr_lr = 0.1, batch_loss = 0.62818004393732, train_err = 0.458984375
-Iteration no. 133, lr = 2, attr_lr = 0.1, batch_loss = 0.61337402967582, train_err = 0.408203125
-Iteration no. 134, lr = 2, attr_lr = 0.1, batch_loss = 0.64342129555379, train_err = 0.43359375
-Iteration no. 135, lr = 2, attr_lr = 0.1, batch_loss = 0.61249673033354, train_err = 0.3984375
-Iteration no. 136, lr = 2, attr_lr = 0.1, batch_loss = 0.60187432212233, train_err = 0.416015625
-Iteration no. 137, lr = 2, attr_lr = 0.1, batch_loss = 0.59784278833262, train_err = 0.416015625
-Iteration no. 138, lr = 2, attr_lr = 0.1, batch_loss = 0.61826038374845, train_err = 0.439453125
-Iteration no. 139, lr = 2, attr_lr = 0.1, batch_loss = 0.60413196595717, train_err = 0.416015625
-Iteration no. 140, lr = 2, attr_lr = 0.1, batch_loss = 0.618960915049, train_err = 0.43359375
-Iteration no. 141, lr = 2, attr_lr = 0.1, batch_loss = 0.62765389413929, train_err = 0.439453125
-Iteration no. 142, lr = 2, attr_lr = 0.1, batch_loss = 0.62101480825208, train_err = 0.41015625
-Iteration no. 143, lr = 2, attr_lr = 0.1, batch_loss = 0.62178550737, train_err = 0.41015625
-Iteration no. 144, lr = 2, attr_lr = 0.1, batch_loss = 0.58384280470493, train_err = 0.3828125
-Iteration no. 145, lr = 2, attr_lr = 0.1, batch_loss = 0.63351763331696, train_err = 0.4375
-Iteration no. 146, lr = 2, attr_lr = 0.1, batch_loss = 0.59163886512961, train_err = 0.423828125
-Iteration no. 147, lr = 2, attr_lr = 0.1, batch_loss = 0.62043893570265, train_err = 0.443359375
-Iteration no. 148, lr = 2, attr_lr = 0.1, batch_loss = 0.56644641250316, train_err = 0.384765625
-Iteration no. 149, lr = 2, attr_lr = 0.1, batch_loss = 0.61480752317633, train_err = 0.40625
-Iteration no. 150, lr = 2, attr_lr = 0.1, batch_loss = 0.61859149364579, train_err = 0.427734375
-Testing... average test_loss = 0.63337687915289, average test_pred_err = 0.437
-Iteration no. 151, lr = 2, attr_lr = 0.1, batch_loss = 0.61665963657416, train_err = 0.412109375
-Iteration no. 152, lr = 2, attr_lr = 0.1, batch_loss = 0.63135817513285, train_err = 0.435546875
-Iteration no. 153, lr = 2, attr_lr = 0.1, batch_loss = 0.61705418299627, train_err = 0.41796875
-Iteration no. 154, lr = 2, attr_lr = 0.1, batch_loss = 0.59854689533071, train_err = 0.39453125
-Iteration no. 155, lr = 2, attr_lr = 0.1, batch_loss = 0.60819557388408, train_err = 0.421875
-Iteration no. 156, lr = 2, attr_lr = 0.1, batch_loss = 0.60678167473783, train_err = 0.3984375
-Iteration no. 157, lr = 2, attr_lr = 0.1, batch_loss = 0.61786326619905, train_err = 0.439453125
-Iteration no. 158, lr = 2, attr_lr = 0.1, batch_loss = 0.61064566380846, train_err = 0.421875
-Iteration no. 159, lr = 2, attr_lr = 0.1, batch_loss = 0.60470142051973, train_err = 0.404296875
-Iteration no. 160, lr = 2, attr_lr = 0.1, batch_loss = 0.57763310724886, train_err = 0.404296875
-Iteration no. 161, lr = 2, attr_lr = 0.1, batch_loss = 0.589404484284, train_err = 0.41796875
-Iteration no. 162, lr = 2, attr_lr = 0.1, batch_loss = 0.58563000812104, train_err = 0.38671875
-Iteration no. 163, lr = 2, attr_lr = 0.1, batch_loss = 0.58823556430634, train_err = 0.3828125
-Iteration no. 164, lr = 2, attr_lr = 0.1, batch_loss = 0.59053786910601, train_err = 0.400390625
-Iteration no. 165, lr = 2, attr_lr = 0.1, batch_loss = 0.59037672485628, train_err = 0.427734375
-Iteration no. 166, lr = 2, attr_lr = 0.1, batch_loss = 0.6087865941607, train_err = 0.416015625
-Iteration no. 167, lr = 2, attr_lr = 0.1, batch_loss = 0.60453106487818, train_err = 0.404296875
-Iteration no. 168, lr = 2, attr_lr = 0.1, batch_loss = 0.60192936461112, train_err = 0.427734375
-Iteration no. 169, lr = 2, attr_lr = 0.1, batch_loss = 0.59723536754289, train_err = 0.39453125
-Iteration no. 170, lr = 2, attr_lr = 0.1, batch_loss = 0.58887866193642, train_err = 0.365234375
-Iteration no. 171, lr = 2, attr_lr = 0.1, batch_loss = 0.5978536111429, train_err = 0.421875
-Iteration no. 172, lr = 2, attr_lr = 0.1, batch_loss = 0.60293254252181, train_err = 0.38671875
-Iteration no. 173, lr = 2, attr_lr = 0.1, batch_loss = 0.59754644435554, train_err = 0.40625
-Iteration no. 174, lr = 2, attr_lr = 0.1, batch_loss = 0.57748892184373, train_err = 0.3828125
-Iteration no. 175, lr = 2, attr_lr = 0.1, batch_loss = 0.60645792806896, train_err = 0.40234375
-Iteration no. 176, lr = 2, attr_lr = 0.1, batch_loss = 0.57419260297466, train_err = 0.341796875
-Iteration no. 177, lr = 2, attr_lr = 0.1, batch_loss = 0.64395571353812, train_err = 0.443359375
-Iteration no. 178, lr = 2, attr_lr = 0.1, batch_loss = 0.59433497051513, train_err = 0.396484375
-Iteration no. 179, lr = 2, attr_lr = 0.1, batch_loss = 0.5925021452962, train_err = 0.404296875
-Iteration no. 180, lr = 2, attr_lr = 0.1, batch_loss = 0.58040731887951, train_err = 0.369140625
-Iteration no. 181, lr = 2, attr_lr = 0.1, batch_loss = 0.62952148002435, train_err = 0.4453125
-Iteration no. 182, lr = 2, attr_lr = 0.1, batch_loss = 0.59655006592472, train_err = 0.40234375
-Iteration no. 183, lr = 2, attr_lr = 0.1, batch_loss = 0.59087098846881, train_err = 0.400390625
-Iteration no. 184, lr = 2, attr_lr = 0.1, batch_loss = 0.59889958509941, train_err = 0.400390625
-Iteration no. 185, lr = 2, attr_lr = 0.1, batch_loss = 0.60118160622984, train_err = 0.40625
-Iteration no. 186, lr = 2, attr_lr = 0.1, batch_loss = 0.58532082318794, train_err = 0.388671875
-Iteration no. 187, lr = 2, attr_lr = 0.1, batch_loss = 0.59039502474892, train_err = 0.390625
-Iteration no. 188, lr = 2, attr_lr = 0.1, batch_loss = 0.58663281738731, train_err = 0.380859375
-Iteration no. 189, lr = 2, attr_lr = 0.1, batch_loss = 0.56757861039048, train_err = 0.380859375
-Iteration no. 190, lr = 2, attr_lr = 0.1, batch_loss = 0.56248938961152, train_err = 0.36328125
-Iteration no. 191, lr = 2, attr_lr = 0.1, batch_loss = 0.56352923162078, train_err = 0.357421875
-Iteration no. 192, lr = 2, attr_lr = 0.1, batch_loss = 0.59080805655258, train_err = 0.412109375
-Iteration no. 193, lr = 2, attr_lr = 0.1, batch_loss = 0.61282815307825, train_err = 0.3984375
-Iteration no. 194, lr = 2, attr_lr = 0.1, batch_loss = 0.5952561181163, train_err = 0.41796875
-Iteration no. 195, lr = 2, attr_lr = 0.1, batch_loss = 0.58707257561519, train_err = 0.400390625
-Iteration no. 196, lr = 2, attr_lr = 0.1, batch_loss = 0.6012376926412, train_err = 0.4296875
-Iteration no. 197, lr = 2, attr_lr = 0.1, batch_loss = 0.62473283510345, train_err = 0.4296875
-Iteration no. 198, lr = 2, attr_lr = 0.1, batch_loss = 0.57783391835122, train_err = 0.384765625
-Iteration no. 199, lr = 2, attr_lr = 0.1, batch_loss = 0.58452107520561, train_err = 0.400390625
-Iteration no. 200, lr = 2, attr_lr = 0.1, batch_loss = 0.59513596839241, train_err = 0.40234375
-Testing... average test_loss = 0.61060758954345, average test_pred_err = 0.423
-Iteration no. 201, lr = 2, attr_lr = 0.1, batch_loss = 0.57397957717274, train_err = 0.361328125
-Iteration no. 202, lr = 2, attr_lr = 0.1, batch_loss = 0.60988859045227, train_err = 0.416015625
-Iteration no. 203, lr = 2, attr_lr = 0.1, batch_loss = 0.53609519155563, train_err = 0.328125
-Iteration no. 204, lr = 2, attr_lr = 0.1, batch_loss = 0.57883641708967, train_err = 0.373046875
-Iteration no. 205, lr = 2, attr_lr = 0.1, batch_loss = 0.58180913002396, train_err = 0.36328125
-Iteration no. 206, lr = 2, attr_lr = 0.1, batch_loss = 0.57132710873673, train_err = 0.388671875
-Iteration no. 207, lr = 2, attr_lr = 0.1, batch_loss = 0.60035593908087, train_err = 0.392578125
-Iteration no. 208, lr = 2, attr_lr = 0.1, batch_loss = 0.61875921844951, train_err = 0.421875
-Iteration no. 209, lr = 2, attr_lr = 0.1, batch_loss = 0.59971041510976, train_err = 0.38671875
-Iteration no. 210, lr = 2, attr_lr = 0.1, batch_loss = 0.57365328481887, train_err = 0.37890625
-Iteration no. 211, lr = 2, attr_lr = 0.1, batch_loss = 0.57101625735462, train_err = 0.359375
-Iteration no. 212, lr = 2, attr_lr = 0.1, batch_loss = 0.55902610578872, train_err = 0.345703125
-Iteration no. 213, lr = 2, attr_lr = 0.1, batch_loss = 0.56956061191241, train_err = 0.369140625
-Iteration no. 214, lr = 2, attr_lr = 0.1, batch_loss = 0.5589817221327, train_err = 0.36328125
-Iteration no. 215, lr = 2, attr_lr = 0.1, batch_loss = 0.55486470059104, train_err = 0.373046875
-Iteration no. 216, lr = 2, attr_lr = 0.1, batch_loss = 0.55989191630544, train_err = 0.375
-Iteration no. 217, lr = 2, attr_lr = 0.1, batch_loss = 0.55737658767044, train_err = 0.345703125
-Iteration no. 218, lr = 2, attr_lr = 0.1, batch_loss = 0.57511100114207, train_err = 0.376953125
-Iteration no. 219, lr = 2, attr_lr = 0.1, batch_loss = 0.55844185570703, train_err = 0.3671875
-Iteration no. 220, lr = 2, attr_lr = 0.1, batch_loss = 0.61025713110894, train_err = 0.390625
-Iteration no. 221, lr = 2, attr_lr = 0.1, batch_loss = 0.56410453267522, train_err = 0.365234375
-Iteration no. 222, lr = 2, attr_lr = 0.1, batch_loss = 0.56873428113688, train_err = 0.388671875
-Iteration no. 223, lr = 2, attr_lr = 0.1, batch_loss = 0.57221298422106, train_err = 0.361328125
-Iteration no. 224, lr = 2, attr_lr = 0.1, batch_loss = 0.59215401707143, train_err = 0.3984375
-Iteration no. 225, lr = 2, attr_lr = 0.1, batch_loss = 0.57957880316523, train_err = 0.39453125
-Iteration no. 226, lr = 2, attr_lr = 0.1, batch_loss = 0.57361563538836, train_err = 0.359375
-Iteration no. 227, lr = 2, attr_lr = 0.1, batch_loss = 0.5933231813036, train_err = 0.41796875
-Iteration no. 228, lr = 2, attr_lr = 0.1, batch_loss = 0.5696525727301, train_err = 0.37109375
-Iteration no. 229, lr = 2, attr_lr = 0.1, batch_loss = 0.58699325119937, train_err = 0.3828125
-Iteration no. 230, lr = 2, attr_lr = 0.1, batch_loss = 0.56316459988093, train_err = 0.37109375
-Iteration no. 231, lr = 2, attr_lr = 0.1, batch_loss = 0.5625118622128, train_err = 0.373046875
-Iteration no. 232, lr = 2, attr_lr = 0.1, batch_loss = 0.64474397245759, train_err = 0.4140625
-Iteration no. 233, lr = 2, attr_lr = 0.1, batch_loss = 0.60146878571825, train_err = 0.408203125
-Iteration no. 234, lr = 2, attr_lr = 0.1, batch_loss = 0.5929416611187, train_err = 0.37109375
-Iteration no. 235, lr = 2, attr_lr = 0.1, batch_loss = 0.58257839476897, train_err = 0.365234375
-Iteration no. 236, lr = 2, attr_lr = 0.1, batch_loss = 0.58339423147367, train_err = 0.384765625
-Iteration no. 237, lr = 2, attr_lr = 0.1, batch_loss = 0.58554474800875, train_err = 0.390625
-Iteration no. 238, lr = 2, attr_lr = 0.1, batch_loss = 0.57907427523781, train_err = 0.400390625
-Iteration no. 239, lr = 2, attr_lr = 0.1, batch_loss = 0.6026497533482, train_err = 0.396484375
-Iteration no. 240, lr = 2, attr_lr = 0.1, batch_loss = 0.54052908395117, train_err = 0.3203125
-Iteration no. 241, lr = 2, attr_lr = 0.1, batch_loss = 0.56478426570537, train_err = 0.357421875
-Iteration no. 242, lr = 2, attr_lr = 0.1, batch_loss = 0.58695865754212, train_err = 0.373046875
-Iteration no. 243, lr = 2, attr_lr = 0.1, batch_loss = 0.58966332159492, train_err = 0.384765625
-Iteration no. 244, lr = 2, attr_lr = 0.1, batch_loss = 0.5256967529194, train_err = 0.310546875
-Iteration no. 245, lr = 2, attr_lr = 0.1, batch_loss = 0.55123957686263, train_err = 0.349609375
-Iteration no. 246, lr = 2, attr_lr = 0.1, batch_loss = 0.57168237505788, train_err = 0.369140625
-Iteration no. 247, lr = 2, attr_lr = 0.1, batch_loss = 0.55149905995195, train_err = 0.345703125
-Iteration no. 248, lr = 2, attr_lr = 0.1, batch_loss = 0.58182342161055, train_err = 0.3671875
-Iteration no. 249, lr = 2, attr_lr = 0.1, batch_loss = 0.57114667273493, train_err = 0.34765625
-Iteration no. 250, lr = 2, attr_lr = 0.1, batch_loss = 0.59381629257534, train_err = 0.384765625
-Testing... average test_loss = 0.5819018471548, average test_pred_err = 0.385
-Iteration no. 251, lr = 2, attr_lr = 0.1, batch_loss = 0.57289895416212, train_err = 0.37890625
-Iteration no. 252, lr = 2, attr_lr = 0.1, batch_loss = 0.54412429957303, train_err = 0.337890625
-Iteration no. 253, lr = 2, attr_lr = 0.1, batch_loss = 0.59332742614594, train_err = 0.37109375
-Iteration no. 254, lr = 2, attr_lr = 0.1, batch_loss = 0.55552361864624, train_err = 0.33984375
-Iteration no. 255, lr = 2, attr_lr = 0.1, batch_loss = 0.58531163663811, train_err = 0.365234375
-Iteration no. 256, lr = 2, attr_lr = 0.1, batch_loss = 0.54920421807324, train_err = 0.361328125
-Iteration no. 257, lr = 2, attr_lr = 0.1, batch_loss = 0.5705308296786, train_err = 0.34375
-Iteration no. 258, lr = 2, attr_lr = 0.1, batch_loss = 0.59433720267114, train_err = 0.384765625
-Iteration no. 259, lr = 2, attr_lr = 0.1, batch_loss = 0.60971581585735, train_err = 0.408203125
-Iteration no. 260, lr = 2, attr_lr = 0.1, batch_loss = 0.55641595012575, train_err = 0.3359375
-Iteration no. 261, lr = 2, attr_lr = 0.1, batch_loss = 0.5462640107766, train_err = 0.3359375
-Iteration no. 262, lr = 2, attr_lr = 0.1, batch_loss = 0.55249558362763, train_err = 0.3515625
-Iteration no. 263, lr = 2, attr_lr = 0.1, batch_loss = 0.58881989142292, train_err = 0.373046875
-Iteration no. 264, lr = 2, attr_lr = 0.1, batch_loss = 0.56916220566231, train_err = 0.3671875
-Iteration no. 265, lr = 2, attr_lr = 0.1, batch_loss = 0.56564687752889, train_err = 0.365234375
-Iteration no. 266, lr = 2, attr_lr = 0.1, batch_loss = 0.55085372409205, train_err = 0.31640625
-Iteration no. 267, lr = 2, attr_lr = 0.1, batch_loss = 0.56815392218601, train_err = 0.380859375
-Iteration no. 268, lr = 2, attr_lr = 0.1, batch_loss = 0.5765298772303, train_err = 0.361328125
-Iteration no. 269, lr = 2, attr_lr = 0.1, batch_loss = 0.57083142327781, train_err = 0.345703125
-Iteration no. 270, lr = 2, attr_lr = 0.1, batch_loss = 0.58033508214831, train_err = 0.373046875
-Iteration no. 271, lr = 2, attr_lr = 0.1, batch_loss = 0.59121848949401, train_err = 0.38671875
-Iteration no. 272, lr = 2, attr_lr = 0.1, batch_loss = 0.56233751041425, train_err = 0.3515625
-Iteration no. 273, lr = 2, attr_lr = 0.1, batch_loss = 0.56425016784418, train_err = 0.3671875
-Iteration no. 274, lr = 2, attr_lr = 0.1, batch_loss = 0.56691397496254, train_err = 0.369140625
-Iteration no. 275, lr = 2, attr_lr = 0.1, batch_loss = 0.55559865276323, train_err = 0.337890625
-Iteration no. 276, lr = 2, attr_lr = 0.1, batch_loss = 0.56516940078557, train_err = 0.357421875
-Iteration no. 277, lr = 2, attr_lr = 0.1, batch_loss = 0.56176454911586, train_err = 0.34375
-Iteration no. 278, lr = 2, attr_lr = 0.1, batch_loss = 0.54996892543333, train_err = 0.330078125
-Iteration no. 279, lr = 2, attr_lr = 0.1, batch_loss = 0.57503916963422, train_err = 0.337890625
-Iteration no. 280, lr = 2, attr_lr = 0.1, batch_loss = 0.57564020315479, train_err = 0.369140625
-Iteration no. 281, lr = 2, attr_lr = 0.1, batch_loss = 0.54020783843566, train_err = 0.30078125
-Iteration no. 282, lr = 2, attr_lr = 0.1, batch_loss = 0.54421575239917, train_err = 0.341796875
-Iteration no. 283, lr = 2, attr_lr = 0.1, batch_loss = 0.59647920424538, train_err = 0.384765625
-Iteration no. 284, lr = 2, attr_lr = 0.1, batch_loss = 0.54353525539977, train_err = 0.33984375
-Iteration no. 285, lr = 2, attr_lr = 0.1, batch_loss = 0.55466218593683, train_err = 0.33203125
-Iteration no. 286, lr = 2, attr_lr = 0.1, batch_loss = 0.57739203175944, train_err = 0.361328125
-Iteration no. 287, lr = 2, attr_lr = 0.1, batch_loss = 0.5531135426611, train_err = 0.345703125
-Iteration no. 288, lr = 2, attr_lr = 0.1, batch_loss = 0.57196605533758, train_err = 0.361328125
-Iteration no. 289, lr = 2, attr_lr = 0.1, batch_loss = 0.54703847774679, train_err = 0.34765625
-Iteration no. 290, lr = 2, attr_lr = 0.1, batch_loss = 0.55609363199699, train_err = 0.357421875
-Iteration no. 291, lr = 2, attr_lr = 0.1, batch_loss = 0.56391073313289, train_err = 0.369140625
-Iteration no. 292, lr = 2, attr_lr = 0.1, batch_loss = 0.54982599910087, train_err = 0.306640625
-Iteration no. 293, lr = 2, attr_lr = 0.1, batch_loss = 0.54890534374457, train_err = 0.3359375
-Iteration no. 294, lr = 2, attr_lr = 0.1, batch_loss = 0.52779184058179, train_err = 0.3125
-Iteration no. 295, lr = 2, attr_lr = 0.1, batch_loss = 0.55735549555825, train_err = 0.373046875
-Iteration no. 296, lr = 2, attr_lr = 0.1, batch_loss = 0.55085564379535, train_err = 0.333984375
-Iteration no. 297, lr = 2, attr_lr = 0.1, batch_loss = 0.57230725119951, train_err = 0.345703125
-Iteration no. 298, lr = 2, attr_lr = 0.1, batch_loss = 0.56035212481291, train_err = 0.3203125
-Iteration no. 299, lr = 2, attr_lr = 0.1, batch_loss = 0.56946910413792, train_err = 0.330078125
-Iteration no. 300, lr = 2, attr_lr = 0.1, batch_loss = 0.54593492022478, train_err = 0.35546875
-Testing... average test_loss = 0.55181389828968, average test_pred_err = 0.342
-Iteration no. 301, lr = 2, attr_lr = 0.1, batch_loss = 0.57316661917116, train_err = 0.357421875
-Iteration no. 302, lr = 2, attr_lr = 0.1, batch_loss = 0.58351924911537, train_err = 0.384765625
-Iteration no. 303, lr = 2, attr_lr = 0.1, batch_loss = 0.57378143210005, train_err = 0.369140625
-Iteration no. 304, lr = 2, attr_lr = 0.1, batch_loss = 0.56372923205273, train_err = 0.349609375
-Iteration no. 305, lr = 2, attr_lr = 0.1, batch_loss = 0.57174294929502, train_err = 0.369140625
-Iteration no. 306, lr = 2, attr_lr = 0.1, batch_loss = 0.58178179880344, train_err = 0.375
-Iteration no. 307, lr = 2, attr_lr = 0.1, batch_loss = 0.5765330856491, train_err = 0.3515625
-Iteration no. 308, lr = 2, attr_lr = 0.1, batch_loss = 0.51797383104467, train_err = 0.294921875
-Iteration no. 309, lr = 2, attr_lr = 0.1, batch_loss = 0.55666804993833, train_err = 0.3515625
-Iteration no. 310, lr = 2, attr_lr = 0.1, batch_loss = 0.54300066136881, train_err = 0.322265625
-Iteration no. 311, lr = 2, attr_lr = 0.1, batch_loss = 0.54345165499967, train_err = 0.30859375
-Iteration no. 312, lr = 2, attr_lr = 0.1, batch_loss = 0.52555094102227, train_err = 0.349609375
-Iteration no. 313, lr = 2, attr_lr = 0.1, batch_loss = 0.57638405647236, train_err = 0.337890625
-Iteration no. 314, lr = 2, attr_lr = 0.1, batch_loss = 0.52558367406123, train_err = 0.32421875
-Iteration no. 315, lr = 2, attr_lr = 0.1, batch_loss = 0.53555468426883, train_err = 0.32421875
-Iteration no. 316, lr = 2, attr_lr = 0.1, batch_loss = 0.53997144536062, train_err = 0.3515625
-Iteration no. 317, lr = 2, attr_lr = 0.1, batch_loss = 0.54777860355791, train_err = 0.31640625
-Iteration no. 318, lr = 2, attr_lr = 0.1, batch_loss = 0.56026866512753, train_err = 0.333984375
-Iteration no. 319, lr = 2, attr_lr = 0.1, batch_loss = 0.58059971967586, train_err = 0.34765625
-Iteration no. 320, lr = 2, attr_lr = 0.1, batch_loss = 0.54265398906809, train_err = 0.31640625
-Iteration no. 321, lr = 2, attr_lr = 0.1, batch_loss = 0.57310360782708, train_err = 0.34765625
-Iteration no. 322, lr = 2, attr_lr = 0.1, batch_loss = 0.54992758176319, train_err = 0.31640625
-Iteration no. 323, lr = 2, attr_lr = 0.1, batch_loss = 0.53324558572725, train_err = 0.326171875
-Iteration no. 324, lr = 2, attr_lr = 0.1, batch_loss = 0.5421975084356, train_err = 0.345703125
-Iteration no. 325, lr = 2, attr_lr = 0.1, batch_loss = 0.57656990583567, train_err = 0.341796875
-Iteration no. 326, lr = 2, attr_lr = 0.1, batch_loss = 0.54473963745399, train_err = 0.3203125
-Iteration no. 327, lr = 2, attr_lr = 0.1, batch_loss = 0.54738908547418, train_err = 0.337890625
-Iteration no. 328, lr = 2, attr_lr = 0.1, batch_loss = 0.54932786332613, train_err = 0.369140625
-Iteration no. 329, lr = 2, attr_lr = 0.1, batch_loss = 0.58603721041628, train_err = 0.341796875
-Iteration no. 330, lr = 2, attr_lr = 0.1, batch_loss = 0.5523607862286, train_err = 0.341796875
-Iteration no. 331, lr = 2, attr_lr = 0.1, batch_loss = 0.55334577458928, train_err = 0.31640625
-Iteration no. 332, lr = 2, attr_lr = 0.1, batch_loss = 0.5642667425363, train_err = 0.337890625
-Iteration no. 333, lr = 2, attr_lr = 0.1, batch_loss = 0.55496228454965, train_err = 0.3203125
-Iteration no. 334, lr = 2, attr_lr = 0.1, batch_loss = 0.540692464707, train_err = 0.341796875
-Iteration no. 335, lr = 2, attr_lr = 0.1, batch_loss = 0.53221056547145, train_err = 0.32421875
-Iteration no. 336, lr = 2, attr_lr = 0.1, batch_loss = 0.5624583949043, train_err = 0.353515625
-Iteration no. 337, lr = 2, attr_lr = 0.1, batch_loss = 0.56537390980718, train_err = 0.35546875
-Iteration no. 338, lr = 2, attr_lr = 0.1, batch_loss = 0.54308455270981, train_err = 0.34375
-Iteration no. 339, lr = 2, attr_lr = 0.1, batch_loss = 0.53750124701214, train_err = 0.310546875
-Iteration no. 340, lr = 2, attr_lr = 0.1, batch_loss = 0.60993409421524, train_err = 0.369140625
-Iteration no. 341, lr = 2, attr_lr = 0.1, batch_loss = 0.52096282710678, train_err = 0.298828125
-Iteration no. 342, lr = 2, attr_lr = 0.1, batch_loss = 0.54398130713226, train_err = 0.306640625
-Iteration no. 343, lr = 2, attr_lr = 0.1, batch_loss = 0.54554582950158, train_err = 0.32421875
-Iteration no. 344, lr = 2, attr_lr = 0.1, batch_loss = 0.50584867862243, train_err = 0.29296875
-Iteration no. 345, lr = 2, attr_lr = 0.1, batch_loss = 0.55191067863632, train_err = 0.326171875
-Iteration no. 346, lr = 2, attr_lr = 0.1, batch_loss = 0.55402251140803, train_err = 0.33984375
+Testing... average test_loss = 0.96024951022942, average test_pred_err = 0.487
+iter 1, lr: 2, attr_lr: 0.5, batch_loss: 0.97407519830504, train_err: 0.47265625, grad_norm: 0.058062062329005
+iter 2, lr: 2, attr_lr: 0.5, batch_loss: 0.90223683617644, train_err: 0.49609375, grad_norm: 0.027041640106886
+iter 3, lr: 2, attr_lr: 0.5, batch_loss: 0.8625079706708, train_err: 0.48828125, grad_norm: 0.025514007101316
+iter 4, lr: 2, attr_lr: 0.5, batch_loss: 0.86814461325329, train_err: 0.482421875, grad_norm: 0.023285171272917
+iter 5, lr: 2, attr_lr: 0.5, batch_loss: 0.86758072856657, train_err: 0.505859375, grad_norm: 0.023846088520257
+iter 6, lr: 2, attr_lr: 0.5, batch_loss: 0.81670313294043, train_err: 0.478515625, grad_norm: 0.022274051416899
+iter 7, lr: 2, attr_lr: 0.5, batch_loss: 0.89391907582845, train_err: 0.521484375, grad_norm: 0.025140066018018
+iter 8, lr: 2, attr_lr: 0.5, batch_loss: 0.79551441190731, train_err: 0.470703125, grad_norm: 0.022976233780655
+iter 9, lr: 2, attr_lr: 0.5, batch_loss: 0.82422486849628, train_err: 0.490234375, grad_norm: 0.023019060141871
+iter 10, lr: 2, attr_lr: 0.5, batch_loss: 0.79205834062398, train_err: 0.466796875, grad_norm: 0.021772549075041
+iter 11, lr: 2, attr_lr: 0.5, batch_loss: 0.74283107245541, train_err: 0.453125, grad_norm: 0.019393114856502
+iter 12, lr: 2, attr_lr: 0.5, batch_loss: 0.70979429328067, train_err: 0.455078125, grad_norm: 0.02030059037576
+iter 13, lr: 2, attr_lr: 0.5, batch_loss: 0.72628656809975, train_err: 0.4375, grad_norm: 0.01911472826243
+iter 14, lr: 2, attr_lr: 0.5, batch_loss: 0.68776486683078, train_err: 0.42578125, grad_norm: 0.019160660740376
+iter 15, lr: 2, attr_lr: 0.5, batch_loss: 0.72865610749084, train_err: 0.451171875, grad_norm: 0.020177733391391
+iter 16, lr: 2, attr_lr: 0.5, batch_loss: 0.72690904137859, train_err: 0.48046875, grad_norm: 0.02054688714809
+iter 17, lr: 2, attr_lr: 0.5, batch_loss: 0.652745396256, train_err: 0.419921875, grad_norm: 0.019075586068238
+iter 18, lr: 2, attr_lr: 0.5, batch_loss: 0.70669101349786, train_err: 0.46875, grad_norm: 0.019373064158992
+iter 19, lr: 2, attr_lr: 0.5, batch_loss: 0.7367252780758, train_err: 0.4921875, grad_norm: 0.019148068276223
+iter 20, lr: 2, attr_lr: 0.5, batch_loss: 0.71840183548863, train_err: 0.474609375, grad_norm: 0.021325679901536
+iter 21, lr: 2, attr_lr: 0.5, batch_loss: 0.72139538487783, train_err: 0.48046875, grad_norm: 0.019996899263131
+iter 22, lr: 2, attr_lr: 0.5, batch_loss: 0.69127975465024, train_err: 0.45703125, grad_norm: 0.019255871152348
+iter 23, lr: 2, attr_lr: 0.5, batch_loss: 0.66528360866598, train_err: 0.4296875, grad_norm: 0.017629308589037
+iter 24, lr: 2, attr_lr: 0.5, batch_loss: 0.67397874975844, train_err: 0.466796875, grad_norm: 0.01932907959786
+iter 25, lr: 2, attr_lr: 0.5, batch_loss: 0.67019878100598, train_err: 0.423828125, grad_norm: 0.017940867522596
+iter 26, lr: 2, attr_lr: 0.5, batch_loss: 0.68773085311488, train_err: 0.455078125, grad_norm: 0.018809506638303
+iter 27, lr: 2, attr_lr: 0.5, batch_loss: 0.64545195402121, train_err: 0.4140625, grad_norm: 0.017277389463852
+iter 28, lr: 2, attr_lr: 0.5, batch_loss: 0.66218340933737, train_err: 0.439453125, grad_norm: 0.017968356604912
+iter 29, lr: 2, attr_lr: 0.5, batch_loss: 0.6827119322657, train_err: 0.451171875, grad_norm: 0.019629999794318
+iter 30, lr: 2, attr_lr: 0.5, batch_loss: 0.65678043834208, train_err: 0.421875, grad_norm: 0.01883003836252
+iter 31, lr: 2, attr_lr: 0.5, batch_loss: 0.66947522459568, train_err: 0.41796875, grad_norm: 0.018803789575712
+iter 32, lr: 2, attr_lr: 0.5, batch_loss: 0.59727090693833, train_err: 0.373046875, grad_norm: 0.016807014224993
+iter 33, lr: 2, attr_lr: 0.5, batch_loss: 0.61280736040304, train_err: 0.375, grad_norm: 0.016984635822492
+iter 34, lr: 2, attr_lr: 0.5, batch_loss: 0.64614811840257, train_err: 0.416015625, grad_norm: 0.017755984146074
+iter 35, lr: 2, attr_lr: 0.5, batch_loss: 0.64474762217978, train_err: 0.396484375, grad_norm: 0.017252039818019
+iter 36, lr: 2, attr_lr: 0.5, batch_loss: 0.63599794000253, train_err: 0.390625, grad_norm: 0.016681139685194
+iter 37, lr: 2, attr_lr: 0.5, batch_loss: 0.6537953320359, train_err: 0.43359375, grad_norm: 0.018437261930273
+iter 38, lr: 2, attr_lr: 0.5, batch_loss: 0.60714615196621, train_err: 0.376953125, grad_norm: 0.016456029783111
+iter 39, lr: 2, attr_lr: 0.5, batch_loss: 0.62641385102469, train_err: 0.427734375, grad_norm: 0.015638412634953
+iter 40, lr: 2, attr_lr: 0.5, batch_loss: 0.66123625951885, train_err: 0.4453125, grad_norm: 0.018048602692053
+iter 41, lr: 2, attr_lr: 0.5, batch_loss: 0.61714825697294, train_err: 0.380859375, grad_norm: 0.016863364103334
+iter 42, lr: 2, attr_lr: 0.5, batch_loss: 0.59966261934643, train_err: 0.416015625, grad_norm: 0.016931690714817
+iter 43, lr: 2, attr_lr: 0.5, batch_loss: 0.63716638646024, train_err: 0.447265625, grad_norm: 0.017646907324092
+iter 44, lr: 2, attr_lr: 0.5, batch_loss: 0.61698743407407, train_err: 0.392578125, grad_norm: 0.017284057335994
+iter 45, lr: 2, attr_lr: 0.5, batch_loss: 0.60466782540172, train_err: 0.373046875, grad_norm: 0.017550655497366
+iter 46, lr: 2, attr_lr: 0.5, batch_loss: 0.61061269577479, train_err: 0.376953125, grad_norm: 0.016825101101101
+iter 47, lr: 2, attr_lr: 0.5, batch_loss: 0.62444445359799, train_err: 0.392578125, grad_norm: 0.01641627662254
+iter 48, lr: 2, attr_lr: 0.5, batch_loss: 0.57681750189555, train_err: 0.3828125, grad_norm: 0.015340249145432
+iter 49, lr: 2, attr_lr: 0.5, batch_loss: 0.6242257641666, train_err: 0.388671875, grad_norm: 0.01633285201075
+iter 50, lr: 2, attr_lr: 0.5, batch_loss: 0.59600899210136, train_err: 0.365234375, grad_norm: 0.017273298109206
+Testing... average test_loss = 0.62170413441892, average test_pred_err = 0.401
+iter 51, lr: 2, attr_lr: 0.5, batch_loss: 0.61667428467685, train_err: 0.396484375, grad_norm: 0.016969250296997
+iter 52, lr: 2, attr_lr: 0.5, batch_loss: 0.66726310648284, train_err: 0.40625, grad_norm: 0.016678156082438
+iter 53, lr: 2, attr_lr: 0.5, batch_loss: 0.5965007815773, train_err: 0.380859375, grad_norm: 0.015925229414181
+iter 54, lr: 2, attr_lr: 0.5, batch_loss: 0.60514098008555, train_err: 0.38671875, grad_norm: 0.017501992660041
+iter 55, lr: 2, attr_lr: 0.5, batch_loss: 0.58185058027485, train_err: 0.37109375, grad_norm: 0.015447856469008
+iter 56, lr: 2, attr_lr: 0.5, batch_loss: 0.59188806442775, train_err: 0.361328125, grad_norm: 0.016295916011331
+iter 57, lr: 2, attr_lr: 0.5, batch_loss: 0.58429271293985, train_err: 0.40234375, grad_norm: 0.015857493914928
+iter 58, lr: 2, attr_lr: 0.5, batch_loss: 0.61151295700072, train_err: 0.388671875, grad_norm: 0.017792200507867
+iter 59, lr: 2, attr_lr: 0.5, batch_loss: 0.60010376829735, train_err: 0.37890625, grad_norm: 0.015997366273006
+iter 60, lr: 2, attr_lr: 0.5, batch_loss: 0.62100011581803, train_err: 0.39453125, grad_norm: 0.014700084117857
+iter 61, lr: 2, attr_lr: 0.5, batch_loss: 0.61214376826242, train_err: 0.3984375, grad_norm: 0.015147724081882
+iter 62, lr: 2, attr_lr: 0.5, batch_loss: 0.56582314519548, train_err: 0.35546875, grad_norm: 0.01713901207219
+iter 63, lr: 2, attr_lr: 0.5, batch_loss: 0.56151994402801, train_err: 0.349609375, grad_norm: 0.015903974438513
+iter 64, lr: 2, attr_lr: 0.5, batch_loss: 0.55923672478524, train_err: 0.33984375, grad_norm: 0.014782933394734
+iter 65, lr: 2, attr_lr: 0.5, batch_loss: 0.59062196289562, train_err: 0.361328125, grad_norm: 0.015021008907241
+iter 66, lr: 2, attr_lr: 0.5, batch_loss: 0.56780368220635, train_err: 0.349609375, grad_norm: 0.015924786135058
+iter 67, lr: 2, attr_lr: 0.5, batch_loss: 0.58327535176692, train_err: 0.373046875, grad_norm: 0.015507255972306
+iter 68, lr: 2, attr_lr: 0.5, batch_loss: 0.59387991183991, train_err: 0.369140625, grad_norm: 0.016050074219773
+iter 69, lr: 2, attr_lr: 0.5, batch_loss: 0.58796447438755, train_err: 0.365234375, grad_norm: 0.016298856479111
+iter 70, lr: 2, attr_lr: 0.5, batch_loss: 0.5672064098509, train_err: 0.31640625, grad_norm: 0.013418401284364
+iter 71, lr: 2, attr_lr: 0.5, batch_loss: 0.57324049970906, train_err: 0.328125, grad_norm: 0.016382924106406
+iter 72, lr: 2, attr_lr: 0.5, batch_loss: 0.54892227972827, train_err: 0.337890625, grad_norm: 0.01417411599197
+iter 73, lr: 2, attr_lr: 0.5, batch_loss: 0.58498058698216, train_err: 0.375, grad_norm: 0.014511978610606
+iter 74, lr: 2, attr_lr: 0.5, batch_loss: 0.56544379505395, train_err: 0.353515625, grad_norm: 0.015673780162807
+iter 75, lr: 2, attr_lr: 0.5, batch_loss: 0.59055677396286, train_err: 0.3671875, grad_norm: 0.015172988027239
+iter 76, lr: 2, attr_lr: 0.5, batch_loss: 0.55109877406837, train_err: 0.33984375, grad_norm: 0.015191752523709
