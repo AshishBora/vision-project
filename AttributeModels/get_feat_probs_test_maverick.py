@@ -1,4 +1,3 @@
-
 import numpy as np
 import caffe
 import os
@@ -67,9 +66,8 @@ while imPaths:
         images.append(image)
         
     # predict takes any number of images, and formats them for the Caffe net automatically
-    prediction = net.predict(images)
+    prob = net.predict(images)
     feat = net.blobs['fc7'].data
-    prob = net.blobs['prob'].data
     feat_vecs = np.vstack([feat_vecs, feat])
     probs = np.vstack([probs, prob])
     print datetime.now() - startTime
