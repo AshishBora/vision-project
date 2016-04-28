@@ -9,8 +9,6 @@ function createFullModel(B_model, C_model)
     local image_feat2 = nn.Narrow(2, 4097, 4096)(input);
     local image_feat3 = nn.Narrow(2, 8193, 4096)(input);
     local question = nn.Narrow(2, 12289, 42)(input);
-    
-    
 
     local confidence = B_model({question, image_feat3});
     local scores = C_model({image_feat1, image_feat2, question, confidence});
@@ -49,8 +47,8 @@ function getCtrainExample(set, labels)
     
     local input = torch.cat({im_feat[1], im_feat[2], im_feat[3], ques})
 --     print(#input)
-    
-    return {input, target}
+
+return {input, target}
 end
 
 function do_weight_decay(model, wd)
@@ -110,33 +108,34 @@ function evalPerf(model, criterion, set, labels, iter)
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
     inputs, targets = nextBatch(set, labels, iter);
---     model:forward(inputs[1])
---     print 'ttttt1\n'
---     model:forward(inputs[2])
---     print 'ttttt2\n'
---     model:forward(inputs[3])
---     print 'ttttt3\n'
-   
+    -- model:forward(inputs[1])
+    -- print 'ttttt1\n'
+    -- model:forward(inputs[2])
+    -- print 'ttttt2\n'
+    -- model:forward(inputs[3])
+    -- print 'ttttt3\n'
+
     outfile:write('Fetched Batch');
 
---     local m1 = nn.Narrow(1, 1, 4096);
---     local m2 = nn.Narrow(1, 4097, 4096);
---     local m3 = nn.Narrow(1, 8193, 4096);
---     local m4 = nn.Narrow(1, 12289, 42);
---     m1:forward(inputs[1]);
---     m2:forward(inputs[1]);
---     m3:forward(inputs[1]);
---     m4:forward(inputs[1]);
---    model:forward(torch.Tensor(12330, 10));
+    -- local m1 = nn.Narrow(1, 1, 4096);
+    -- local m2 = nn.Narrow(1, 4097, 4096);
+    -- local m3 = nn.Narrow(1, 8193, 4096);
+    -- local m4 = nn.Narrow(1, 12289, 42);
+    -- m1:forward(inputs[1]);
+    -- m2:forward(inputs[1]);
+    -- m3:forward(inputs[1]);
+    -- m4:forward(inputs[1]);
+    -- model:forward(torch.Tensor(12330, 10));
     print('done')
-    
-     local probs = model:forward(inputs)
-     local test_loss = criterion:forward(probs, targets)
-     local test_pred_err = get_total_pred_err(probs, targets)
 
---     outfile:write('average test_loss = ', test_loss, ', ')
---     outfile:write('average test_pred_err = ', test_pred_err, '\n')
+    local probs = model:forward(inputs)
+    local test_loss = criterion:forward(probs, targets)
+    local test_pred_err = get_total_pred_err(probs, targets)
+
+    -- outfile:write('average test_loss = ', test_loss, ', ')
+    -- outfile:write('average test_pred_err = ', test_pred_err, '\n')
     outfile:close()
+
 end
 
 
@@ -230,9 +229,12 @@ end
 outfile:close()
 
 print(C_model.modules) 
-C_model_old = torch.load('C_model__1500_init.t7')
-C_model.modules[13].modules[1].weight = C_model_old.modules[10].modules[1].weight
-C_model.modules[13].modules[3].weight = C_model_old.modules[10].modules[3].weight
+C_model_old = torch.load('C_model__1500.t7')
+C_model.modules[13].modules[1].weight = C_model_old.modules[10].modules[1].weight:clone()
+C_model.modules[13].modules[3].weight = C_model_old.modules[10].modules[3].weight:clone()
+C_model.modules[13].modules[1].bias = C_model_old.modules[10].modules[1].bias:clone()
+C_model.modules[13].modules[3].bias = C_model_old.modules[10].modules[3].bias:clone()
+
 -- local method = 'xavier';
 -- C_model.modules[2] = require('weight-init')(C_model.modules[2], method)
 -- C_model.modules[6] = require('weight-init')(C_model.modules[6], method)
@@ -261,10 +263,10 @@ for i = 1, max_train_iter do
     batch_loss, train_pred_err = accumulate(BC_model, inputs, targets, crit, eval_crit,  wd);
 
     -- update parameters for only a few layers in C
---     C_model.modules[2]:updateParameters(attr_lr)
---     C_model.modules[6]:updateParameters(attr_lr)
---     C_model.modules[13]:updateParameters(lr)
-    
+    -- C_model.modules[2]:updateParameters(attr_lr)
+    -- C_model.modules[6]:updateParameters(attr_lr)
+    -- C_model.modules[13]:updateParameters(lr)
+
     BC_model:clearState();
 
     outfile = io.open("train_C.out", "a")
