@@ -101,7 +101,7 @@ end
 function evalPerf(model, criterion, set, labels, iter)
 
     outfile = io.open("train_C.out", "a")
-    outfile:write('Testing... ')
+    outfile:write('Testing... \n')
 
 
     -- FOR DEBUGGING only
@@ -115,7 +115,7 @@ function evalPerf(model, criterion, set, labels, iter)
     -- model:forward(inputs[3])
     -- print 'ttttt3\n'
 
-    outfile:write('Fetched Batch');
+    -- outfile:write('Fetched Batch');
 
     -- local m1 = nn.Narrow(1, 1, 4096);
     -- local m2 = nn.Narrow(1, 4097, 4096);
@@ -126,14 +126,14 @@ function evalPerf(model, criterion, set, labels, iter)
     -- m3:forward(inputs[1]);
     -- m4:forward(inputs[1]);
     -- model:forward(torch.Tensor(12330, 10));
-    print('done')
+    -- print('done')
 
     local probs = model:forward(inputs)
     local test_loss = criterion:forward(probs, targets)
     local test_pred_err = get_total_pred_err(probs, targets)
 
-    -- outfile:write('average test_loss = ', test_loss, ', ')
-    -- outfile:write('average test_pred_err = ', test_pred_err, '\n')
+    outfile:write('average test_loss = ', test_loss, ', ')
+    outfile:write('average test_pred_err = ', test_pred_err, '\n')
     outfile:close()
 
 end
@@ -228,12 +228,14 @@ else
 end
 outfile:close()
 
-print(C_model.modules) 
+-- print(C_model.modules) 
 C_model_old = torch.load('C_model__1500.t7')
 C_model.modules[13].modules[1].weight = C_model_old.modules[10].modules[1].weight:clone()
 C_model.modules[13].modules[3].weight = C_model_old.modules[10].modules[3].weight:clone()
 C_model.modules[13].modules[1].bias = C_model_old.modules[10].modules[1].bias:clone()
 C_model.modules[13].modules[3].bias = C_model_old.modules[10].modules[3].bias:clone()
+
+C_model_old = nil
 
 -- local method = 'xavier';
 -- C_model.modules[2] = require('weight-init')(C_model.modules[2], method)
@@ -246,13 +248,16 @@ C_model.modules[13].modules[3].bias = C_model_old.modules[10].modules[3].bias:cl
 
 for i = 1, max_train_iter do
 
+    collectgarbage()
+
     -- initial testing
 
     if i == 1 then
         evalPerf(BC_model, eval_crit, testset, test_labels, test_iter)
     end
+
     BC_model:zeroGradParameters()
-    print('i ', i, '\n');
+    -- print('i ', i, '\n');
     local batch_loss = 0
 
     -- FOR DEBUGGING only
