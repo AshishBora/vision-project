@@ -26,8 +26,12 @@ function createCModel(getAttScores)
 
 	local conf_pred1 = nn.DotProduct()({attScores1, question})
 	local conf_pred2 = nn.DotProduct()({attScores2, question})
+    
+    local conf_pred11 = nn.View(-1, 1)(conf_pred1);
+    local conf_pred22 = nn.View(-1, 1)(conf_pred2);
+    local confidence11 = nn.View(-1, 1)(confidence);
 
-	local input = nn.JoinTable(1)({conf_pred1, conf_pred2, confidence});
+	local input = nn.JoinTable(2)({conf_pred11, conf_pred22, confidence11});
 
 	local y = nn.Sequential()
 	y:add(nn.Linear(3, 2))
