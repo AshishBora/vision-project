@@ -22,6 +22,7 @@ AttributeModels/*.prototxt.lua
 AttributeModels/*.ipynb
 AttributeModels/npy/*
 AttributeModels/sukrit*
+AttributeModels/Sukrit/*
 AttributeModels/debug/*
 
 AttributeModels/old/*
