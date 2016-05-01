@@ -31,3 +31,4 @@ poster/
 
 AttributeModels/train_C_lr*
 *.mat
+AttributeModels/imPaths.txt

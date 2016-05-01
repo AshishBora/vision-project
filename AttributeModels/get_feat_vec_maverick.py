@@ -1,44 +1,48 @@
-
-# coding: utf-8
-
-# --------------------------------------------------------------------------
-# Generate Results for the SUN Attributes Ranked Training Dataset 
-# --------------------------------------------------------------------------
-# import pylab as pltss
-# from pylab import *
+#------------------------------------------------------
+# Generate results 
+#------------------------------------------------------
+import pylab as pltss
+from pylab import *
 import numpy as np
+import matplotlib.pyplot as plt
+import scipy
+import scipy.io
+import os.path
+
+# Make sure that caffe is on the python path:
+caffe_root = '/work/01932/dineshj/CS381V/caffe_install_scripts/caffe/'  # this file is expected to be in {caffe_root}/examples
+import sys
+sys.path.insert(0, caffe_root + 'python')
+
 import caffe
-import os
+
 from datetime import datetime
 import glob
+import os
 
-
-# -----------------------------------------------------
 # Set the right path to your model definition file, pretrained model weights,
 # and the image you would like to classify.
 MODEL_FILE = 'deploy_sun_ws.prototxt'
 PRETRAINED = 'caffe_sun_ws.caffemodel'
 
-print('Hi 1')
+import os
+
 caffe.set_mode_gpu()
-
-print('Hi 2')
 net = caffe.Classifier(MODEL_FILE, PRETRAINED,
-                       mean = np.load('sunours_mean.npy').mean(1).mean(1),
-                       channel_swap = (2,1,0),
-                       raw_scale = 255,
-                       image_dims = (256, 256))
+                       mean=np.load('sunours_mean.npy').mean(1).mean(1),
+                       channel_swap=(2,1,0),
+                       raw_scale=255,
+                       image_dims=(256, 256))
 
-print('Hi 3')
+
 base_path = '/work/04001/ashishb/maverick/vision-project/data/SUN/SUN_WS/training/'
 imPaths = glob.glob(base_path + '*/*.jpg')
-print('Hi 4')
+
 
 feat_vecs = np.zeros((1, 4096))
 batch_size = net.blobs['data'].data.shape[0]
 num_im = len(imPaths)
 
-print('Hi 5')
 print(num_im)
 print(batch_size)
 
@@ -63,13 +67,12 @@ while imPaths:
         images.append(image)
         
     # predict takes any number of images, and formats them for the Caffe net automatically
-    prediction = net.predict(images)
+    prediction = net.predict(images, oversample = False)
     feat = net.blobs['fc7'].data
     feat_vecs = np.vstack([feat_vecs, feat])
     print datetime.now() - startTime
 
+
 feat_vecs = feat_vecs[1:num_im+1, :]
-
 print(feat_vecs.shape)
-
-np.save('feat_vecs.npy', feat_vecs)
+np.save('feat_vecs_train.npy', feat_vecs)
