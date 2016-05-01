@@ -23,3 +23,10 @@ AttributeModels/*.ipynb
 AttributeModels/npy/*
 AttributeModels/sukrit*
 AttributeModels/debug/*
+
+AttributeModels/old/*
+
+poster/
+
+AttributeModels/train_C_lr*
+*.mat
