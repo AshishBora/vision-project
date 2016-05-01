@@ -199,15 +199,15 @@ outfile:close()
 
 
 ---------------- Define hyper parameters ------------------------
-lr = 2
+lr = 0.2
 attr_lr = 0.5
 batch_size = 512
 max_train_iter = 10000
 test_interval = 50
 test_iter = 1000
-lr_stepsize = 100
-gamma = 1
-attr_gamma = 1
+lr_stepsize = 200
+gamma = 0.7
+attr_gamma = 0.7
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
@@ -259,7 +259,7 @@ for i = 1, max_train_iter do
     -- update parameters for only a few layers in C
     C_model.modules[2]:updateParameters(attr_lr)
     C_model.modules[7]:updateParameters(attr_lr)
-    -- C_model.modules[13]:updateParameters(lr)
+    C_model.modules[13]:updateParameters(lr)
 
     BC_model:clearState(); -- reduce memory usage
 
