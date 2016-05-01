@@ -144,8 +144,8 @@ outfile = io.open("train_C.out", "w")
 outfile:write('Creating model... ')
 
 B_model = torch.load('B_model_nn.t7')
-C_model_old = torch.load('C_model__1500_init.t7')
 
+C_model_old = torch.load('C_model__1500_init.t7')
 C_model = torch.load('C_model.t7')
 C_model.modules[13].modules[1].weight = C_model_old.modules[10].modules[1].weight:clone()
 C_model.modules[13].modules[3].weight = C_model_old.modules[10].modules[3].weight:clone()
@@ -211,12 +211,16 @@ attr_gamma = 0.7
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
-snapshot = false
-
-
+snapshot = true
+B_model.modules[2].modules[2].p = 0.2 -- dropout rate
+C_model.modules[2].modules[2].p = 0.2  -- dropout rate
+C_model.modules[7].modules[2].p = 0.2  -- dropout rate
 
 
 ----------------  Start training ------------------------
+
+BC_model:training() -- put the model in training mode
+
 outfile = io.open('train_C.out', 'a')
 outfile:write('Training with snapshotting ')
 if snapshot then
@@ -226,16 +230,15 @@ else
 end
 outfile:close()
 
--- local method = 'xavier';
--- C_model.modules[2] = require('weight-init')(C_model.modules[2], method)
--- C_model.modules[6] = require('weight-init')(C_model.modules[6], method)
-
+-- random initialization of C's fully connected layer
 C_model.modules[2]:reset(0.01);
 C_model.modules[7]:reset(0.01);
-C_model.modules[13].modules[1].weight:mul(0.3)
-C_model.modules[13].modules[3].weight:mul(0.3)
-C_model.modules[13].modules[1].bias:mul(0.3)
-C_model.modules[13].modules[3].bias:mul(0.09)
+-- divide weights to get in trainable area
+div_fact = 0.3
+C_model.modules[13].modules[1].weight:mul(div_fact)
+C_model.modules[13].modules[3].weight:mul(div_fact)
+C_model.modules[13].modules[1].bias:mul(div_fact)
+C_model.modules[13].modules[3].bias:mul(div_fact^2)
 
 for i = 1, max_train_iter do
 
