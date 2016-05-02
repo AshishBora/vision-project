@@ -97,7 +97,7 @@ function accumulate(model, inputs, targets, criterion, eval_criterion,  wd)
 end
 
 
--- function to evalaute the model
+-- function to evaluate the model
 function evalPerf(model, criterion, set, iter)
 
     outfile = io.open("train_A.out", "a")
@@ -108,8 +108,11 @@ function evalPerf(model, criterion, set, iter)
     -- torch.manualSeed(3489208)
     inputs, targets = nextBatch(set, iter);
 
+    model:evaluate()
     local probs = model:forward(inputs)
     local test_loss = criterion:forward(probs, targets)
+    model:training()
+
     local test_pred_err = get_total_pred_err(probs, targets)
 
     outfile:write('average test_loss = ', test_loss, ', ')
