@@ -1,5 +1,8 @@
+require 'loadcaffe';
+require 'image';
+require 'cunn';
+require 'cudnn';
 require 'nngraph';
-
 
 function createCModel(getAttScores)
 	local image_feat1 = nn.Identity()();
@@ -34,7 +37,7 @@ function createCModel(getAttScores)
 	return nn.gModule({image_feat1, image_feat2, question, confidence}, {prob});
 end
 
-B_model = torch.load('B_model_nn.t7')
+B_model = torch.load('B_model.t7')
 getAttScores = B_model.modules[2]
 C_model = createCModel(getAttScores)
 torch.save('C_model.t7', C_model)

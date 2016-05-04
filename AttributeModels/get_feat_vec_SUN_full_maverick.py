@@ -35,8 +35,8 @@ net = caffe.Classifier(MODEL_FILE, PRETRAINED,
                        image_dims=(256, 256))
 
 
-base_path = '/work/04001/ashishb/maverick/vision-project/data/SUN/SUN_WS/training/'
-imPaths = glob.glob(base_path + '*/*.jpg')
+base_path = '/work/04001/ashishb/maverick/vision-project/data/SUN/images/'
+imPaths = glob.glob(base_path + '*/*/*.jpg')
 
 
 feat_vecs = np.zeros((1, 4096))
@@ -57,8 +57,10 @@ while imPaths:
     
     for i in range(batch_size):
         if imPaths:
-            print('image no.', (iter_-1)*batch_size + i + 1, 'out of', num_im)
-            ims.append(imPaths.pop())
+	    temp = imPaths.pop()
+            # print('image no.', (iter_-1)*batch_size + i + 1, 'out of', num_im)
+	    print(temp)
+            ims.append(temp)
         else:
             break
 
@@ -75,4 +77,4 @@ while imPaths:
 
 feat_vecs = feat_vecs[1:num_im+1, :]
 print(feat_vecs.shape)
-np.save('feat_vecs_train.npy', feat_vecs)
+np.save('feat_vecs_SUN_full.npy', feat_vecs)

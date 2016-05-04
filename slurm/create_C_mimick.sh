@@ -5,9 +5,9 @@
 #SBATCH -N 1
 #SBATCH -p gpu
 #SBATCH -t 12:00:00 
-#SBATCH -e ./logs/get_feat_vec.err
-#SBATCH -o ./logs/get_feat_vec.out
-#SBATCH -J get_feat_vec
+#SBATCH -e ./logs/torchModel_BC.err
+#SBATCH -o ./logs/torchModel_BC.out
+#SBATCH -J torchModel_BC
 #SBATCH --mail-user=ashish.bora@utexas.edu
 #SBATCH --mail-type=all
 
@@ -19,5 +19,5 @@ echo "running on node $NODE_HOSTNAME"
 # echo -e "\n\nTraining LeNet\n\n"
 
 cd ./AttributeModels
-source ~/.bashrc_old
-python get_feat_vec_SUN_full_maverick.py
+
+luajit create_C_mimick.lua

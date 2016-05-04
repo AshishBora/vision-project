@@ -1,4 +1,21 @@
-job execution at: Sun Apr 17 23:43:25 CDT 2016
-running on node c221-202
-==> Downloading image and network
-==> Loading network
+job execution at: Wed May 4 02:47:38 CDT 2016
+running on node c221-304
+proecessing	1	to	400
+proecessing	401	to	800
+proecessing	801	to	1200
+proecessing	1201	to	1600
+proecessing	1601	to	2000
+proecessing	2001	to	2400
+proecessing	2401	to	2800
+proecessing	2801	to	3200
+proecessing	3201	to	3600
+proecessing	3601	to	4000
+proecessing	4001	to	4400
+proecessing	4401	to	4800
+proecessing	4801	to	5200
+proecessing	5201	to	5600
+proecessing	5601	to	5618
+ 5618
+   42
+[torch.LongStorage of size 2]
+

@@ -1,1 +1,0 @@
-[libprotobuf ERROR google/protobuf/text_format.cc:245] Error parsing text-format caffe.NetParameter: 6:15: Message type "caffe.LayerParameter" has no field named "input_param".

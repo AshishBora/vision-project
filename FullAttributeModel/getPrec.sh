@@ -1,0 +1,1 @@
+ scp $MAV/attr_pred.t7 ./

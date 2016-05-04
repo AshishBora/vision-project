@@ -14,7 +14,7 @@ temp/
 LearnTorch/*
 *.t7
 debug/*
-AttributeModels/*.caffemodel
+*.caffemodel
 AttributeModels/*.npy
 AttributeModels/*.prototxt
 AttributeModels/*.prototxt.lua
