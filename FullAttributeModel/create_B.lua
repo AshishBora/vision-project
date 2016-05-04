@@ -18,8 +18,8 @@ function create_B(getFeat, getAttr)
 end
 
 sun_ws = torch.load('sun_ws.t7')
-getFeat = get_getFeat(sun_ws)
-getAttr = get_getAttr(sun_ws)
+getFeat = get_getFeat(sun_ws, true)
+getAttr = get_getAttr(sun_ws, true)
 
 B_model = create_B(getFeat, getAttr)
 torch.save('B_model.t7', B_model)
