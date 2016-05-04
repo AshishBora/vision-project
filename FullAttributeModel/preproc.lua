@@ -15,7 +15,13 @@ function loadImage(path)
 	return input
 end
 
-mean = {112.5696779 ,  119.66566533,  122.03348502}
+-- np.load('sunours_mean.npy').mean(1).mean(1) gives this
+-- score achived = 0.5790
+-- mean = {112.5696779 ,  119.66566533,  122.03348502}
+
+-- testing channel swapping
+-- score achieved = 0.5808
+mean = {122.03348502,  119.66566533,  112.5696779}
 
 -- function to preprocess the image
 function preprocess(path, max_crop_jitter, std)
