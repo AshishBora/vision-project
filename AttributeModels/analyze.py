@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 lines = []
-with open('./train_A.out', 'r') as f:
+with open('./train_ABC.out', 'r') as f:
 	line = f.readline()
 	while line != '':
 		lines.append(line)
