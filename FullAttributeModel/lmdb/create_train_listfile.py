@@ -3,7 +3,7 @@ import glob
 project_dir = '/Users/ashish/vision-project/'
 base_path = project_dir + 'data/SUN/SUN_WS/training/'
 
-attrs = ['vegetation',
+attr_names = ['vegetation',
     'shrubbery',
     'foliage',
     'leaves',
@@ -47,18 +47,18 @@ attrs = ['vegetation',
     'soothing']
 
 imPaths = []
-labels = []
-for i, attr in enumerate(attrs):
-	im_dir = base_path + attr + '/'
+attrs = []
+for i, attr_name in enumerate(attr_names):
+	im_dir = base_path + attr_name + '/'
 	im_paths_temp = glob.glob(im_dir + '*.jpg')
-	labels_temp = [i+1 for im in im_paths_temp]
+	attrs_temp = [i+1 for im in im_paths_temp]
 	imPaths.extend(im_paths_temp)
-	labels.extend(labels_temp)
+	attrs.extend(attrs_temp)
 
 print(len(imPaths))
-print(len(labels))
+print(len(attrs))
 
 with open('train_listfile.txt', 'wb') as f:
-	for imPath, label in zip(imPaths, labels):
-		f.write(imPath[len(base_path):] + ' ' + str(label) + '\n')
+	for imPath, attr in zip(imPaths, attrs):
+		f.write(imPath[len(base_path):] + ' ' + str(attr) + '\n')
 

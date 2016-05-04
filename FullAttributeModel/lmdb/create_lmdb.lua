@@ -2,9 +2,9 @@ require 'lmdb'
 require 'image'
 require 'torch'
 
-function create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, labels_path)
+function create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, attrs_path)
 
-    labels = {}
+    attrs = {}
 
     db = lmdb.env{
         Path = lmdb_path,
@@ -17,8 +17,8 @@ function create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, labels_pat
     i = 1
     for line in io.lines(list_file_path) do
         words = line:split(' ')
-        im_Path, label = words[1], words[2]
-        labels[i] = tonumber(label)
+        im_Path, attr = words[1], words[2]
+        attrs[i] = tonumber(attr)
 
         path = base_path .. im_Path
         img = image.load(path, 3, 'float')
@@ -34,6 +34,6 @@ function create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, labels_pat
     txn:commit()
     db:close()
 
-    labels = torch.Tensor(labels)
-    torch.save(labels_path, labels)
+    attrs = torch.Tensor(attrs)
+    torch.save(attrs_path, attrs)
 end

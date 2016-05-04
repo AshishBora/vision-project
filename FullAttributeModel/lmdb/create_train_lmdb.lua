@@ -9,6 +9,6 @@ base_path = project_dir .. 'data/SUN/SUN_WS/training/'
 list_file_path = './train_listfile.txt'
 lmdb_path = './train_lmdb'
 lmdb_name = 'train_lmdb'
-labels_path = './labels.t7'
+attrs_path = './attrs.t7'
 
-create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, labels_path)
+create_lmdb(base_path, list_file_path, lmdb_path, lmdb_name, attrs_path)

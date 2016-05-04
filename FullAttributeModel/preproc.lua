@@ -1,5 +1,5 @@
 require 'image';
-require 'cunn';
+-- require 'cunn';
 
 loadSize = {3, 256, 256}
 sampleSize = {3, 227, 227}
