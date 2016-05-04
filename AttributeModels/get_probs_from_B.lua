@@ -1,6 +1,6 @@
 require 'nngraph';
 
-B_model = torch.load('B_model_nn.t7')
+B_model = torch.load('B_model__4000.t7')
 B_model:evaluate()
 B_predictor = B_model.modules[2]
 B_model:double()
