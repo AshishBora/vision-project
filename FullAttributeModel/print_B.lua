@@ -1,6 +1,7 @@
 require 'cudnn'
 require 'torch'
 require 'nngraph'
+require 'cunn';
 
 dofile('func_lib.lua')
 

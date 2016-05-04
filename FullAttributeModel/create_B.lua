@@ -1,5 +1,6 @@
 require 'cudnn';
 require 'nngraph';
+require 'cunn';
 
 dofile('extractors.lua')
 
@@ -13,7 +14,7 @@ function create_B(getFeat, getAttr)
 
 	local score = nn.DotProduct()({image_attr, question})
 	nngraph.annotateNodes();
-	return nn.gModule({question, image_feat}, {score})
+	return nn.gModule({question, image}, {score})
 end
 
 sun_ws = torch.load('sun_ws.t7')

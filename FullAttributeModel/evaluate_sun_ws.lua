@@ -1,6 +1,7 @@
 require 'cudnn'
 require 'torch'
 require 'nngraph'
+require 'cunn'
 
 -- require 'clnn'
 -- require 'cltorch'
@@ -15,9 +16,9 @@ for i  = 1, 5618 do
 end
 
 sun_ws = torch.load('sun_ws.t7')
-input = preprocess(imPaths[1], 0, 0)
-
 sun_ws:cuda()
+
+input = preprocess(imPaths[1], 0, 0)
 output = sun_ws:forward(input:cuda())
 
 -- print(B_model.modules[2].output)

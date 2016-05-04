@@ -2,7 +2,7 @@ require 'cudnn'
 require 'torch'
 require 'nngraph'
 require 'nn'
-require 'cunn'
+require 'cunn';
 
 -- require 'clnn'
 -- require 'cltorch'
@@ -16,15 +16,15 @@ for i  = 1, 5618 do
 	imPaths[i] = base_path .. tostring(i) .. '.jpg'
 end
 
-B_model = torch.load('B_model.t7')
-
+sun_ws = torch.load('sun_ws.t7')
 input = preprocess(imPaths[1], 0, 0)
-ques = torch.Tensor(42):fill(0)
-ques[3] = 1
 
-B_model:cuda()
-output = B_model:forward({ques:cuda(), input:cuda()})
+A = nn.Sequential()
+A:add(sun_ws)
+A:add(nn.SoftMax())
 
-print(B_model.modules[2].output:size())
-print(B_model.modules[3].output:size())
+A:cuda()
+print(A)
+
+output = A:forward(input:cuda())
 print(output)
