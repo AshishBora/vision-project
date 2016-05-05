@@ -1,4 +1,3 @@
-require 'loadcaffe';
 require 'image';
 require 'cunn';
 require 'cudnn';
@@ -60,19 +59,25 @@ outfile:close()
 
 -- verify this
 B_fc = B_model.modules[2]
-C_fc1 = C_model.modules[2]
-C_fc2 = C_model.modules[7]
-C_cmpr = C_model.modules[13]
+C_fc1 = C_model.modules[3]
+C_fc2 = C_model.modules[9]
+C_cmpr = C_model.modules[15]
 
 
 
 ---------------- Define hyper parameters ------------------------
 lr = 0.2
 attr_lr = 0.5
+
+-- batch_size = 512
 batch_size = 512
+
 max_train_iter = 10000
 test_interval = 50
-val_iter = 1000
+
+-- val_iter = 1000
+val_iter = 2
+
 lr_stepsize = 200
 gamma = 0.7
 attr_gamma = 0.7
@@ -80,10 +85,11 @@ wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
 snapshot = true
+
+-- verify this
 B_fc.modules[2].p = 0.2 -- dropout rate
 C_fc1.modules[2].p = 0.2  -- dropout rate
 C_fc2.modules[2].p = 0.2  -- dropout rate
-
 
 ----------------  Start training ------------------------
 
@@ -102,7 +108,7 @@ outfile:close()
 for i = 1, max_train_iter do
     collectgarbage()
     if i == 1 then  -- initial testing
-        evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, attrs, val_num)
+        evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, val_attrs, val_num)
     end
     BC_model:zeroGradParameters()
     local batch_loss = 0

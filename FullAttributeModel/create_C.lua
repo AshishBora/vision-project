@@ -13,13 +13,13 @@ function create_C(getFeat, getAttr)
 	local question = nn.Identity()();
 	local confidence = nn.Identity()();
 
-	local getFeat1 = getFeat:clone('weight','bias')
-	local getFeat2 = getFeat:clone('weight','bias')
+	local getFeat1 = getFeat:clone()
+	local getFeat2 = getFeat1:clone('weight','bias')
 	local image_feat1 = getFeat1(image1)
 	local image_feat2 = getFeat2(image2)
 
-	local getAttr1 = getAttr:clone('weight','bias')
-	local getAttr2 = getAttr:clone('weight','bias')
+	local getAttr1 = getAttr:clone()
+	local getAttr2 = getAttr1:clone('weight','bias')
 	local attScores1 = getAttr1(image_feat1)
 	local attScores2 = getAttr2(image_feat2)
 

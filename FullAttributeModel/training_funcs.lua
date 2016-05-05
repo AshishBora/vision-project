@@ -85,7 +85,7 @@ function evalPerf(model, crit, get_example, reader, iter, attrs, num_im)
     -- torch.manualSeed(3489208)
     inputs, targets = nextBatch(get_example, reader, iter, attrs, num_im)
 
-    model:evalaute()
+    model:evaluate()
     local probs = model:forward(inputs:cuda())
     model:training()
 
