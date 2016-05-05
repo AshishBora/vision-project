@@ -2,17 +2,21 @@ require 'nngraph';
 require 'torch';
 
 
-
 function create_BC(B_model, C_model)
     local input = nn.Identity()();
 
-    local image_feat1 = nn.Narrow(2, 1, 4096)(input);
-    local image_feat2 = nn.Narrow(2, 4097, 4096)(input);
-    local image_feat3 = nn.Narrow(2, 8193, 4096)(input);
-    local question = nn.Narrow(2, 12289, 42)(input);
+    local im_size = 227*227*3
+    local image1_srlz = nn.Narrow(2, 1, im_size)(input);
+    local image2_srlz = nn.Narrow(2, im_size+1, im_size)(input);
+    local image3_srlz = nn.Narrow(2, 2*im_size+1, im_size)(input);
+    local question = nn.Narrow(2, 3*im_size+1, 42)(input);
 
-    local confidence = B_model({question, image_feat3});
-    local scores = C_model({image_feat1, image_feat2, question, confidence});
+    local image1 = nn.View(3, 227, 227)(image1_srlz)
+    local image2 = nn.View(3, 227, 227)(image2_srlz)
+    local image3 = nn.View(3, 227, 227)(image3_srlz)
+
+    local confidence = B_model({question, image3});
+    local scores = C_model({image1, image2, question, confidence});
     
     nngraph.annotateNodes();
     return nn.gModule({input}, {scores});
@@ -97,7 +101,7 @@ end
 
 
 function nextBatch(get_example, reader, batch_size, attrs, num_im)
-    local inputs = torch.Tensor(batch_size, 12330);
+    local inputs = torch.Tensor(batch_size, 3*227*227*3+42);
     local targets = torch.Tensor(batch_size);
     local i = 0;
     for i = 1, batch_size do
