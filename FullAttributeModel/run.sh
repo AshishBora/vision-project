@@ -6,7 +6,8 @@
 #luajit evaluate_B.lua
 #luajit create_C.lua
 #luajit print_C.lua
-cd lmdb;
+luajit evaluate_C.lua
+#cd lmdb;
 #luajit create_train_lmdb.lua
-luajit create_val_lmdb.lua
-luajit create_test_lmdb.lua
+#luajit create_val_lmdb.lua
+#luajit create_test_lmdb.lua

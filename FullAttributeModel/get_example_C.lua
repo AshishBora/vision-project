@@ -24,19 +24,22 @@ get_example_C = function(reader, attrs, num_im)
     -- randomly select one of the images to ask about its attrsibute
     local ques = torch.Tensor(42):fill(0)
     ques[attrs[y[torch.bernoulli() + 1]]] = 1
+    ques = ques:view(1, -1)
 
     -- target is probability of label = 2
     local target = label - 1
 
+    -- random crops and gaussian noise
     -- serialize
     for i = 1, 3 do
-        images[i] = images[i]:view(-1)
+        images[i] = preprocess(images[i], 1, 0.1)
+        images[i] = images[i]:view(1, -1)
         images[i]:float()
         -- print(images[i]:size())
     end
 
     -- print(ques:size())
-    input = torch.cat({images[1], images[2], images[3], ques:float()})
+    input = torch.cat({images[1], images[2], images[3], ques:float()}, 2)
     return input, target
 
 end

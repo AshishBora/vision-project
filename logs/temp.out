@@ -1,102 +1,16 @@
-job execution at: Wed May 4 23:45:29 CDT 2016
-running on node c221-302
-Processed	100	images
-Processed	200	images
-Processed	300	images
-Processed	400	images
-Processed	500	images
-Processed	600	images
-Processed	700	images
-Processed	800	images
-Processed	900	images
-Processed	1000	images
-Processed	1100	images
-Processed	1200	images
-Processed	1300	images
-Processed	1400	images
-Processed	1500	images
-Processed	1600	images
-Processed	1700	images
-Processed	1800	images
-Processed	1900	images
-Processed	2000	images
-Processed	2100	images
-Processed	2200	images
-Processed	2300	images
-Processed	2400	images
-Processed	2500	images
-Processed	2600	images
-Processed	2700	images
-Processed	2800	images
-Processed	2900	images
-Processed	3000	images
-Processed	3100	images
-Processed	3200	images
-Processed	3300	images
-Processed	3400	images
-Processed	3500	images
-Processed	3600	images
-Processed	3700	images
-Processed	3800	images
-Processed	3900	images
-Processed	4000	images
-Processed	4100	images
-Processed	4200	images
-Processed	4300	images
-Processed	4400	images
-Processed	100	images
-Processed	200	images
-Processed	300	images
-Processed	400	images
-Processed	500	images
-Processed	600	images
-Processed	700	images
-Processed	800	images
-Processed	900	images
-Processed	1000	images
-Processed	1100	images
-Processed	1200	images
-Processed	1300	images
-Processed	1400	images
-Processed	1500	images
-Processed	1600	images
-Processed	1700	images
-Processed	1800	images
-Processed	1900	images
-Processed	2000	images
-Processed	2100	images
-Processed	2200	images
-Processed	2300	images
-Processed	2400	images
-Processed	2500	images
-Processed	2600	images
-Processed	2700	images
-Processed	2800	images
-Processed	2900	images
-Processed	3000	images
-Processed	3100	images
-Processed	3200	images
-Processed	3300	images
-Processed	3400	images
-Processed	3500	images
-Processed	3600	images
-Processed	3700	images
-Processed	3800	images
-Processed	3900	images
-Processed	4000	images
-Processed	4100	images
-Processed	4200	images
-Processed	4300	images
-Processed	4400	images
-Processed	4500	images
-Processed	4600	images
-Processed	4700	images
-Processed	4800	images
-Processed	4900	images
-Processed	5000	images
-Processed	5100	images
-Processed	5200	images
-Processed	5300	images
-Processed	5400	images
-Processed	5500	images
-Processed	5600	images
+job execution at: Thu May 5 05:37:12 CDT 2016
+running on node c221-603
+psize	4096
+depth	2
+entries	17907
+branch_pages	1
+leaf_pages	189
+overflow_pages	3456051
+ 0.3753
+ 0.3113
+[torch.CudaTensor of size 2x1]
+
+ 0
+ 0
+[torch.DoubleTensor of size 2]
+

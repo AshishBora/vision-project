@@ -1,4 +1,4 @@
-require 'loadcaffe';
+-- require 'loadcaffe';
 require 'image';
 require 'cunn';
 require 'cudnn';

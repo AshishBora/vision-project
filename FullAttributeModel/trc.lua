@@ -1,7 +1,12 @@
+require 'loadcaffe';
+require 'image';
+require 'cunn';
+require 'cudnn';
+require 'nngraph';
+
 ----------------- get training functions --------------
 dofile('training_funcs.lua')
 dofile('get_example_C.lua')
-
 
 
 ------------- Load the LMDBs and get the reader ----------------
@@ -40,11 +45,12 @@ B_model = torch.load('B_model.t7')
 C_model = torch.load('C_model.t7')
 BC_model = create_BC(B_model, C_model)
 --graph.dot(BC_model.fg, 'BCM')
-
 crit = nn.BCECriterion() -- define loss
 
 BC_model:double() -- convert to double
 BC_model:evaluate() -- put the model in evalaute mode
+BC_model:cuda() -- put the model on cuda
+crit:cuda()
 
 outfile:write('done\n')
 outfile:close()
@@ -113,7 +119,6 @@ for i = 1, max_train_iter do
     C_cmpr:updateParameters(lr)
 
     BC_model:clearState(); -- reduce memory usage
-
 
     outfile = io.open("train_C.out", "a")
     outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
