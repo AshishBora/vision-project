@@ -4,7 +4,8 @@ require 'torch'
 
 dofile('create_lmdb.lua')
 
-project_dir = '/Users/ashish/vision-project/'
+-- project_dir = '/Users/ashish/vision-project/'
+project_dir = '/work/04001/ashishb/maverick/vision-project/'
 base_path = project_dir .. 'data/SUN/SUN_WS/test/'
 
 list_file_path = './test_listfile.txt'
