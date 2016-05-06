@@ -86,7 +86,7 @@ function evalPerf(model, crit, get_example, reader, iter, attrs, num_im)
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
-    inputs, targets = nextBatch(get_example, reader, iter, attrs, num_im)
+    inputs, targets = nextBatch(get_example, reader, iter, attrs, num_im, 0, 0)
     -- print(collectgarbage('count'))
     -- print(inputs:size())
 
@@ -107,13 +107,12 @@ function evalPerf(model, crit, get_example, reader, iter, attrs, num_im)
 end
 
 
-
-function nextBatch(get_example, reader, batch_size, attrs, num_im)
+function nextBatch(get_example, reader, batch_size, attrs, num_im, max_crop_jitter, std_dev)
     local inputs = torch.Tensor(batch_size, 3*227*227*3+42);
     local targets = torch.Tensor(batch_size);
     local i = 0;
     for i = 1, batch_size do
-        inputs[i], targets[i] = get_example(reader, attrs, num_im)
+        inputs[i], targets[i] = get_example(reader, attrs, num_im, max_crop_jitter, std_dev)
         -- print(i, collectgarbage('count'))
     end
     inputs:cuda()

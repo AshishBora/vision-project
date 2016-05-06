@@ -82,32 +82,28 @@ BC_model:clearState()
 -- print(collectgarbage('count'))
 
 ---------------- Define hyper parameters ------------------------
-lr = 0.2
-attr_lr = 0.5
+max_crop_jitter = 1
+std_dev = 0.1
+hflip = true
 
--- batch_size = 512
+lr = 0.5
 batch_size = 128
-
-max_train_iter = 5
+max_train_iter = 5000
 test_interval = 50
-
--- val_iter = 1000
 val_iter = 128
-
 lr_stepsize = 200
 gamma = 0.7
-attr_gamma = 0.7
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
 snapshot = true
 
--- verify this
-B_fc.modules[2].p = 0.2 -- dropout rate
-C_fc1.modules[2].p = 0.2  -- dropout rate
-C_fc2.modules[2].p = 0.2  -- dropout rate
+B_fc.modules[2].p = 0 -- dropout rate
+C_fc1.modules[2].p = 0  -- dropout rate
+C_fc2.modules[2].p = 0  -- dropout rate
 
-----------------  Start training ------------------------
+
+------------------  Start training ------------------------
 
 BC_model:training() -- put the model in training mode
 
@@ -133,7 +129,7 @@ for i = 1, max_train_iter do
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(214325)
-    inputs, targets = nextBatch(get_example_C, train_reader, batch_size, train_attrs, train_num)
+    inputs, targets = nextBatch(get_example_C, train_reader, batch_size, train_attrs, train_num, max_crop_jitter, std_dev, hflip)
 
     -- outfile = io.open('train_C.out', 'a')
     -- outfile:write(inputs:size())
@@ -143,14 +139,14 @@ for i = 1, max_train_iter do
     local grad_norm = torch.norm(C_fc1.modules[3].gradWeight)
 
     -- update parameters for only a few layers in C
-    C_fc1:updateParameters(attr_lr)
-    C_fc2:updateParameters(attr_lr)
+    C_fc1:updateParameters(lr)
+    C_fc2:updateParameters(lr)
     C_cmpr:updateParameters(lr)
 
     BC_model:clearState(); -- reduce memory usage
 
     outfile = io.open('train_C.out', 'a')
-    outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
+    outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', 0)
     outfile:write(', batch_loss: ', batch_loss, ', train_err: ', train_pred_err)
     outfile:write(', grad_norm: ', grad_norm, ', mem: ', mem, '\n')
     outfile:close()
@@ -161,7 +157,7 @@ for i = 1, max_train_iter do
 
     if i % lr_stepsize == 0 then
         lr = lr * gamma;
-        attr_lr = attr_lr * attr_gamma;
+        -- attr_lr = attr_lr * attr_gamma;
     end
 
     if snapshot and (i % snapshot_interval == 0) then

@@ -8,7 +8,7 @@ dofile('func_lib.lua')
 dofile('preproc.lua')
 
 -- function to get an example for training C
-get_example_C = function(reader, attrs, num_im)
+get_example_C = function(reader, attrs, num_im, max_crop_jitter, std_dev, hflip)
 
     -- randomly select two images from different classes
     local y = torch.randperm(num_im)
@@ -32,7 +32,7 @@ get_example_C = function(reader, attrs, num_im)
     -- random crops and gaussian noise
     -- serialize
     for i = 1, 3 do
-        images[i] = preprocess(images[i], 1, 0.1)
+        images[i] = preprocess(images[i], max_crop_jitter, std_dev, hflip)
         images[i] = images[i]:view(1, -1)
         images[i]:float()
         -- print(images[i]:size())

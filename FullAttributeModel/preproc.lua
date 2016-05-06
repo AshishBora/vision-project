@@ -65,7 +65,7 @@ end
 
 
 -- function to preprocess the image
-function preprocess(img, max_crop_jitter, std_dev)
+function preprocess(img, max_crop_jitter, std_dev, hflip)
 
     -- collectgarbage()
 
@@ -75,6 +75,8 @@ function preprocess(img, max_crop_jitter, std_dev)
     local iW = img:size(3)
     local w1_mean = math.floor((iW-oW)/2)
     local h1_mean = math.floor((iH-oH)/2)
+
+    -- random cropping
     w1, h1 = getTopLeftCorner(w1_mean, h1_mean, max_crop_jitter)
 	local out = image.crop(img, w1, h1, w1+oW, h1+oH) -- center patch  
 
@@ -82,8 +84,10 @@ function preprocess(img, max_crop_jitter, std_dev)
     -- addNoise(out, std_dev)
 
     -- randomly decide whether to horizontally flip the image
-    if torch.bernoulli() == 1 then
-        image.hflip(img, img)
+    if hflip then
+        if torch.bernoulli() == 1 then
+            image.hflip(img, img)
+        end 
     end
 	
     -- make the range [0, 255]
