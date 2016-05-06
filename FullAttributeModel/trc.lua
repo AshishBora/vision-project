@@ -2,6 +2,8 @@ require 'image';
 require 'cunn';
 require 'cudnn';
 require 'nngraph';
+ProFi = require 'ProFi' -- profiler
+ProFi:start()
 
 ----------------- get training functions --------------
 dofile('training_funcs.lua')
@@ -86,7 +88,7 @@ attr_lr = 0.5
 -- batch_size = 512
 batch_size = 128
 
-max_train_iter = 10000
+max_train_iter = 10
 test_interval = 50
 
 -- val_iter = 1000
@@ -150,7 +152,7 @@ for i = 1, max_train_iter do
     outfile = io.open("train_C.out", "a")
     outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
     outfile:write(', batch_loss: ', batch_loss, ', train_err: ', train_pred_err)
-    outfile:write(', grad_norm: ', grad_norm, ', mem:', mem, '\n')
+    outfile:write(', grad_norm: ', grad_norm, ', mem: ', mem, '\n')
     outfile:close()
 
     if i % test_interval == 0 then
@@ -180,3 +182,6 @@ val_reader:abort()
 
 train_lmdb:close()
 val_lmdb:close()
+
+ProFi:stop()
+ProFi:writeReport('profiling_report.txt')

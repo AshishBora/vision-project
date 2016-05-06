@@ -1,17 +1,14 @@
 Creating model... done
 Training with snapshotting enabled... 
 Testing... 
-test_loss = 0.73677292466164, test_pred_err = 0.4609375
-iter 1, lr: 0.2, attr_lr: 0.5, batch_loss: 0.69959452748299, train_err: 0.421875, grad_norm: 0.094123363494873, mem:2799.439453125
-iter 2, lr: 0.2, attr_lr: 0.5, batch_loss: 0.72171162068844, train_err: 0.4609375, grad_norm: 0.099739342927933, mem:2859.7841796875
-iter 3, lr: 0.2, attr_lr: 0.5, batch_loss: 0.78527547419071, train_err: 0.5546875, grad_norm: 0.08655658364296, mem:3060.7021484375
-iter 4, lr: 0.2, attr_lr: 0.5, batch_loss: 0.75104558467865, train_err: 0.515625, grad_norm: 0.10125447064638, mem:3084.1904296875
-iter 5, lr: 0.2, attr_lr: 0.5, batch_loss: 0.74234144389629, train_err: 0.5078125, grad_norm: 0.090391799807549, mem:3099.51171875
-iter 6, lr: 0.2, attr_lr: 0.5, batch_loss: 0.76265704631805, train_err: 0.5703125, grad_norm: 0.082199819386005, mem:3123.2744140625
-iter 7, lr: 0.2, attr_lr: 0.5, batch_loss: 0.71980558335781, train_err: 0.5, grad_norm: 0.067640542984009, mem:3134.37890625
-iter 8, lr: 0.2, attr_lr: 0.5, batch_loss: 0.73301351070404, train_err: 0.53125, grad_norm: 0.074256919324398, mem:3145.1142578125
-iter 9, lr: 0.2, attr_lr: 0.5, batch_loss: 0.6949595361948, train_err: 0.453125, grad_norm: 0.065375149250031, mem:3156.33984375
-iter 10, lr: 0.2, attr_lr: 0.5, batch_loss: 0.72192573547363, train_err: 0.515625, grad_norm: 0.073749616742134, mem:3212.919921875
-iter 11, lr: 0.2, attr_lr: 0.5, batch_loss: 0.69367618858814, train_err: 0.4609375, grad_norm: 0.073091059923172, mem:3219.169921875
-iter 12, lr: 0.2, attr_lr: 0.5, batch_loss: 0.69100713729858, train_err: 0.4609375, grad_norm: 0.070179015398026, mem:3228.3505859375
-iter 13, lr: 0.2, attr_lr: 0.5, batch_loss: 0.69138851761818, train_err: 0.4453125, grad_norm: 0.071325160562992, mem:3236.8671875
+test_loss = 0.78919541835785, test_pred_err = 0.5390625
+iter 1, lr: 0.2, attr_lr: 0.5, batch_loss: 0.72125793993473, train_err: 0.453125, grad_norm: 0.091217324137688, mem: 6202.166015625
+iter 2, lr: 0.2, attr_lr: 0.5, batch_loss: 0.78047704696655, train_err: 0.53125, grad_norm: 0.10152745246887, mem: 4570.990234375
+iter 3, lr: 0.2, attr_lr: 0.5, batch_loss: 0.71897500753403, train_err: 0.46875, grad_norm: 0.089712999761105, mem: 4215.5166015625
+iter 4, lr: 0.2, attr_lr: 0.5, batch_loss: 0.73974627256393, train_err: 0.5078125, grad_norm: 0.094443567097187, mem: 4092.22265625
+iter 5, lr: 0.2, attr_lr: 0.5, batch_loss: 0.73430353403091, train_err: 0.5, grad_norm: 0.087323792278767, mem: 4004.5244140625
+iter 6, lr: 0.2, attr_lr: 0.5, batch_loss: 0.71891990303993, train_err: 0.4921875, grad_norm: 0.080708332359791, mem: 3881.986328125
+iter 7, lr: 0.2, attr_lr: 0.5, batch_loss: 0.69364139437675, train_err: 0.4140625, grad_norm: 0.076752424240112, mem: 3701.3876953125
+iter 8, lr: 0.2, attr_lr: 0.5, batch_loss: 0.76528742909431, train_err: 0.578125, grad_norm: 0.094808958470821, mem: 3577.0283203125
+iter 9, lr: 0.2, attr_lr: 0.5, batch_loss: 0.72285202145576, train_err: 0.5078125, grad_norm: 0.070297434926033, mem: 3528.0107421875
+iter 10, lr: 0.2, attr_lr: 0.5, batch_loss: 0.7014277279377, train_err: 0.46875, grad_norm: 0.069716267287731, mem: 3407.552734375
