@@ -39,7 +39,7 @@ val_attrs = torch.load('./lmdb/val_attrs.t7')
 
 
 -------------------------  Create model --------------------------
-outfile = io.open("train_C.out", "w")
+outfile = io.open('train_C.out', 'w')
 outfile:write('Creating model... ')
 
 B_model = torch.load('B_model.t7')
@@ -72,14 +72,14 @@ C_cmpr = C_model.modules[15]
 
 
 -------------------- share parameters --------------------
--- print(collectgarbage("count"))
+-- print(collectgarbage('count'))
 
 C_conv1 = B_conv:clone('weight', 'bias')
 C_conv2 = B_conv:clone('weight', 'bias')
 
--- print(collectgarbage("count"))
+-- print(collectgarbage('count'))
 BC_model:clearState()
--- print(collectgarbage("count"))
+-- print(collectgarbage('count'))
 
 ---------------- Define hyper parameters ------------------------
 lr = 0.2
@@ -88,7 +88,7 @@ attr_lr = 0.5
 -- batch_size = 512
 batch_size = 128
 
-max_train_iter = 10
+max_train_iter = 5
 test_interval = 50
 
 -- val_iter = 1000
@@ -123,7 +123,7 @@ outfile:close()
 
 for i = 1, max_train_iter do
     
-    mem = collectgarbage("count")
+    mem = collectgarbage('count')
 
     if i == 1 then  -- initial testing
         evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, val_attrs, val_num)
@@ -135,7 +135,7 @@ for i = 1, max_train_iter do
     -- torch.manualSeed(214325)
     inputs, targets = nextBatch(get_example_C, train_reader, batch_size, train_attrs, train_num)
 
-    -- outfile = io.open("train_C.out", "a")
+    -- outfile = io.open('train_C.out', 'a')
     -- outfile:write(inputs:size())
     -- outfile:close()
 
@@ -149,7 +149,7 @@ for i = 1, max_train_iter do
 
     BC_model:clearState(); -- reduce memory usage
 
-    outfile = io.open("train_C.out", "a")
+    outfile = io.open('train_C.out', 'a')
     outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
     outfile:write(', batch_loss: ', batch_loss, ', train_err: ', train_pred_err)
     outfile:write(', grad_norm: ', grad_norm, ', mem: ', mem, '\n')
@@ -165,7 +165,7 @@ for i = 1, max_train_iter do
     end
 
     if snapshot and (i % snapshot_interval == 0) then
-        outfile = io.open("train_C.out", "a")
+        outfile = io.open('train_C.out', 'a')
         outfile:write('Snapshotting C_model... ')
         snapshot_filename_C = snapshot_prefix .. 'C_model__' .. tostring(i) .. '.t7'
         C_model:clearState()

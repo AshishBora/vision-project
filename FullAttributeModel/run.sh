@@ -15,4 +15,4 @@
 #luajit print_C.lua
 #luajit evaluate_C.lua
 
-luajit trc.lua
+luajit -jp=l2 trc.lua

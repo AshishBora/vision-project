@@ -1,405 +1,419 @@
 ###############################################################################################################
-#####  ProFi, a lua profiler. This profile was generated on: Fri May  6 00:43:53 2016
+#####  ProFi, a lua profiler. This profile was generated on: Fri May  6 05:12:07 2016
 #####  ProFi is created by Luke Perkin 2012 under the MIT Licence, www.locofilm.co.uk
 #####  Version 1.3. Get the most recent version at this gist: https://gist.github.com/2838755
 ###############################################################################################################
 
-| TOTAL TIME = 100.920000
+| TOTAL TIME = 28.480000
 | FILE                                              : FUNCTION                                : LINE                : TIME        : RELATIVE    : CALLED      |
-| preproc.lua                                       : preprocess                              :   35                : 190905.030  : 189164.71%  :      57     |
-| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: clear                                   :  203                : 100664.880  : 99747.21%   :      97     |
-| get_example_C.lua                                 : get_example                             :   11                : 54315.190   : 53820.05%   :     137     |
-| training_funcs.lua                                : nextBatch                               :  107                : 75.180      : 74.49%      :      11     |
-| preproc.lua                                       : addNoise                                :   26                : 47.150      : 46.72%      :    4224     |
-| training_funcs.lua                                : accumulate                              :   64                : 19.440      : 19.26%      :      10     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: get                                     :   17                : 12.580      : 12.47%      :    2816     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: cuda                                    :    8                : 9.200       : 9.12%       :      95     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: getHandle                               :   33                : 8.810       : 8.73%       :    8319     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: rethrowErrors                           :   28                : 8.760       : 8.68%       :    2356     |
-| training_funcs.lua                                : evalPerf                                :   78                : 7.600       : 7.53%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: backward                                :   29                : 7.040       : 6.98%       :      10     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: accGradParameters                       :  392                : 4.750       : 4.71%       :      30     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  393                : 4.680       : 4.64%       :     440     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: accGradParameters                       :   63                : 4.660       : 4.62%       :      70     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  394                : 4.070       : 4.03%       :     150     |
-| training_funcs.lua                                : get_total_pred_err                      :   52                : 4.070       : 4.03%       :      11     |
-| training_funcs.lua                                : get_pred_err                            :   38                : 4.060       : 4.02%       :    1408     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: readObject                              :  245                : 3.060       : 3.03%       :    8410     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isTensor                                :  171                : 2.890       : 2.86%       :    2217     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: read                                    :  157                : 2.770       : 2.74%       :     138     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  245                : 2.720       : 2.70%       :    3246     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: type                                    :  117                : 2.540       : 2.52%       :     208     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: updateGradInput                         :  320                : 2.420       : 2.40%       :      30     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: forward                                 :  230                : 2.320       : 2.30%       :      11     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  230                : 2.310       : 2.29%       :      22     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  243                : 2.300       : 2.28%       :     484     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: func                                    :   41                : 2.250       : 2.23%       :      77     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  433                : 2.210       : 2.19%       :    2816     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  321                : 2.170       : 2.15%       :     440     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: updateGradInput                         :   50                : 2.090       : 2.07%       :      70     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/cutorc: data                                    :  107                : 2.060       : 2.04%       :    5838     |
-| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: recursiveType                           :   36                : 1.990       : 1.97%       :    1903     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: type                                    :  198                : 1.990       : 1.97%       :       4     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/torc: data                                    :  103                : 1.930       : 1.91%       :    7200     |
-| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: torch_Storage_type                      :    5                : 1.870       : 1.85%       :     168     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: load                                    :  392                : 1.780       : 1.76%       :       4     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: read                                    :  424                : 1.770       : 1.75%       :       2     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: errcheck                                :   52                : 1.470       : 1.46%       :    5865     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: clone                                   :  105                : 1.370       : 1.36%       :       2     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  347                : 1.220       : 1.21%       :     165     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: double                                  :  198                : 1.170       : 1.16%       :       1     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: anonymous                               :   38                : 0.890       : 0.88%       :     210     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: cuda                                    :  198                : 0.840       : 0.83%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: write                                   :  148                : 0.820       : 0.81%       :      10     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: writeObject                             :  107                : 0.750       : 0.74%       :    1028     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: float                                   :    8                : 0.730       : 0.72%       :   10006     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: createIODescriptors                     :   95                : 0.720       : 0.71%       :     465     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  372                : 0.710       : 0.70%       :     150     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: view                                    :  420                : 0.690       : 0.68%       :    6211     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  107                : 0.640       : 0.63%       :     138     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/image: crop                                    :  397                : 0.610       : 0.60%       :    4224     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: createIODescriptors                     :    9                : 0.560       : 0.55%       :     441     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   93                : 0.560       : 0.55%       :     110     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: toDescriptor                            :   63                : 0.500       : 0.50%       :    1050     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: anonymous                               :   26                : 0.410       : 0.41%       :     231     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: type                                    :  120                : 0.370       : 0.37%       :    1126     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: anonymous                               :   58                : 0.320       : 0.32%       :      66     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: resetWeightDescriptors                  :   32                : 0.270       : 0.27%       :     150     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: errcheck                                :   32                : 0.190       : 0.19%       :    2834     |
-| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: clearState                              :  198                : 0.180       : 0.18%       :     990     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: clearState                              :  127                : 0.180       : 0.18%       :     110     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: istensor                                :  423                : 0.130       : 0.13%       :   36756     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: int                                     :    8                : 0.130       : 0.13%       :    2100     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: anonymous                               :   86                : 0.120       : 0.12%       :      99     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Si: anonymous                               :    3                : 0.110       : 0.11%       :      44     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Sigmoid_updateOutput                    :  109                : 0.110       : 0.11%       :      44     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: write                                   :  445                : 0.090       : 0.09%       :      10     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: specifyFully                            :  393                : 0.090       : 0.09%       :    6211     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: createIODescriptors                     :   44                : 0.070       : 0.07%       :     189     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: getmetamethod                           :   74                : 0.070       : 0.07%       :    6754     |
-| training_funcs.lua                                : do_weight_decay                         :   27                : 0.060       : 0.06%       :      10     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: close                                   :   92                : 0.050       : 0.05%       :       2     |
-| preproc.lua                                       : getTopLeftCorner                        :   20                : 0.050       : 0.05%       :    4224     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: resetPoolDescriptors                    :   27                : 0.040       : 0.04%       :      90     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: updateGradInput                         :   45                : 0.030       : 0.03%       :      10     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isTypeOf                                :  129                : 0.030       : 0.03%       :    3610     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: createIODescriptors                     :   28                : 0.030       : 0.03%       :     126     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   75                : 0.030       : 0.03%       :     110     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: MDB_val                                 :   42                : 0.030       : 0.03%       :    2816     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __MDB_val                               :  107                : 0.030       : 0.03%       :    2816     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: updateGradInput                         :   24                : 0.020       : 0.02%       :      30     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: zeroGradParameters                      :   67                : 0.020       : 0.02%       :     970     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   78                : 0.020       : 0.02%       :    1060     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: parameters                              :    9                : 0.020       : 0.02%       :    1090     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   81                : 0.020       : 0.02%       :    6754     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: zeroGradParameters                      :   77                : 0.020       : 0.02%       :     100     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: anonymous                               :   77                : 0.020       : 0.02%       :      33     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: write                                   :   61                : 0.020       : 0.02%       :      12     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: open                                    :   51                : 0.020       : 0.02%       :       2     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: recursiveType                           :  186                : 0.020       : 0.02%       :     216     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: long                                    :    8                : 0.020       : 0.02%       :     150     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: type                                    :    8                : 0.020       : 0.02%       :     640     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: anonymous                               :   16                : 0.020       : 0.02%       :      66     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: func                                    :   21                : 0.020       : 0.02%       :      11     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: expandAs                                :  284                : 0.010       : 0.01%       :      30     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: func                                    :   13                : 0.010       : 0.01%       :      44     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: findModules                             :  327                : 0.010       : 0.01%       :    1070     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: applyToModules                          :   71                : 0.010       : 0.01%       :     170     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: anonymous                               :   72                : 0.010       : 0.01%       :      60     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: batchsize                               :   37                : 0.010       : 0.01%       :      99     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: func                                    :   77                : 0.010       : 0.01%       :      66     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: accGradParameters                       :   46                : 0.010       : 0.01%       :     210     |
-| get_example_C.lua                                 : anonymous                               :    0                : 0.010       : 0.01%       :       1     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: applyTypeToTable                        :  201                : 0.010       : 0.01%       :      18     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: writeBool                               :    3                : 0.010       : 0.01%       :      62     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   96                : 0.010       : 0.01%       :     278     |
-| [builtin:remove]                                  : remove                                  :   -1                : 0.010       : 0.01%       :    2107     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: clear                                   :  129                : 0.010       : 0.01%       :     220     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: getTotalGradOutput                      :    7                : 0.010       : 0.01%       :     440     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nngraph/: istable                                 :    7                : 0.010       : 0.01%       :     516     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: updateAddBuffer                         :   45                : 0.010       : 0.01%       :     231     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   53                : 0.010       : 0.01%       :     121     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: shape                                   :  150                : 0.010       : 0.01%       :     450     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: anonymous                               :   98                : 0.010       : 0.01%       :      90     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: func                                    :    8                : 0.010       : 0.01%       :      33     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: float                                   :   47                : 0.000       : 0.00%       :   10006     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: anonymous                               :   37                : 0.000       : 0.00%       :      60     |
-| [C]                                               : mul                                     :   -1                : 0.000       : 0.00%       :    8569     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: anonymous                               :   88                : 0.000       : 0.00%       :      30     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: addNestedTo                             :   75                : 0.000       : 0.00%       :      50     |
-| [C]                                               : t                                       :   -1                : 0.000       : 0.00%       :     341     |
-| [C]                                               : lt                                      :   -1                : 0.000       : 0.00%       :    4224     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: forward                                 :  226                : 0.000       : 0.00%       :      11     |
-| [C]                                               : cloneNested                             :   -1                : 0.000       : 0.00%       :       3     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: istensor                                :  171                : 0.000       : 0.00%       :      83     |
+| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: clear                                   :  203                : 7311.080    : 25670.93%   :     189     |
+| get_example_C.lua                                 : get_example                             :   11                : 5320.710    : 18682.27%   :     183     |
+| training_funcs.lua                                : nextBatch                               :  111                : 13.020      : 45.72%      :       6     |
+| training_funcs.lua                                : accumulate                              :   66                : 9.280       : 32.58%      :       5     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: get                                     :   17                : 8.050       : 28.27%      :    1536     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: cuda                                    :    8                : 4.330       : 15.20%      :      50     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: rethrowErrors                           :   28                : 4.010       : 14.08%      :    1216     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: backward                                :   29                : 3.660       : 12.85%      :       5     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: readObject                              :  245                : 3.200       : 11.24%      :    7130     |
+| training_funcs.lua                                : evalPerf                                :   80                : 2.970       : 10.43%      :       1     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: read                                    :  157                : 2.780       : 9.76%       :     138     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: accGradParameters                       :  392                : 2.700       : 9.48%       :      15     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: type                                    :  117                : 2.460       : 8.64%       :     208     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  245                : 2.460       : 8.64%       :    1966     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  393                : 2.140       : 7.51%       :     220     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: type                                    :  198                : 1.970       : 6.92%       :       4     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  433                : 1.960       : 6.88%       :    1536     |
+| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: recursiveType                           :   36                : 1.950       : 6.85%       :    1903     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: updateGradInput                         :  320                : 1.930       : 6.78%       :      15     |
+| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: torch_Storage_type                      :    5                : 1.860       : 6.53%       :     168     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: double                                  :    8                : 1.840       : 6.46%       :      12     |
+| preproc.lua                                       : preprocess                              :   68                : 1.830       : 6.43%       :    2304     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: load                                    :  392                : 1.790       : 6.29%       :       4     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: read                                    :  424                : 1.770       : 6.21%       :       2     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  394                : 1.640       : 5.76%       :      75     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: accGradParameters                       :   63                : 1.640       : 5.76%       :      35     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  321                : 1.520       : 5.34%       :     220     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: clone                                   :  105                : 1.380       : 4.85%       :       2     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isTensor                                :  171                : 1.330       : 4.67%       :    1997     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: forward                                 :  230                : 1.310       : 4.60%       :       6     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: neteval                                 :  243                : 1.310       : 4.60%       :     264     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  230                : 1.290       : 4.53%       :      12     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: func                                    :   41                : 1.270       : 4.46%       :      42     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: getHandle                               :   33                : 1.210       : 4.25%       :    4255     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: double                                  :  198                : 1.130       : 3.97%       :       1     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/Seque: updateGradInput                         :   50                : 1.100       : 3.86%       :      35     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: write                                   :  148                : 0.850       : 2.98%       :      10     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: cuda                                    :  198                : 0.840       : 2.95%       :       1     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: view                                    :  420                : 0.770       : 2.70%       :    3366     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: writeObject                             :  107                : 0.750       : 2.63%       :    1028     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  107                : 0.670       : 2.35%       :     138     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/torc: data                                    :  103                : 0.640       : 2.25%       :    3675     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  372                : 0.640       : 2.25%       :      75     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: anonymous                               :  347                : 0.630       : 2.21%       :      90     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/cutorc: data                                    :  107                : 0.620       : 2.18%       :    3018     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: createIODescriptors                     :   95                : 0.590       : 2.07%       :     240     |
+| preproc.lua                                       : swap_channels                           :   59                : 0.530       : 1.86%       :    2304     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/image: crop                                    :  397                : 0.400       : 1.40%       :    2304     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: istensor                                :  423                : 0.400       : 1.40%       :   19926     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: updateGradInput                         :   24                : 0.380       : 1.33%       :      15     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: type                                    :  120                : 0.370       : 1.30%       :    1132     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: errcheck                                :   52                : 0.360       : 1.26%       :    2970     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: anonymous                               :   77                : 0.350       : 1.23%       :      18     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: batchsize                               :   37                : 0.350       : 1.23%       :      54     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: anonymous                               :   98                : 0.310       : 1.09%       :      45     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/image: hflip                                   :  974                : 0.300       : 1.05%       :    1168     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: resetWeightDescriptors                  :   32                : 0.270       : 0.95%       :      75     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: errcheck                                :   32                : 0.200       : 0.70%       :    1554     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: toDescriptor                            :   63                : 0.180       : 0.63%       :     525     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Si: anonymous                               :    3                : 0.120       : 0.42%       :      24     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Sigmoid_updateOutput                    :  109                : 0.120       : 0.42%       :      24     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: getmetamethod                           :   74                : 0.100       : 0.35%       :    4194     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: clearState                              :  127                : 0.100       : 0.35%       :      60     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: anonymous                               :   72                : 0.090       : 0.32%       :      30     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: write                                   :  445                : 0.080       : 0.28%       :      10     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __MDB_val                               :  107                : 0.070       : 0.25%       :    1536     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: createIODescriptors                     :   44                : 0.070       : 0.25%       :      99     |
+| ...4001/ashishb/torch-cl/install/share/lua/5.1/nn/: clearState                              :  198                : 0.070       : 0.25%       :     540     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: MDB_val                                 :   42                : 0.060       : 0.21%       :    1536     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: recursiveType                           :  186                : 0.060       : 0.21%       :     242     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: specifyFully                            :  393                : 0.060       : 0.21%       :    3366     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: anonymous                               :   86                : 0.060       : 0.21%       :      54     |
+| preproc.lua                                       : getTopLeftCorner                        :   22                : 0.060       : 0.21%       :    2304     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: applyToModules                          :   71                : 0.050       : 0.18%       :     105     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: anonymous                               :   26                : 0.050       : 0.18%       :     126     |
+| training_funcs.lua                                : do_weight_decay                         :   27                : 0.050       : 0.18%       :       5     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: float                                   :    8                : 0.040       : 0.14%       :    3147     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: createIODescriptors                     :    9                : 0.040       : 0.14%       :     231     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: anonymous                               :   38                : 0.040       : 0.14%       :     105     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: anonymous                               :   58                : 0.040       : 0.14%       :      36     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: zeroGradParameters                      :   77                : 0.030       : 0.11%       :      50     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: open                                    :   51                : 0.030       : 0.11%       :       2     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   78                : 0.030       : 0.11%       :     530     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   81                : 0.030       : 0.11%       :    4194     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: createIODescriptors                     :   28                : 0.030       : 0.11%       :      66     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: func                                    :   13                : 0.020       : 0.07%       :      24     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: int                                     :    8                : 0.020       : 0.07%       :    1050     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: anonymous                               :   37                : 0.020       : 0.07%       :      30     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: close                                   :   92                : 0.020       : 0.07%       :       2     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: parameters                              :    9                : 0.020       : 0.07%       :     545     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: write                                   :   61                : 0.020       : 0.07%       :      12     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: zeroGradParameters                      :   67                : 0.020       : 0.07%       :     485     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   82                : 0.010       : 0.04%       :      60     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: long                                    :    8                : 0.010       : 0.04%       :      75     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   53                : 0.010       : 0.04%       :      66     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: clearDesc                               :  429                : 0.010       : 0.04%       :     100     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: resetDescriptors                        :   16                : 0.010       : 0.04%       :      30     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: findModules                             :  327                : 0.010       : 0.04%       :     535     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: updateParameters                        :   76                : 0.010       : 0.04%       :      60     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: anonymous                               :   16                : 0.010       : 0.04%       :      36     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: updateParameters                        :   81                : 0.010       : 0.04%       :      15     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   86                : 0.010       : 0.04%       :     212     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: write                                   :   98                : 0.010       : 0.04%       :       4     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: training                                :   85                : 0.010       : 0.04%       :      20     |
+| get_example_C.lua                                 : anonymous                               :    0                : 0.010       : 0.04%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: dfs                                     :   73                : 0.010       : 0.04%       :       2     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: dfs_dirty                               :   61                : 0.010       : 0.04%       :       2     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: topsort                                 :  107                : 0.010       : 0.04%       :       2     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: applyTypeToTable                        :  201                : 0.010       : 0.04%       :      18     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: __init                                  :   44                : 0.010       : 0.04%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isWritableObject                        :   28                : 0.010       : 0.04%       :    1084     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: visit                                   :   35                : 0.010       : 0.04%       :      32     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: isstorage                               :  426                : 0.010       : 0.04%       :    3330     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   96                : 0.010       : 0.04%       :     278     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: post_func                               :   63                : 0.010       : 0.04%       :      24     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: type                                    :    8                : 0.010       : 0.04%       :     600     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: updateGradInput                         :   20                : 0.010       : 0.04%       :      20     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: func                                    :   77                : 0.010       : 0.04%       :      36     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: updateGradInput                         :   88                : 0.010       : 0.04%       :      30     |
+| [C]                                               : fill                                    :   -1                : 0.000       : 0.00%       :     919     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: cuda                                    :   47                : 0.000       : 0.00%       :      50     |
+| [C]                                               : bernoulli                               :   -1                : 0.000       : 0.00%       :    3870     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: get                                     :   55                : 0.000       : 0.00%       :    1536     |
+| [C]                                               : clone                                   :   -1                : 0.000       : 0.00%       :    7680     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  447                : 0.000       : 0.00%       :    1536     |
+| [C]                                               : narrow                                  :   -1                : 0.000       : 0.00%       :    1613     |
+| [C]                                               : CharTensor                              :   -1                : 0.000       : 0.00%       :    3072     |
+| [C]                                               : totable                                 :   -1                : 0.000       : 0.00%       :    3402     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: typeAs                                  :    8                : 0.000       : 0.00%       :      44     |
+| [C]                                               : floor                                   :   -1                : 0.000       : 0.00%       :    9216     |
+| [C]                                               : add                                     :   -1                : 0.000       : 0.00%       :    7015     |
+| [C]                                               : mul                                     :   -1                : 0.000       : 0.00%       :    2365     |
+| [C]                                               : hflip                                   :   -1                : 0.000       : 0.00%       :    1168     |
+| [C]                                               : resizeAs                                :   -1                : 0.000       : 0.00%       :    1619     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: forward                                 :  226                : 0.000       : 0.00%       :       6     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: forward                                 :   25                : 0.000       : 0.00%       :       6     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: float                                   :   47                : 0.000       : 0.00%       :    3147     |
+| [C]                                               : cat                                     :   -1                : 0.000       : 0.00%       :     768     |
+| [C]                                               : isContiguous                            :   -1                : 0.000       : 0.00%       :    5500     |
+| [C]                                               : randperm                                :   -1                : 0.000       : 0.00%       :     768     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  233                : 0.000       : 0.00%       :     180     |
+| [C]                                               : uniform                                 :   -1                : 0.000       : 0.00%       :    4608     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: get                                     :  170                : 0.000       : 0.00%       :    1536     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: typeAs                                  :   21                : 0.000       : 0.00%       :      44     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: propagate                               :  244                : 0.000       : 0.00%       :     264     |
+| [C]                                               : nDimension                              :   -1                : 0.000       : 0.00%       :    3526     |
+| [C]                                               : dim                                     :   -1                : 0.000       : 0.00%       :    3374     |
+| [C]                                               : cropNoScale                             :   -1                : 0.000       : 0.00%       :    2304     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: func                                    :    3                : 0.000       : 0.00%       :      42     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  226                : 0.000       : 0.00%       :      12     |
+| [C]                                               : CudaTensor                              :   -1                : 0.000       : 0.00%       :       1     |
+| [C]                                               : getDevice                               :   -1                : 0.000       : 0.00%       :    4440     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Sigmoid_updateGradInput                 :  109                : 0.000       : 0.00%       :      20     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Si: anonymous                               :   11                : 0.000       : 0.00%       :      20     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: getTotalGradOutput                      :    7                : 0.000       : 0.00%       :     220     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   75                : 0.000       : 0.00%       :      55     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Abs_updateGradInput                     :  109                : 0.000       : 0.00%       :       5     |
+| .../04001/ashishb/torch-cl/install/share/lua/5.1/n: anonymous                               :   15                : 0.000       : 0.00%       :       5     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: updateGradInput                         :   45                : 0.000       : 0.00%       :       5     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: updateGradInput                         :    9                : 0.000       : 0.00%       :      35     |
+| [C]                                               : cdiv                                    :   -1                : 0.000       : 0.00%       :       5     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: backward                                :   15                : 0.000       : 0.00%       :       5     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: double                                  :   47                : 0.000       : 0.00%       :      12     |
+| training_funcs.lua                                : get_total_pred_err                      :   52                : 0.000       : 0.00%       :       6     |
+| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: backward                                :   67                : 0.000       : 0.00%       :       5     |
+| [C]                                               : lt                                      :   -1                : 0.000       : 0.00%       :       6     |
+| [C]                                               : get_total_pred_err                      :   -1                : 0.000       : 0.00%       :       6     |
+| [C]                                               : ne                                      :   -1                : 0.000       : 0.00%       :       6     |
+| [C]                                               : div                                     :   -1                : 0.000       : 0.00%       :      35     |
+| [C]                                               : dot                                     :   -1                : 0.000       : 0.00%       :      12     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: expandAs                                :  333                : 0.000       : 0.00%       :      15     |
 | ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: cloneNested                             :    8                : 0.000       : 0.00%       :       3     |
-| [C]                                               : add                                     :   -1                : 0.000       : 0.00%       :   17099     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: forward                                 :   25                : 0.000       : 0.00%       :      11     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: copyNested                              :   55                : 0.000       : 0.00%       :      30     |
-| [C]                                               : gt                                      :   -1                : 0.000       : 0.00%       :    4224     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: resizeNestedAs                          :   33                : 0.000       : 0.00%       :      30     |
-| [C]                                               : cat                                     :   -1                : 0.000       : 0.00%       :    1408     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: cuda                                    :   47                : 0.000       : 0.00%       :      95     |
-| [C]                                               : randn                                   :   -1                : 0.000       : 0.00%       :    4224     |
-| [C]                                               : uniform                                 :   -1                : 0.000       : 0.00%       :    8448     |
-| [C]                                               : nDimension                              :   -1                : 0.000       : 0.00%       :    4323     |
-| [C]                                               : CharTensor                              :   -1                : 0.000       : 0.00%       :    5632     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :  447                : 0.000       : 0.00%       :    2816     |
-| [C]                                               : narrow                                  :   -1                : 0.000       : 0.00%       :    2963     |
-| [C]                                               : bernoulli                               :   -1                : 0.000       : 0.00%       :    2876     |
-| [C]                                               : clone                                   :   -1                : 0.000       : 0.00%       :   14080     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: updateParameters                        :   76                : 0.000       : 0.00%       :     120     |
-| [C]                                               : cast                                    :   -1                : 0.000       : 0.00%       :    2816     |
-| ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: shouldReturn                            :  199                : 0.000       : 0.00%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: get                                     :   55                : 0.000       : 0.00%       :    2816     |
+| [C]                                               : FloatTensor                             :   -1                : 0.000       : 0.00%       :      75     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: accGradParameters                       :   46                : 0.000       : 0.00%       :     105     |
+| [C]                                               : addmv                                   :   -1                : 0.000       : 0.00%       :      55     |
+| [C]                                               : norm                                    :   -1                : 0.000       : 0.00%       :       5     |
 | ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: stop                                    :   85                : 0.000       : 0.00%       :       1     |
 | ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: abort                                   :  141                : 0.000       : 0.00%       :       2     |
-| [C]                                               : cropNoScale                             :   -1                : 0.000       : 0.00%       :    4224     |
-| [C]                                               : fill                                    :   -1                : 0.000       : 0.00%       :    1683     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: updateParameters                        :   81                : 0.000       : 0.00%       :      30     |
-| [C]                                               : floor                                   :   -1                : 0.000       : 0.00%       :   16896     |
-| [C]                                               : addmv                                   :   -1                : 0.000       : 0.00%       :     110     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: anonymous                               :   46                : 0.000       : 0.00%       :     500     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: updateGradInput                         :   20                : 0.000       : 0.00%       :      40     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   82                : 0.000       : 0.00%       :     120     |
-| [C]                                               : isContiguous                            :   -1                : 0.000       : 0.00%       :    8092     |
-| [C]                                               : FloatTensor                             :   -1                : 0.000       : 0.00%       :     150     |
-| [C]                                               : totable                                 :   -1                : 0.000       : 0.00%       :    6277     |
-| [C]                                               : norm                                    :   -1                : 0.000       : 0.00%       :      10     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: isstorage                               :  426                : 0.000       : 0.00%       :    6145     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: propagate                               :  244                : 0.000       : 0.00%       :     484     |
-| [C]                                               : resizeAs                                :   -1                : 0.000       : 0.00%       :     891     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: func                                    :    3                : 0.000       : 0.00%       :      77     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: long                                    :   47                : 0.000       : 0.00%       :     150     |
-| [C]                                               : dim                                     :   -1                : 0.000       : 0.00%       :    4326     |
-| [C]                                               : max                                     :   -1                : 0.000       : 0.00%       :     450     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: getSharedWorkspace                      :   87                : 0.000       : 0.00%       :     150     |
-| [C]                                               : CudaTensor                              :   -1                : 0.000       : 0.00%       :       1     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/cutorc: cdata                                   :  104                : 0.000       : 0.00%       :     300     |
-| [C]                                               : LongTensor                              :   -1                : 0.000       : 0.00%       :    2550     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/cunn/T: state_getter                            :   11                : 0.000       : 0.00%       :     105     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: int                                     :   47                : 0.000       : 0.00%       :    2100     |
-| [C]                                               : Tensor_tt                               :   -1                : 0.000       : 0.00%       :   13338     |
-| [C]                                               : sum                                     :   -1                : 0.000       : 0.00%       :      44     |
-| [C]                                               : IntTensor                               :   -1                : 0.000       : 0.00%       :    1020     |
-| [C]                                               : ceil                                    :   -1                : 0.000       : 0.00%       :     183     |
-| [C]                                               : dot                                     :   -1                : 0.000       : 0.00%       :      22     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: _getPositiveDimension                   :   11                : 0.000       : 0.00%       :      21     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: resetDescriptors                        :   16                : 0.000       : 0.00%       :      60     |
-| [C]                                               : addr                                    :   -1                : 0.000       : 0.00%       :     121     |
-| [C]                                               : zero                                    :   -1                : 0.000       : 0.00%       :     780     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: anonymous                               :    3                : 0.000       : 0.00%       :     231     |
-| .../04001/ashishb/torch-cl/install/share/lua/5.1/n: anonymous                               :    7                : 0.000       : 0.00%       :      11     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: forward                                 :   11                : 0.000       : 0.00%       :      11     |
-| [C]                                               : log                                     :   -1                : 0.000       : 0.00%       :      22     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Abs_updateOutput                        :  109                : 0.000       : 0.00%       :      11     |
-| ...rch-cl/install/share/lua/5.1/cudnn/SpatialMaxPo: anonymous                               :    3                : 0.000       : 0.00%       :      99     |
-| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: forward                                 :   27                : 0.000       : 0.00%       :      11     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  233                : 0.000       : 0.00%       :     330     |
-| [C]                                               : cudnnSetStream                          :   -1                : 0.000       : 0.00%       :    5865     |
-| [C]                                               : getState                                :   -1                : 0.000       : 0.00%       :    5970     |
-| [C]                                               : xpcall                                  :   -1                : 0.000       : 0.00%       :    2356     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: updateGradInput                         :    9                : 0.000       : 0.00%       :      70     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: updateGradInput                         :   88                : 0.000       : 0.00%       :      60     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Abs_updateGradInput                     :  109                : 0.000       : 0.00%       :      10     |
-| .../04001/ashishb/torch-cl/install/share/lua/5.1/n: anonymous                               :   15                : 0.000       : 0.00%       :      10     |
-| [C]                                               : cmul                                    :   -1                : 0.000       : 0.00%       :     223     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: func                                    :  226                : 0.000       : 0.00%       :      22     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: typeAs                                  :   21                : 0.000       : 0.00%       :      84     |
-| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: expandAs                                :  333                : 0.000       : 0.00%       :      30     |
-| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: typeAs                                  :    8                : 0.000       : 0.00%       :      84     |
-| [C]                                               : addmm                                   :   -1                : 0.000       : 0.00%       :     341     |
-| [C]                                               : THCState_getCurrentStream               :   -1                : 0.000       : 0.00%       :    5865     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Sigmoid_updateGradInput                 :  109                : 0.000       : 0.00%       :      40     |
-| [C]                                               : cdiv                                    :   -1                : 0.000       : 0.00%       :      10     |
-| [C]                                               : __add                                   :   -1                : 0.000       : 0.00%       :   15381     |
-| [C]                                               : getStream                               :   -1                : 0.000       : 0.00%       :    8730     |
+| ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: shouldReturn                            :  199                : 0.000       : 0.00%       :       1     |
+| .../ashishb/torch-cl/install/share/lua/5.1/torch/T: expandAs                                :  284                : 0.000       : 0.00%       :      15     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: anonymous                               :   93                : 0.000       : 0.00%       :      55     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: anonymous                               :   88                : 0.000       : 0.00%       :      15     |
+| [C]                                               : cloneNested                             :   -1                : 0.000       : 0.00%       :       3     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: istensor                                :  171                : 0.000       : 0.00%       :      43     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: anonymous                               :   46                : 0.000       : 0.00%       :     250     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: resizeNestedAs                          :   33                : 0.000       : 0.00%       :      15     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: addNestedTo                             :   75                : 0.000       : 0.00%       :      25     |
+| ...hishb/torch-cl/install/share/lua/5.1/nngraph/ne: copyNested                              :   55                : 0.000       : 0.00%       :      15     |
+| [C]                                               : xpcall                                  :   -1                : 0.000       : 0.00%       :    1216     |
+| [C]                                               : log                                     :   -1                : 0.000       : 0.00%       :      12     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: forward                                 :   11                : 0.000       : 0.00%       :       6     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: long                                    :   47                : 0.000       : 0.00%       :      75     |
+| ...shishb/torch-cl/install/share/lua/5.1/cutorch/T: int                                     :   47                : 0.000       : 0.00%       :    1050     |
+| [C]                                               : LongTensor                              :   -1                : 0.000       : 0.00%       :    1275     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: shape                                   :  150                : 0.000       : 0.00%       :     225     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: getSharedWorkspace                      :   87                : 0.000       : 0.00%       :      75     |
+| [C]                                               : max                                     :   -1                : 0.000       : 0.00%       :     225     |
+| [C]                                               : ceil                                    :   -1                : 0.000       : 0.00%       :      93     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/cudnn: anonymous                               :    3                : 0.000       : 0.00%       :     126     |
+| [C]                                               : Tensor_tt                               :   -1                : 0.000       : 0.00%       :    6848     |
+| [C]                                               : cudnnSetStream                          :   -1                : 0.000       : 0.00%       :    2970     |
+| [C]                                               : __add                                   :   -1                : 0.000       : 0.00%       :    7901     |
+| [C]                                               : getStream                               :   -1                : 0.000       : 0.00%       :    4440     |
+| [C]                                               : IntTensor                               :   -1                : 0.000       : 0.00%       :     510     |
 | [C]                                               : cudnnCreate                             :   -1                : 0.000       : 0.00%       :       1     |
-| [C]                                               : __eq                                    :   -1                : 0.000       : 0.00%       :   18904     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Si: anonymous                               :   11                : 0.000       : 0.00%       :      40     |
-| [C]                                               : getDevice                               :   -1                : 0.000       : 0.00%       :    8730     |
-| [C]                                               : div                                     :   -1                : 0.000       : 0.00%       :      70     |
-| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: backward                                :   67                : 0.000       : 0.00%       :      10     |
-| [C]                                               : state_getter                            :   -1                : 0.000       : 0.00%       :     105     |
-| [C]                                               : v                                       :   -1                : 0.000       : 0.00%       :     105     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: backward                                :   15                : 0.000       : 0.00%       :      10     |
+| [C]                                               : getState                                :   -1                : 0.000       : 0.00%       :    3025     |
+| [C]                                               : __eq                                    :   -1                : 0.000       : 0.00%       :    9664     |
+| [C]                                               : THCState_getCurrentStream               :   -1                : 0.000       : 0.00%       :    2970     |
+| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: forward                                 :   27                : 0.000       : 0.00%       :       6     |
+| ...rch-cl/install/share/lua/5.1/cudnn/SpatialMaxPo: anonymous                               :    3                : 0.000       : 0.00%       :      54     |
+| [C]                                               : zero                                    :   -1                : 0.000       : 0.00%       :     390     |
+| [C]                                               : sum                                     :   -1                : 0.000       : 0.00%       :      24     |
+| [C]                                               : cmul                                    :   -1                : 0.000       : 0.00%       :     113     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: func                                    :    8                : 0.000       : 0.00%       :      18     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: func                                    :   21                : 0.000       : 0.00%       :       6     |
+| .../04001/ashishb/torch-cl/install/share/lua/5.1/n: anonymous                               :    7                : 0.000       : 0.00%       :       6     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: _getPositiveDimension                   :   11                : 0.000       : 0.00%       :      11     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: Abs_updateOutput                        :  109                : 0.000       : 0.00%       :       6     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: resetPoolDescriptors                    :   27                : 0.000       : 0.00%       :      45     |
+| [C]                                               : v                                       :   -1                : 0.000       : 0.00%       :      55     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/cunn/T: state_getter                            :   11                : 0.000       : 0.00%       :      55     |
+| [C]                                               : t                                       :   -1                : 0.000       : 0.00%       :     176     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: updateAddBuffer                         :   45                : 0.000       : 0.00%       :     121     |
+| [C]                                               : state_getter                            :   -1                : 0.000       : 0.00%       :      55     |
+| [C]                                               : addmm                                   :   -1                : 0.000       : 0.00%       :     176     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/cutorc: cdata                                   :  104                : 0.000       : 0.00%       :     155     |
+| [C]                                               : addr                                    :   -1                : 0.000       : 0.00%       :      66     |
 | ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: startHooks                              :  234                : 0.000       : 0.00%       :       0     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: clear                                   :   16                : 0.000       : 0.00%       :     154     |
-| [C]                                               : randperm                                :   -1                : 0.000       : 0.00%       :    1408     |
-| [C]                                               : write                                   :   -1                : 0.000       : 0.00%       :     239     |
-| [C]                                               : open                                    :   -1                : 0.000       : 0.00%       :      13     |
-| [C]                                               : close                                   :   -1                : 0.000       : 0.00%       :    2835     |
-| [C]                                               : read                                    :   -1                : 0.000       : 0.00%       :    6232     |
-| [C]                                               : readObject                              :   -1                : 0.000       : 0.00%       :    3402     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: readObject                              :   11                : 0.000       : 0.00%       :     269     |
-| [C]                                               : pairs                                   :   -1                : 0.000       : 0.00%       :     802     |
-| [C]                                               : ipairs                                  :   -1                : 0.000       : 0.00%       :    2334     |
-| [C]                                               : loadstring                              :   -1                : 0.000       : 0.00%       :       4     |
-| [C]                                               : (for generator)                         :   -1                : 0.000       : 0.00%       :    9804     |
-| [C]                                               : getmetatable                            :   -1                : 0.000       : 0.00%       :   21077     |
-| [C]                                               : factory                                 :   -1                : 0.000       : 0.00%       :   13268     |
-| [C]                                               : getenv                                  :   -1                : 0.000       : 0.00%       :   35061     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: referenced                              :   49                : 0.000       : 0.00%       :       4     |
-| [C]                                               : DiskFile                                :   -1                : 0.000       : 0.00%       :       4     |
-| [C]                                               : pcall                                   :   -1                : 0.000       : 0.00%       :    9577     |
-| [C]                                               : setenv                                  :   -1                : 0.000       : 0.00%       :    2826     |
-| [C]                                               : readChar                                :   -1                : 0.000       : 0.00%       :   15259     |
-| [C]                                               : readInt                                 :   -1                : 0.000       : 0.00%       :   35412     |
-| [C]                                               : string                                  :   -1                : 0.000       : 0.00%       :   19679     |
-| [C]                                               : assert                                  :   -1                : 0.000       : 0.00%       :   32708     |
-| training_funcs.lua                                : create_BC                               :    5                : 0.000       : 0.00%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: __init                                  :    3                : 0.000       : 0.00%       :       9     |
-| [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :    7846     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: add                                     :   22                : 0.000       : 0.00%       :      75     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: add                                     :   35                : 0.000       : 0.00%       :      75     |
-| [C]                                               : next                                    :   -1                : 0.000       : 0.00%       :       9     |
-| [C]                                               : View                                    :   -1                : 0.000       : 0.00%       :       3     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: resetSize                               :    3                : 0.000       : 0.00%       :       3     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: __init                                  :   26                : 0.000       : 0.00%       :       3     |
-| [C]                                               : LongStorage                             :   -1                : 0.000       : 0.00%       :   11834     |
-| [C]                                               : Identity                                :   -1                : 0.000       : 0.00%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: __init                                  :    3                : 0.000       : 0.00%       :       4     |
-| [C]                                               : tableMaxN                               :   -1                : 0.000       : 0.00%       :      12     |
-| [C]                                               : Node                                    :   -1                : 0.000       : 0.00%       :      12     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: anonymous                               :   25                : 0.000       : 0.00%       :      10     |
-| [C]                                               : Tensor                                  :   -1                : 0.000       : 0.00%       :    1996     |
-| [C]                                               : Narrow                                  :   -1                : 0.000       : 0.00%       :       4     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: __init                                  :   10                : 0.000       : 0.00%       :      48     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: _makeDebugLabel                         :   22                : 0.000       : 0.00%       :      12     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :   14                : 0.000       : 0.00%       :      48     |
-| [C]                                               : format                                  :   -1                : 0.000       : 0.00%       :      27     |
-| [C]                                               : __len                                   :   -1                : 0.000       : 0.00%       :    1078     |
+| [C]                                               : getupvalue                              :   -1                : 0.000       : 0.00%       :       2     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: training                                :   85                : 0.000       : 0.00%       :     214     |
+| [C]                                               : txn                                     :   -1                : 0.000       : 0.00%       :       2     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: txn                                     :   63                : 0.000       : 0.00%       :       2     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: stat                                    :   73                : 0.000       : 0.00%       :       2     |
+| [C]                                               : tonumber                                :   -1                : 0.000       : 0.00%       :    5500     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __init                                  :  103                : 0.000       : 0.00%       :       2     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: dbi_open                                :  129                : 0.000       : 0.00%       :       2     |
+| [C]                                               : gc                                      :   -1                : 0.000       : 0.00%       :     752     |
+| [C]                                               : assert                                  :   -1                : 0.000       : 0.00%       :   17518     |
 | ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: dbi_open                                :   32                : 0.000       : 0.00%       :       2     |
-| [C]                                               : gc                                      :   -1                : 0.000       : 0.00%       :    1502     |
-| [C]                                               : sub                                     :   -1                : 0.000       : 0.00%       :     452     |
-| [C]                                               : match                                   :   -1                : 0.000       : 0.00%       :    8264     |
-| [C]                                               : type                                    :   -1                : 0.000       : 0.00%       :   30302     |
+| [C]                                               : DiskFile                                :   -1                : 0.000       : 0.00%       :       4     |
+| [C]                                               : execute                                 :   -1                : 0.000       : 0.00%       :       2     |
+| [C]                                               : typename                                :   -1                : 0.000       : 0.00%       :   56644     |
+| [C]                                               : env                                     :   -1                : 0.000       : 0.00%       :       2     |
+| [C]                                               : rawset                                  :   -1                : 0.000       : 0.00%       :       2     |
+| ...hishb/torch-cl/install/share/lua/5.1/randomkit/: create_wrapper                          :  296                : 0.000       : 0.00%       :      46     |
+| [C]                                               : unpack                                  :   -1                : 0.000       : 0.00%       :      38     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   87                : 0.000       : 0.00%       :      45     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __init                                  :   11                : 0.000       : 0.00%       :       2     |
+| [C]                                               : setmetatable                            :   -1                : 0.000       : 0.00%       :     406     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/dok/i: unpack                                  :  662                : 0.000       : 0.00%       :       2     |
+| [C]                                               : rk_seed                                 :   -1                : 0.000       : 0.00%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: referenced                              :   49                : 0.000       : 0.00%       :       4     |
+| [C]                                               : setenv                                  :   -1                : 0.000       : 0.00%       :    1546     |
+| [C]                                               : Identity                                :   -1                : 0.000       : 0.00%       :       1     |
+| training_funcs.lua                                : create_BC                               :    5                : 0.000       : 0.00%       :       1     |
+| [C]                                               : ipairs                                  :   -1                : 0.000       : 0.00%       :    1319     |
+| [C]                                               : loadstring                              :   -1                : 0.000       : 0.00%       :       4     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: __init                                  :    3                : 0.000       : 0.00%       :       9     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: anonymous                               :   25                : 0.000       : 0.00%       :      10     |
+| [C]                                               : Tensor                                  :   -1                : 0.000       : 0.00%       :    1352     |
+| [C]                                               : Node                                    :   -1                : 0.000       : 0.00%       :      12     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nngraph/: istable                                 :    7                : 0.000       : 0.00%       :     266     |
+| [C]                                               : getenv                                  :   -1                : 0.000       : 0.00%       :   27381     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: readObject                              :   11                : 0.000       : 0.00%       :     269     |
+| [C]                                               : write                                   :   -1                : 0.000       : 0.00%       :     224     |
+| [C]                                               : string                                  :   -1                : 0.000       : 0.00%       :   11999     |
+| [C]                                               : readChar                                :   -1                : 0.000       : 0.00%       :   10139     |
+| [C]                                               : readInt                                 :   -1                : 0.000       : 0.00%       :   25172     |
+| [C]                                               : readObject                              :   -1                : 0.000       : 0.00%       :    3402     |
+| [C]                                               : factory                                 :   -1                : 0.000       : 0.00%       :    8148     |
+| [C]                                               : getmetatable                            :   -1                : 0.000       : 0.00%       :   12510     |
+| [C]                                               : pcall                                   :   -1                : 0.000       : 0.00%       :    5737     |
+| [C]                                               : read                                    :   -1                : 0.000       : 0.00%       :    3672     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: __init                                  :   10                : 0.000       : 0.00%       :      48     |
+| [C]                                               : __index                                 :   -1                : 0.000       : 0.00%       :  295206     |
+| [C]                                               : cast                                    :   -1                : 0.000       : 0.00%       :    1537     |
+| [C]                                               : sub                                     :   -1                : 0.000       : 0.00%       :     273     |
+| [C]                                               : match                                   :   -1                : 0.000       : 0.00%       :    5706     |
+| [C]                                               : type                                    :   -1                : 0.000       : 0.00%       :   22172     |
 | [C]                                               : getinfo                                 :   -1                : 0.000       : 0.00%       :      14     |
 | [C]                                               : concat                                  :   -1                : 0.000       : 0.00%       :       6     |
 | ...4001/ashishb/torch-cl/install/share/lua/5.1/lmd: anonymous                               :    0                : 0.000       : 0.00%       :       1     |
 | [C]                                               : dirname                                 :   -1                : 0.000       : 0.00%       :       2     |
-| [C]                                               : load                                    :   -1                : 0.000       : 0.00%       :       1     |
-| [C]                                               : cdef                                    :   -1                : 0.000       : 0.00%       :       1     |
+| [C]                                               : load                                    :   -1                : 0.000       : 0.00%       :       2     |
+| [C]                                               : cdef                                    :   -1                : 0.000       : 0.00%       :       3     |
 | ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: anonymous                               :    0                : 0.000       : 0.00%       :       1     |
 | ...01/ashishb/torch-cl/install/share/lua/5.1/paths: thisfile                                :   62                : 0.000       : 0.00%       :       2     |
 | ...01/ashishb/torch-cl/install/share/lua/5.1/torch: include                                 :   48                : 0.000       : 0.00%       :       2     |
-| [C]                                               : dofile                                  :   -1                : 0.000       : 0.00%       :       6     |
+| [C]                                               : dofile                                  :   -1                : 0.000       : 0.00%       :       8     |
 | ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: start                                   :   67                : 0.000       : 0.00%       :       0     |
 | [C]                                               : getTime                                 :   -1                : 0.000       : 0.00%       :       2     |
 | ...01/ashishb/torch-cl/install/share/lua/5.1/paths: dofile                                  :   79                : 0.000       : 0.00%       :       2     |
 | training_funcs.lua                                : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
-| [C]                                               : anonymous                               :   -1                : 0.000       : 0.00%       :  660278     |
-| [C]                                               : require                                 :   -1                : 0.000       : 0.00%       :      14     |
+| [C]                                               : anonymous                               :   -1                : 0.000       : 0.00%       :  370449     |
+| [C]                                               : require                                 :   -1                : 0.000       : 0.00%       :      17     |
 | ...001/ashishb/torch-cl/install/share/lua/5.1/lmdb: anonymous                               :    0                : 0.000       : 0.00%       :       1     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: dbi_open                                :  129                : 0.000       : 0.00%       :       2     |
+| [C]                                               : __newindex                              :   -1                : 0.000       : 0.00%       :   19253     |
 | ...01/ashishb/torch-cl/install/share/lua/5.1/torch: class                                   :   57                : 0.000       : 0.00%       :       3     |
 | [C]                                               : newmetatable                            :   -1                : 0.000       : 0.00%       :       3     |
-| [C]                                               : tonumber                                :   -1                : 0.000       : 0.00%       :    9340     |
-| [C]                                               : execute                                 :   -1                : 0.000       : 0.00%       :       2     |
-| [C]                                               : new                                     :   -1                : 0.000       : 0.00%       :   21112     |
-| [C]                                               : __newindex                              :   -1                : 0.000       : 0.00%       :   41589     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: stat                                    :   73                : 0.000       : 0.00%       :       2     |
-| [C]                                               : txn                                     :   -1                : 0.000       : 0.00%       :       2     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: txn                                     :   63                : 0.000       : 0.00%       :       2     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __init                                  :  103                : 0.000       : 0.00%       :       2     |
-| [C]                                               : select                                  :   -1                : 0.000       : 0.00%       :    8481     |
-| [C]                                               : unpack                                  :   -1                : 0.000       : 0.00%       :      68     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/dok/i: unpack                                  :  662                : 0.000       : 0.00%       :       2     |
-| [C]                                               : env                                     :   -1                : 0.000       : 0.00%       :       2     |
+| ...hishb/torch-cl/install/share/lua/5.1/randomkit/: anonymous                               :  122                : 0.000       : 0.00%       :     344     |
+| [C]                                               : searchpath                              :   -1                : 0.000       : 0.00%       :       1     |
+| ...hishb/torch-cl/install/share/lua/5.1/randomkit/: anonymous                               :    0                : 0.000       : 0.00%       :       1     |
+| [C]                                               : close                                   :   -1                : 0.000       : 0.00%       :    1553     |
+| [C]                                               : insert                                  :   -1                : 0.000       : 0.00%       :    5272     |
+| [C]                                               : pairs                                   :   -1                : 0.000       : 0.00%       :     755     |
+| [builtin:remove]                                  : remove                                  :   -1                : 0.000       : 0.00%       :    1579     |
+| [C]                                               : pointer                                 :   -1                : 0.000       : 0.00%       :     794     |
+| [C]                                               : new                                     :   -1                : 0.000       : 0.00%       :    9236     |
+| [C]                                               : select                                  :   -1                : 0.000       : 0.00%       :    5809     |
+| [C]                                               : open                                    :   -1                : 0.000       : 0.00%       :      17     |
+| [C]                                               : (for generator)                         :   -1                : 0.000       : 0.00%       :    5752     |
+| ...shishb/torch-cl/install/share/lua/5.1/randomkit: anonymous                               :    0                : 0.000       : 0.00%       :       2     |
 | preproc.lua                                       : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
 | func_lib.lua                                      : anonymous                               :    0                : 0.000       : 0.00%       :       1     |
-| [C]                                               : typename                                :   -1                : 0.000       : 0.00%       :  100991     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: anonymous                               :   87                : 0.000       : 0.00%       :      45     |
-| [C]                                               : __index                                 :   -1                : 0.000       : 0.00%       :  543630     |
-| [C]                                               : setmetatable                            :   -1                : 0.000       : 0.00%       :     406     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: __init                                  :   11                : 0.000       : 0.00%       :       2     |
-| ...04001/ashishb/torch-cl/install/share/lua/5.1/lm: get                                     :  170                : 0.000       : 0.00%       :    2816     |
-| [C]                                               : B_model                                 :   -1                : 0.000       : 0.00%       :       1     |
-| ...rch-cl/install/share/lua/5.1/nngraph/graphinspe: annotateNodes                           :  128                : 0.000       : 0.00%       :       1     |
-| [C]                                               : writeChar                               :   -1                : 0.000       : 0.00%       :    1023     |
-| [C]                                               : version                                 :   -1                : 0.000       : 0.00%       :     244     |
-| [C]                                               : CharStorage                             :   -1                : 0.000       : 0.00%       :    6655     |
-| [C]                                               : writeInt                                :   -1                : 0.000       : 0.00%       :    2598     |
-| [C]                                               : tostring                                :   -1                : 0.000       : 0.00%       :    3307     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: clearDesc                               :  429                : 0.000       : 0.00%       :     175     |
-| [C]                                               : writeDouble                             :   -1                : 0.000       : 0.00%       :     188     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: write                                   :  124                : 0.000       : 0.00%       :       6     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: clearDesc                               :   57                : 0.000       : 0.00%       :     243     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: clearDesc                               :  118                : 0.000       : 0.00%       :     105     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isWritableObject                        :   28                : 0.000       : 0.00%       :    1084     |
+| [C]                                               : gsub                                    :   -1                : 0.000       : 0.00%       :     604     |
+| [C]                                               : rawget                                  :   -1                : 0.000       : 0.00%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: packageLuaPath                          :   26                : 0.000       : 0.00%       :       2     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: include                                 :   53                : 0.000       : 0.00%       :       2     |
+| [C]                                               : gmatch                                  :   -1                : 0.000       : 0.00%       :       3     |
+| [C]                                               : collectgarbage                          :   -1                : 0.000       : 0.00%       :       5     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :   14                : 0.000       : 0.00%       :      48     |
+| [C]                                               : format                                  :   -1                : 0.000       : 0.00%       :      27     |
 | [C]                                               : binary                                  :   -1                : 0.000       : 0.00%       :       2     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: cuda                                    :  141                : 0.000       : 0.00%       :       1     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: evaluate                                :   89                : 0.000       : 0.00%       :     214     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   91                : 0.000       : 0.00%       :     212     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: hook                                    :  109                : 0.000       : 0.00%       :    1166     |
-| [C]                                               : nElement                                :   -1                : 0.000       : 0.00%       :   22022     |
+| [C]                                               : MemoryFile                              :   -1                : 0.000       : 0.00%       :    1538     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: cuda                                    :   31                : 0.000       : 0.00%       :       1     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: cuda                                    :   48                : 0.000       : 0.00%       :       1     |
-| [C]                                               : MemoryFile                              :   -1                : 0.000       : 0.00%       :    2818     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: hook                                    :  109                : 0.000       : 0.00%       :    1166     |
+| [C]                                               : CharStorage                             :   -1                : 0.000       : 0.00%       :    4095     |
+| [C]                                               : writeInt                                :   -1                : 0.000       : 0.00%       :    2598     |
+| [C]                                               : writeChar                               :   -1                : 0.000       : 0.00%       :    1023     |
+| [C]                                               : version                                 :   -1                : 0.000       : 0.00%       :     244     |
+| [C]                                               : tostring                                :   -1                : 0.000       : 0.00%       :    2027     |
+| [C]                                               : nElement                                :   -1                : 0.000       : 0.00%       :    9680     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: evaluate                                :   89                : 0.000       : 0.00%       :     214     |
+| [C]                                               : stride                                  :   -1                : 0.000       : 0.00%       :     740     |
+| [C]                                               : storageOffset                           :   -1                : 0.000       : 0.00%       :    3581     |
+| [C]                                               : copy                                    :   -1                : 0.000       : 0.00%       :    3837     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: cuda                                    :  141                : 0.000       : 0.00%       :       1     |
+| [C]                                               : set                                     :   -1                : 0.000       : 0.00%       :    5107     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: evaluate                                :   90                : 0.000       : 0.00%       :      20     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: write                                   :   98                : 0.000       : 0.00%       :       4     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: type                                    :   71                : 0.000       : 0.00%       :       2     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   91                : 0.000       : 0.00%       :     212     |
+| [C]                                               : resize                                  :   -1                : 0.000       : 0.00%       :    3549     |
+| [C]                                               : writeDouble                             :   -1                : 0.000       : 0.00%       :     188     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: clearDesc                               :   57                : 0.000       : 0.00%       :     138     |
+| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: clearState                              :   70                : 0.000       : 0.00%       :     126     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: clearState                              :  454                : 0.000       : 0.00%       :      90     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: clearState                              :  381                : 0.000       : 0.00%       :     540     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: clear                                   :   16                : 0.000       : 0.00%       :      84     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: clearState                              :  133                : 0.000       : 0.00%       :      54     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: clearState                              :  111                : 0.000       : 0.00%       :      66     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: clearState                              :  107                : 0.000       : 0.00%       :      36     |
+| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: clearState                              :   58                : 0.000       : 0.00%       :      18     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: clearState                              :   64                : 0.000       : 0.00%       :      36     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: writeBool                               :    3                : 0.000       : 0.00%       :      62     |
+| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: clearState                              :   14                : 0.000       : 0.00%       :      42     |
+| [C]                                               : dump                                    :   -1                : 0.000       : 0.00%       :       2     |
+| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: clearDesc                               :   93                : 0.000       : 0.00%       :      40     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: clearDesc                               :  118                : 0.000       : 0.00%       :      60     |
+| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: write                                   :  124                : 0.000       : 0.00%       :       6     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: clear                                   :  129                : 0.000       : 0.00%       :     120     |
 | [C]                                               : seek                                    :   -1                : 0.000       : 0.00%       :       2     |
-| ...ashishb/torch-cl/install/share/lua/5.1/nn/DotPr: clearState                              :   58                : 0.000       : 0.00%       :      33     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/nn/Dr: clearState                              :   64                : 0.000       : 0.00%       :      66     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/L: clearState                              :  111                : 0.000       : 0.00%       :     121     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: clearState                              :  107                : 0.000       : 0.00%       :      66     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: training                                :   85                : 0.000       : 0.00%       :      20     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: training                                :   85                : 0.000       : 0.00%       :     214     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: func                                    :   86                : 0.000       : 0.00%       :     212     |
-| [C]                                               : collectgarbage                          :   -1                : 0.000       : 0.00%       :    4234     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialCrossM: clearDesc                               :   93                : 0.000       : 0.00%       :      70     |
-| ...ashishb/torch-cl/install/share/lua/5.1/cudnn/Po: clearState                              :  133                : 0.000       : 0.00%       :      99     |
-| ...ch-cl/install/share/lua/5.1/cudnn/SpatialConvol: clearState                              :  454                : 0.000       : 0.00%       :     165     |
-| [C]                                               : getupvalue                              :   -1                : 0.000       : 0.00%       :       2     |
 | ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: share                                   :   93                : 0.000       : 0.00%       :      40     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: share                                   :   95                : 0.000       : 0.00%       :       2     |
-| ...hishb/torch-cl/install/share/lua/5.1/cudnn/Poin: clearState                              :   70                : 0.000       : 0.00%       :     231     |
-| [C]                                               : dump                                    :   -1                : 0.000       : 0.00%       :       2     |
 | ...e/04001/ashishb/torch-cl/install/share/lua/5.1/: stopHooks                               :  238                : 0.000       : 0.00%       :       1     |
-| ...1/ashishb/torch-cl/install/share/lua/5.1/nn/Ide: clearState                              :   14                : 0.000       : 0.00%       :      77     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: clearState                              :  381                : 0.000       : 0.00%       :     990     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: _makeDebugLabel                         :   22                : 0.000       : 0.00%       :      12     |
+| [C]                                               : size                                    :   -1                : 0.000       : 0.00%       :   18557     |
+| [C]                                               : storage                                 :   -1                : 0.000       : 0.00%       :    4371     |
+| ...rch-cl/install/share/lua/5.1/nngraph/graphinspe: annotateNodes                           :  128                : 0.000       : 0.00%       :       1     |
 | [C]                                               : C_model                                 :   -1                : 0.000       : 0.00%       :       1     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Join: type                                    :   71                : 0.000       : 0.00%       :       2     |
-| [C]                                               : stride                                  :   -1                : 0.000       : 0.00%       :    1280     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :    7                : 0.000       : 0.00%       :      60     |
-| [C]                                               : Edge                                    :   -1                : 0.000       : 0.00%       :      15     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: func                                    :   52                : 0.000       : 0.00%       :      12     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs_func                                :   82                : 0.000       : 0.00%       :      12     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: add                                     :   25                : 0.000       : 0.00%       :      60     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: new                                     :   87                : 0.000       : 0.00%       :      81     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: reverse                                 :   76                : 0.000       : 0.00%       :       3     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: roots                                   :  148                : 0.000       : 0.00%       :       5     |
-| [C]                                               : sort                                    :   -1                : 0.000       : 0.00%       :       5     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs_dirty                               :   79                : 0.000       : 0.00%       :       1     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :   17                : 0.000       : 0.00%       :       4     |
+| [C]                                               : B_model                                 :   -1                : 0.000       : 0.00%       :       1     |
+| [C]                                               : __len                                   :   -1                : 0.000       : 0.00%       :    1041     |
+| [C]                                               : getlocal                                :   -1                : 0.000       : 0.00%       :      14     |
 | [C]                                               : create_BC                               :   -1                : 0.000       : 0.00%       :       1     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nngraph: annotate                                :   80                : 0.000       : 0.00%       :      10     |
-| [C]                                               : getlocal                                :   -1                : 0.000       : 0.00%       :      14     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs                                     :  101                : 0.000       : 0.00%       :       1     |
-| ...hishb/torch-cl/install/share/lua/5.1/nngraph/gm: __init                                  :   44                : 0.000       : 0.00%       :       1     |
 | ...01/ashishb/torch-cl/install/share/lua/5.1/graph: graph                                   :   50                : 0.000       : 0.00%       :       1     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: __init                                  :    5                : 0.000       : 0.00%       :       1     |
 | [C]                                               : Graph                                   :   -1                : 0.000       : 0.00%       :       4     |
-| [C]                                               : set                                     :   -1                : 0.000       : 0.00%       :    9262     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: topsort                                 :  107                : 0.000       : 0.00%       :       2     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: dfs_dirty                               :   61                : 0.000       : 0.00%       :       2     |
-| [C]                                               : pointer                                 :   -1                : 0.000       : 0.00%       :     793     |
+| [C]                                               : LongStorage                             :   -1                : 0.000       : 0.00%       :    6444     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: __init                                  :   26                : 0.000       : 0.00%       :       3     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/N: __init                                  :    3                : 0.000       : 0.00%       :       4     |
+| [C]                                               : Narrow                                  :   -1                : 0.000       : 0.00%       :       4     |
+| [C]                                               : tableMaxN                               :   -1                : 0.000       : 0.00%       :      12     |
+| ...04001/ashishb/torch-cl/install/share/lua/5.1/nn: resetSize                               :    3                : 0.000       : 0.00%       :       3     |
+| [C]                                               : next                                    :   -1                : 0.000       : 0.00%       :       9     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: add                                     :   22                : 0.000       : 0.00%       :      75     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nngraph: add                                     :   35                : 0.000       : 0.00%       :      75     |
+| [C]                                               : View                                    :   -1                : 0.000       : 0.00%       :       3     |
 | ...torch-cl/install/share/lua/5.1/nn/SpatialConvol: type                                    :  167                : 0.000       : 0.00%       :      30     |
-| [C]                                               : storage                                 :   -1                : 0.000       : 0.00%       :    7306     |
-| [C]                                               : gsub                                    :   -1                : 0.000       : 0.00%       :     547     |
-| [C]                                               : size                                    :   -1                : 0.000       : 0.00%       :   36195     |
-| [C]                                               : copy                                    :   -1                : 0.000       : 0.00%       :   11304     |
-| [C]                                               : resize                                  :   -1                : 0.000       : 0.00%       :    8643     |
-| [C]                                               : storageOffset                           :   -1                : 0.000       : 0.00%       :    6441     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: dfs                                     :   73                : 0.000       : 0.00%       :       2     |
-| [C]                                               : find                                    :   -1                : 0.000       : 0.00%       :   28048     |
-| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: __init                                  :    3                : 0.000       : 0.00%       :       1     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: post_func                               :   63                : 0.000       : 0.00%       :      24     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: pre_func                                :   67                : 0.000       : 0.00%       :      24     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: visit                                   :   35                : 0.000       : 0.00%       :      32     |
-| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: double                                  :  137                : 0.000       : 0.00%       :       1     |
-| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: func                                    :  138                : 0.000       : 0.00%       :      24     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :   17                : 0.000       : 0.00%       :       4     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs_dirty                               :   79                : 0.000       : 0.00%       :       1     |
+| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: __init                                  :    5                : 0.000       : 0.00%       :       1     |
 | [C]                                               : BCECriterion                            :   -1                : 0.000       : 0.00%       :       1     |
 | .../ashishb/torch-cl/install/share/lua/5.1/nn/Cont: add                                     :   10                : 0.000       : 0.00%       :      10     |
-| ...hishb/torch-cl/install/share/lua/5.1/nn/BCECrit: __init                                  :    5                : 0.000       : 0.00%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: func                                    :  138                : 0.000       : 0.00%       :      24     |
+| .../ashishb/torch-cl/install/share/lua/5.1/nn/Crit: __init                                  :    3                : 0.000       : 0.00%       :       1     |
+| [C]                                               : find                                    :   -1                : 0.000       : 0.00%       :   15633     |
+| ...001/ashishb/torch-cl/install/share/lua/5.1/nn/M: double                                  :  137                : 0.000       : 0.00%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: isTypeOf                                :  129                : 0.000       : 0.00%       :    3610     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs                                     :  101                : 0.000       : 0.00%       :       1     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: pre_func                                :   67                : 0.000       : 0.00%       :      24     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: roots                                   :  148                : 0.000       : 0.00%       :       5     |
+| [C]                                               : Edge                                    :   -1                : 0.000       : 0.00%       :      15     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: func                                    :   52                : 0.000       : 0.00%       :      12     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: bfs_func                                :   82                : 0.000       : 0.00%       :      12     |
+| [C]                                               : sort                                    :   -1                : 0.000       : 0.00%       :       5     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: __init                                  :    7                : 0.000       : 0.00%       :      60     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: reverse                                 :   76                : 0.000       : 0.00%       :       3     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/graph: add                                     :   25                : 0.000       : 0.00%       :      60     |
+| ...01/ashishb/torch-cl/install/share/lua/5.1/torch: new                                     :   87                : 0.000       : 0.00%       :      81     |
 | [C]                                               : sethook                                 :   -1                : 0.000       : 0.00%       :       1     |

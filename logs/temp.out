@@ -1,3 +1,15 @@
-job execution at: Fri May 6 00:41:32 CDT 2016
-running on node c221-604
-[ProFi]	 Report written to MyProfilingReport.txt
+job execution at: Fri May 6 05:11:26 CDT 2016
+running on node c221-102
+[ProFi]	 Report written to profiling_report.txt
+11%  init.lua:24 < get_example_C.lua:18
+10%  init.lua:24 < get_example_C.lua:17
+ 7%  Tensor.lua:16 < training_funcs.lua:56
+ 7%  utils.lua:13 < utils.lua:57
+ 5%  ProFi.lua:441 < ffi.meta.__index
+ 4%  Tensor.lua:16 < training_funcs.lua:68
+ 4%  Tensor.lua:16 < training_funcs.lua:119
+ 4%  File.lua:351 < @0x2aaaabf48790
+ 3%  Tensor.lua:16 < training_funcs.lua:67
+ 3%  ProFi.lua:441 < @0x2aaaab084560
+ 3%  Tensor.lua:16 < training_funcs.lua:71
+ 3%  File.lua:439 < pcall
