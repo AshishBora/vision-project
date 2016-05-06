@@ -19,6 +19,7 @@ end
 B_model = torch.load('B_model.t7')
 predictor = get_predictor(B_model)
 predictor:cuda()
+predictor:evaluate()
 
 attr_pred = torch.Tensor(num_im, 42)
 batch_size = 400

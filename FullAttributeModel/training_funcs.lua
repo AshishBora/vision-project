@@ -36,12 +36,12 @@ end
 
 
 function get_pred_err(prob, target)
-    local pred = 2
+    local pred = 1
     if(prob[1] < 0.5) then
-        pred = 1
+        pred = 0
     end
     local pred_err = 0
-    if pred ~= target+1 then
+    if pred ~= target then
         pred_err = 1
     end
     return pred_err
@@ -50,12 +50,14 @@ end
 
 
 function get_total_pred_err(probs, targets)
-    local total_pred_err = 0;
-    local i = 0;
-    for i = 1, (#probs)[1] do
-        total_pred_err = total_pred_err + get_pred_err(probs[i], targets[i]);
-    end
-    return total_pred_err/(#probs)[1];
+
+    local pred = torch.Tensor(probs:size())
+    pred:fill(1)
+    pred[torch.lt(probs:double(), 0.5)] = 0
+
+    local pred_err = torch.ne(pred, targets)
+    return torch.mean(pred_err:double())
+
 end
 
 
@@ -77,21 +79,27 @@ end
 -- function to evalaute the model
 function evalPerf(model, crit, get_example, reader, iter, attrs, num_im)
 
-    outfile = io.open("train_C.out", "a")
+    outfile = io.open('train_C.out', 'a')
     outfile:write('Testing... \n')
+    outfile:close()
 
     -- FOR DEBUGGING only
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
     inputs, targets = nextBatch(get_example, reader, iter, attrs, num_im)
+    -- print(collectgarbage('count'))
+    -- print(inputs:size())
 
     model:evaluate()
     local probs = model:forward(inputs:cuda())
     model:training()
+    -- print(collectgarbage('count'))
 
     local test_loss = crit:forward(probs:cuda(), targets:cuda())
     local test_pred_err = get_total_pred_err(probs, targets)
+    -- print(collectgarbage('count'))
 
+    outfile = io.open('train_C.out', 'a')
     outfile:write('test_loss = ', test_loss, ', ')
     outfile:write('test_pred_err = ', test_pred_err, '\n')
     outfile:close()
@@ -106,6 +114,7 @@ function nextBatch(get_example, reader, batch_size, attrs, num_im)
     local i = 0;
     for i = 1, batch_size do
         inputs[i], targets[i] = get_example(reader, attrs, num_im)
+        -- print(i, collectgarbage('count'))
     end
     inputs:cuda()
     targets:cuda()

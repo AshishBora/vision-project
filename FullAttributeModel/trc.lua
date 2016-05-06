@@ -2,6 +2,8 @@ require 'image';
 require 'cunn';
 require 'cudnn';
 require 'nngraph';
+ProFi = require 'ProFi' -- profiler
+ProFi:start()
 
 ----------------- get training functions --------------
 dofile('training_funcs.lua')
@@ -37,7 +39,7 @@ val_attrs = torch.load('./lmdb/val_attrs.t7')
 
 
 -------------------------  Create model --------------------------
-outfile = io.open("train_C.out", "w")
+outfile = io.open('train_C.out', 'w')
 outfile:write('Creating model... ')
 
 B_model = torch.load('B_model.t7')
@@ -58,25 +60,39 @@ outfile:close()
 -------------------- easy access to layers --------------------
 
 -- verify this
-B_fc = B_model.modules[2]
+B_conv = B_model.modules[2]
+B_fc = B_model.modules[3]
+
+C_conv1 = C_model.modules[2]
 C_fc1 = C_model.modules[3]
+C_conv2 = C_model.modules[8]
 C_fc2 = C_model.modules[9]
+
 C_cmpr = C_model.modules[15]
 
 
+-------------------- share parameters --------------------
+-- print(collectgarbage('count'))
+
+C_conv1 = B_conv:clone('weight', 'bias')
+C_conv2 = B_conv:clone('weight', 'bias')
+
+-- print(collectgarbage('count'))
+BC_model:clearState()
+-- print(collectgarbage('count'))
 
 ---------------- Define hyper parameters ------------------------
 lr = 0.2
 attr_lr = 0.5
 
 -- batch_size = 512
-batch_size = 512
+batch_size = 128
 
-max_train_iter = 10000
+max_train_iter = 5
 test_interval = 50
 
 -- val_iter = 1000
-val_iter = 2
+val_iter = 128
 
 lr_stepsize = 200
 gamma = 0.7
@@ -106,7 +122,9 @@ outfile:close()
 
 
 for i = 1, max_train_iter do
-    collectgarbage()
+    
+    mem = collectgarbage('count')
+
     if i == 1 then  -- initial testing
         evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, val_attrs, val_num)
     end
@@ -116,6 +134,11 @@ for i = 1, max_train_iter do
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(214325)
     inputs, targets = nextBatch(get_example_C, train_reader, batch_size, train_attrs, train_num)
+
+    -- outfile = io.open('train_C.out', 'a')
+    -- outfile:write(inputs:size())
+    -- outfile:close()
+
     batch_loss, train_pred_err = accumulate(BC_model, inputs, targets, crit,  wd)
     local grad_norm = torch.norm(C_fc1.modules[3].gradWeight)
 
@@ -126,14 +149,14 @@ for i = 1, max_train_iter do
 
     BC_model:clearState(); -- reduce memory usage
 
-    outfile = io.open("train_C.out", "a")
+    outfile = io.open('train_C.out', 'a')
     outfile:write('iter ', i, ', lr: ', lr, ', attr_lr: ', attr_lr)
     outfile:write(', batch_loss: ', batch_loss, ', train_err: ', train_pred_err)
-    outfile:write(', grad_norm: ', grad_norm, '\n')
+    outfile:write(', grad_norm: ', grad_norm, ', mem: ', mem, '\n')
     outfile:close()
 
     if i % test_interval == 0 then
-        evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, attrs, val_num)
+        evalPerf(BC_model, crit, get_example_C, val_reader, val_iter, val_attrs, val_num)
     end
 
     if i % lr_stepsize == 0 then
@@ -142,7 +165,7 @@ for i = 1, max_train_iter do
     end
 
     if snapshot and (i % snapshot_interval == 0) then
-        outfile = io.open("train_C.out", "a")
+        outfile = io.open('train_C.out', 'a')
         outfile:write('Snapshotting C_model... ')
         snapshot_filename_C = snapshot_prefix .. 'C_model__' .. tostring(i) .. '.t7'
         C_model:clearState()
@@ -159,3 +182,6 @@ val_reader:abort()
 
 train_lmdb:close()
 val_lmdb:close()
+
+ProFi:stop()
+ProFi:writeReport('profiling_report.txt')

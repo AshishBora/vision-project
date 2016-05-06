@@ -1,4 +1,9 @@
-Creating model... done
+reating model... done
 Training with snapshotting enabled... 
 Testing... 
-test_loss = 0.70628702640533, test_pred_err = 0.5
+test_loss = 0.75355675816536, test_pred_err = 0.4921875
+iter 1, lr: 0.2, attr_lr: 0.5, batch_loss: 0.75481288135052, train_err: 0.5, grad_norm: 0.10362355411053, mem: 6318.775390625
+iter 2, lr: 0.2, attr_lr: 0.5, batch_loss: 0.71727359294891, train_err: 0.46875, grad_norm: 0.092280104756355, mem: 4142.2783203125
+iter 3, lr: 0.2, attr_lr: 0.5, batch_loss: 0.70236331224442, train_err: 0.421875, grad_norm: 0.08778578042984, mem: 6598.21875
+iter 4, lr: 0.2, attr_lr: 0.5, batch_loss: 0.70076087117195, train_err: 0.4296875, grad_norm: 0.08730648458004, mem: 6466.5849609375
+iter 5, lr: 0.2, attr_lr: 0.5, batch_loss: 0.72762805223465, train_err: 0.4765625, grad_norm: 0.098105676472187, mem: 4238.40625
