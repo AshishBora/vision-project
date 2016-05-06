@@ -1,16 +1,2 @@
-job execution at: Thu May 5 05:37:12 CDT 2016
-running on node c221-603
-psize	4096
-depth	2
-entries	17907
-branch_pages	1
-leaf_pages	189
-overflow_pages	3456051
- 0.3753
- 0.3113
-[torch.CudaTensor of size 2x1]
-
- 0
- 0
-[torch.DoubleTensor of size 2]
-
+job execution at: Fri May 6 00:36:43 CDT 2016
+running on node c221-301

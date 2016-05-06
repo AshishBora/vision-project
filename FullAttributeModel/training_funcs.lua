@@ -84,13 +84,17 @@ function evalPerf(model, crit, get_example, reader, iter, attrs, num_im)
     -- set the random seed so that same batch is chosen always. Make sure error goes down
     -- torch.manualSeed(3489208)
     inputs, targets = nextBatch(get_example, reader, iter, attrs, num_im)
+    -- print(collectgarbage("count"))
+    -- print(inputs:size())
 
     model:evaluate()
     local probs = model:forward(inputs:cuda())
     model:training()
+    -- print(collectgarbage("count"))
 
     local test_loss = crit:forward(probs:cuda(), targets:cuda())
     local test_pred_err = get_total_pred_err(probs, targets)
+    -- print(collectgarbage("count"))
 
     outfile:write('test_loss = ', test_loss, ', ')
     outfile:write('test_pred_err = ', test_pred_err, '\n')
@@ -106,6 +110,7 @@ function nextBatch(get_example, reader, batch_size, attrs, num_im)
     local i = 0;
     for i = 1, batch_size do
         inputs[i], targets[i] = get_example(reader, attrs, num_im)
+        -- print(i, collectgarbage("count"))
     end
     inputs:cuda()
     targets:cuda()
