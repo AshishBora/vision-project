@@ -3,6 +3,7 @@ require 'torch'
 require 'nngraph'
 require 'nn'
 require 'cunn'
+require 'image'
 
 dofile('func_lib.lua')
 dofile('preproc.lua')
@@ -29,9 +30,10 @@ for i = 1, max_num_batches do
 	print('proecessing', start, 'to', stop)
 	batch = torch.Tensor(stop-start+1, 3, 227, 227)
 	for j = start, stop do
-		input = preprocess(imPaths[j], 0, 0)
-		input = input:double()
-		batch[j-start+1] = input
+		img = image.load(imPaths[j], 3, 'float')
+		img = preprocess(img, 0, 0)
+		img = img:double()
+		batch[j-start+1] = img
 	end
 	output = predictor:forward(batch:cuda())
 	attr = predictor.modules[2].output:double()
