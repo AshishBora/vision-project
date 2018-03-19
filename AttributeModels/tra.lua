@@ -2,6 +2,9 @@ require 'nngraph';
 require 'torch';
 
 
+torch.manualSeed(0)
+
+
 function createFullModel(A_model, B_model, C_model)
     local input = nn.Identity()();
 
@@ -176,7 +179,7 @@ outfile:write('Creating model... ')
 
 A_model = torch.load('A_model.t7')
 B_model = torch.load('B_model_nn.t7')
-C_model = torch.load('C_model__10000.t7')
+C_model = torch.load('C_model__1500_init.t7')
 
 ABC_model = createFullModel(A_model, B_model, C_model)
 -- graph.dot(ABC_model.fg, 'ABCM')
@@ -217,7 +220,7 @@ attr_gamma = 1
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
-snapshot = false
+snapshot = true
 B_model.modules[2].modules[2].p = 0.2 -- dropout rate
 C_model.modules[2].modules[2].p = 0.2  -- dropout rate
 C_model.modules[7].modules[2].p = 0.2  -- dropout rate
@@ -276,7 +279,7 @@ for i = 1, max_train_iter do
     outfile:close()
 
     if i % test_interval == 0 then
-        evalPerf(ABC_model, crit, testset, test_iter)        
+        evalPerf(ABC_model, crit, testset, test_iter)
     end
 
     if i % lr_stepsize == 0 then
@@ -291,7 +294,7 @@ for i = 1, max_train_iter do
         outfile:write('Snapshotting A_model... ')
         snapshot_filename_A = snapshot_prefix .. 'A_model__' .. tostring(i) .. '.t7'
         A_model:clearState()
-        torch.save(snapshot_filename_C, C_model)
+        torch.save(snapshot_filename_A, A_model)
         outfile:write('done\n')
 
         outfile:close()

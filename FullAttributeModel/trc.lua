@@ -82,25 +82,25 @@ BC_model:clearState()
 -- print(collectgarbage('count'))
 
 ---------------- Define hyper parameters ------------------------
-max_crop_jitter = 1
-std_dev = 0.1
-hflip = true
+max_crop_jitter = 1*0
+std_dev = 0.1*0
+hflip = false
 
-lr = 0.5
+lr = 2
 batch_size = 128
 max_train_iter = 5000
 test_interval = 50
 val_iter = 128
 lr_stepsize = 200
-gamma = 0.7
+gamma = 0.5
 wd = 0
 snapshot_interval = 100
 snapshot_prefix = './'
 snapshot = true
 
-B_fc.modules[2].p = 0 -- dropout rate
-C_fc1.modules[2].p = 0  -- dropout rate
-C_fc2.modules[2].p = 0  -- dropout rate
+B_fc.modules[2].p = 0.0 -- dropout rate
+C_fc1.modules[2].p = 0.0  -- dropout rate
+C_fc2.modules[2].p = 0.0  -- dropout rate
 
 
 ------------------  Start training ------------------------
@@ -139,8 +139,8 @@ for i = 1, max_train_iter do
     local grad_norm = torch.norm(C_fc1.modules[3].gradWeight)
 
     -- update parameters for only a few layers in C
-    C_fc1:updateParameters(lr)
-    C_fc2:updateParameters(lr)
+    -- C_fc1:updateParameters(lr)
+    -- C_fc2:updateParameters(lr)
     C_cmpr:updateParameters(lr)
 
     BC_model:clearState(); -- reduce memory usage

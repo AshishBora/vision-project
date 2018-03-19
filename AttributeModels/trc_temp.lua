@@ -41,7 +41,7 @@ function getCtrainExample(set, labels)
     local target = label - 1
     local input = torch.cat({im_feat[1], im_feat[2], im_feat[3], ques})
 
-return {input, target}
+    return {input, target}
 end
 
 
@@ -219,7 +219,7 @@ snapshot = false
 
 ----------------  Start training ------------------------
 
-BC_model:training() -- put the model in training mode
+-- BC_model:training() -- put the model in training mode
 
 outfile = io.open('train_C.out', 'a')
 outfile:write('Training with snapshotting ')
